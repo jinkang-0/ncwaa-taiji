@@ -188,9 +188,10 @@ export const serializeLeanDoc = <T>(
 };
 
 /**
- * Formalize link.
+ * Ensure link is prefixed with http://
+ * or https://
  */
 export const formalizeLink = (link: string) => {
-  if (link.startsWith("https://")) return link;
+  if (link.match(/^https?:\/\//)) return link;
   return `https://${link}`;
 };
