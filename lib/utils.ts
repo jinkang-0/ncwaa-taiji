@@ -186,3 +186,11 @@ export const serializeLeanDoc = <T>(
 
   return doc as never;
 };
+
+/**
+ * Formalize link.
+ */
+export const formalizeLink = (link: string) => {
+  if (link.startsWith("https://")) return link;
+  return `https://${link}`;
+};
