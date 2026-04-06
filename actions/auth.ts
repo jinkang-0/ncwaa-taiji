@@ -148,21 +148,7 @@ export async function getSession() {
     };
 
     // check admin status
-    const res = await fetch(`${CONFIG.siteUrl}/api/check-admin`, {
-      headers: {
-        Authorization: process.env.ADMIN_KEY!,
-        "X-Email": user.email
-      },
-      next: { revalidate: 3600, tags: ["check-admin"] } // revalidate every hour
-    });
-
-    if (!res.ok) {
-      console.error("Failed to check admin status:", res.statusText);
-      return { success: false, message: "Failed to check admin status" };
-    }
-
-    const data = await res.json();
-    const isAdmin = !!data.isAdmin;
+    const isAdmin = await checkAdmin(user.email);
     if (!isAdmin) {
       console.error("User is not an admin.");
       return { success: false, message: "Not authorized" };
