@@ -7,7 +7,8 @@ const CONFIG = {
       ? "https://caltaiji.org"
       : "http://localhost:3000",
   siteName: "CalTaiji",
-  siteDescription: "The official tai chi club at UC Berkeley"
+  siteDescription: "The official tai chi club at UC Berkeley",
+  timezone: "America/Los_Angeles"
 };
 
 export default CONFIG;
