@@ -1,5 +1,7 @@
 import { Types } from "mongoose";
 import { Serialize } from "./types";
+import { DateTime } from "luxon";
+import CONFIG from "@/data/config";
 
 /**
  * Get the month from a string of the format "Jan 1, 2025"
@@ -63,22 +65,18 @@ export const parseDateObj = (dateObj: Date) => {
 
 /**
  * Returns true if a provided date
- * comes before a provided date range
- * and a provided time.
+ * comes before a provided date and time.
  */
-export const compareDate = (
-  base: Date,
-  fromDate: string,
-  toDate: string | undefined,
-  t: string
-) => {
+export const compareDate = (base: Date, date: string, t: string) => {
   // try with date and time
-  const d = new Date(`${toDate ? toDate : fromDate} ${t}`);
-  if (!isNaN(d.getTime())) return base < d;
+  const dt = DateTime.fromFormat(`${date} ${t}`, "DD t", {
+    zone: CONFIG.timezone
+  });
+  if (dt.isValid) return base.getTime() < dt.toUTC().toMillis();
 
   // try with date only
-  const dDate = new Date(toDate ? toDate : fromDate);
-  if (!isNaN(dDate.getTime())) return base < dDate;
+  const dt2 = DateTime.fromFormat(date, "DD", { zone: CONFIG.timezone });
+  if (dt2.isValid) return base.getTime() < dt2.toUTC().toMillis();
 
   // invalid date
   return false;

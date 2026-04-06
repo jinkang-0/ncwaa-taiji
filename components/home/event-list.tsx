@@ -29,7 +29,7 @@ export default async function EventList() {
       name: ev.Name,
       attachments: ev.Attachments ? ev.Attachments.split("\n") : []
     }))
-    .filter((ev) => compareDate(today, ev.fromDate, ev.toDate, ev.to))
+    .filter((ev) => compareDate(today, ev.toDate || ev.fromDate, ev.to))
     .sort((e1, e2) => getTime(e1.fromDate) - getTime(e2.fromDate))
     .slice(0, 15);
   const hasOverflow = events.length > 3;
