@@ -19,21 +19,27 @@ interface ScheduleProps {
 }
 
 function ScheduleTemplate({ items }: ScheduleProps) {
-  return items.map((sched) => (
-    <div
-      key={sched.Day + sched.From + sched.To}
-      className={styles.scheduleBlock}
-    >
-      <p>{sched.Day}</p>
-      <span>
-        {sched.From} - {sched.To}
-      </span>
-      <div>
-        <p>{sched.Location}</p>
-        {sched.Alternative ? <p>({sched.Alternative})</p> : null}
+  return (
+    <div className={styles.scheduleTable}>
+      <div className={styles.scheduleTable}>
+        {items.map((sched) => (
+          <div
+            key={sched.Day + sched.From + sched.To}
+            className={styles.scheduleBlock}
+          >
+            <p>{sched.Day}</p>
+            <span>
+              {sched.From} - {sched.To}
+            </span>
+            <div>
+              <p>{sched.Location}</p>
+              {sched.Alternative ? <p>({sched.Alternative})</p> : null}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
-  ));
+  );
 }
 
 function DefaultSchedule() {
@@ -42,8 +48,9 @@ function DefaultSchedule() {
 
 async function Schedule() {
   const schedule = (await getSchedule()) as ScheduleItem[];
+  const config = await loadScheduleSettings();
 
-  return <ScheduleTemplate items={schedule} />;
+  return config.showSchedule ? <ScheduleTemplate items={schedule} /> : null;
 }
 
 //
@@ -61,15 +68,13 @@ function RegistrationTemplate({ config }: { config: ScheduleSettings }) {
     today > config.classStartDate &&
     today < config.classEndDate;
 
-  const registrationOpen =
-    config.registrationOpen ||
-    (config.registrationStartDate &&
-      config.classEndDate &&
-      today >= config.registrationStartDate &&
-      today <= config.classEndDate);
+  const registrationOpen = config.registrationOpen;
 
   return (
     <>
+      {config.announcement ? (
+        <Callout type="warning">{config.announcement}</Callout>
+      ) : null}
       {!classInSession ? (
         <Callout type={config.registrationOpen ? "success" : "warning"}>
           {/* class ended */}
@@ -135,11 +140,9 @@ export default function ScheduleSection() {
           on the UC Berkeley campus. All skill levels are welcome! New members
           can try out their first week of classes for free.
         </p>
-        <div className={styles.scheduleTable}>
-          <Suspense fallback={<DefaultSchedule />}>
-            <Schedule />
-          </Suspense>
-        </div>
+        <Suspense fallback={<DefaultSchedule />}>
+          <Schedule />
+        </Suspense>
         <footer>
           <Registration />
           <p className={styles.note}>

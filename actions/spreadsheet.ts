@@ -62,6 +62,9 @@ export const loadScheduleSettings = async () => {
     ? newUTCDate(configMap.REGISTRATION_START_DATE)
     : undefined;
 
+  const announcement = configMap.ANNOUNCEMENT;
+  const showSchedule = configMap.SHOW_SCHEDULE === "TRUE" || false;
+
   // derived
   const today = new Date();
   let classInSession = configMap.CLASS_IN_SESSION === "TRUE" || false;
@@ -80,7 +83,9 @@ export const loadScheduleSettings = async () => {
     classEndDate,
     registrationStartDate,
     classInSession,
-    registrationOpen
+    registrationOpen,
+    announcement,
+    showSchedule
   };
 
   return settings;
