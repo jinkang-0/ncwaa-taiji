@@ -73,6 +73,8 @@ interface ScheduleSettings {
   classEndDate?: Date;
   classInSession?: boolean;
   registrationOpen: boolean;
+  announcement?: string;
+  showSchedule: boolean;
 }
 
 // database objects
