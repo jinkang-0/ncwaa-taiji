@@ -168,7 +168,7 @@ collections:
               - label: "Schedule"
                 name: "schedule"
                 widget: "list"
-                field:
+                fields:
                   - label: "Day of the Week"
                     name: "day"
                     widget: "datetime"
@@ -190,7 +190,8 @@ collections:
                   - label: "Location Alternative Name"
                     name: "locationAlternative"
                     required: false
-                    widget: "An alternative name for the location (optional)"
+                    widget: "string"
+                    hint: "An alternative name for the location (optional)"
               - label: "Registration Link"
                 name: "registrationLink"
                 widget: "string"
@@ -213,7 +214,7 @@ collections:
               - label: "Events"
                 name: "events"
                 widget: "list"
-                field:
+                fields:
                   - label: "Name"
                     name: "name"
                     widget: "string"
@@ -252,7 +253,7 @@ collections:
                     fields:
                       - label: "Name"
                         name: "name"
-                        widget: string
+                        widget: "string"
                       - label: "URL"
                         name: "url"
                         widget: "string"
