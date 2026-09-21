@@ -41,8 +41,6 @@ media_processing:
     default: webp
   quality: 80
   strip_metadata: true
-  config:
-    max_file_size: 10485760 # 10 MB = 10 x 2^10 KB = 10 x 2^20 B
 
 # Collections
 collections:
@@ -99,6 +97,12 @@ collections:
             widget: "image"
             hint: "This is the large image on the landing page, it should be at least 1920x1440."
             media_processing:
+              enabled: true
+              format:
+                enabled: true
+                default: webp
+              quality: 80
+              strip_metadata: true
               aspect_ratio: 4x3
           - label: "Community Photos"
             name: "communityPhotos"
@@ -108,6 +112,12 @@ collections:
                 name: "image"
                 widget: "image"
                 media_processing:
+                  enabled: true
+                  format:
+                    enabled: true
+                    default: webp
+                  quality: 80
+                  strip_metadata: true
                   width: 1028
                   height: null
                   aspect_ratio: 4x3
@@ -304,6 +314,12 @@ collections:
                     widget: "image"
                     hint: "Portrait should have an aspect ratio of 3:4."
                     media_processing:
+                      enabled: true
+                      format:
+                        enabled: true
+                        default: webp
+                      quality: 80
+                      strip_metadata: true
                       width: 600
                       aspect_ratio: 3x4
                   - label: "Full Name"
@@ -358,6 +374,12 @@ collections:
                 name: "thumbnail"
                 widget: "image"
                 media_processing:
+                  enabled: true
+                  format:
+                    enabled: true
+                    default: webp
+                  quality: 80
+                  strip_metadata: true
                   width: 800
                   height: null
                   aspect_ratio: 2x1
@@ -386,6 +408,12 @@ collections:
         name: "thumbnail"
         widget: "image"
         media_processing:
+          enabled: true
+          format:
+            enabled: true
+            default: webp
+          quality: 80
+          strip_metadata: true
           width: 1400
           height: null
           aspect_ratio: 5x3
