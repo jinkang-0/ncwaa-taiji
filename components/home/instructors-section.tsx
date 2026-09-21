@@ -23,7 +23,7 @@ export default function InstructorsSection() {
               nationally and internationally, and served as the coach for the US
               Wushu Team at the 1st World Wushu Championships. Currently, he is
               the coach for the San Francisco Wushu Team and head instructor of
-              both Cal Taiji and Cal Wushu at UC Berkeley.
+              both CalTaiji and CalWushu at UC Berkeley.
               <br /> <br />
               Sifu Fong is proficient in both traditional as well as modern
               Wushu. He is a graduate of the San Francisco Jing-Wu Academy,

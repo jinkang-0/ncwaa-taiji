@@ -19,10 +19,10 @@ export default function Hero() {
       />
       <div className={styles.imageCover}></div>
       <div className={styles.content}>
-        <h1>CalTaiji</h1>
+        <h1>NCWAA Taiji</h1>
         <div>
-          <p>Official tai chi club at UC Berkeley</p>
-          <p>Founded 1969</p>
+          <p>A program of the National</p>
+          <p>Chinese Wushu Association of America</p>
         </div>
         <div className={styles.links}>
           <Link href={LINKS.instagram} target="_blank">

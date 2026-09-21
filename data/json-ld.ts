@@ -1,9 +1,9 @@
 export const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "CalTaiji",
-  url: "https://caltaiji.org",
-  logo: "https://caltaiji.org/favicon.ico",
+  name: "NCWAA Taiji",
+  url: "https://ncwaataiji.org",
+  logo: "https://ncwaataiji.org/favicon.ico",
   sameAs: [
     "https://www.facebook.com/UCBTaiji",
     "https://youtube.com/@TsanoVideos/",

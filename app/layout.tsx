@@ -16,59 +16,59 @@ import "swiper/css/effect-fade";
 // ensure environmental variables are imported
 if (!process.env.AUTH_GOOGLE_ID)
   throw new Error(
-    "Google OAuth Client ID not included in environment variables."
+    "Google OAuth Client ID not included in environment variables.",
   );
 
 // import fonts
 const kaushanScript = Kaushan_Script({
   variable: "--font-kaushan-script",
   weight: "400",
-  subsets: ["latin"]
+  subsets: ["latin"],
 });
 
 const sen = Sen({
   variable: "--font-sen",
-  subsets: ["latin", "latin-ext"]
+  subsets: ["latin", "latin-ext"],
 });
 
 // site metadata
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#282b2f"
+  themeColor: "#282b2f",
 };
 
 export const metadata: Metadata = {
   title: {
     default: CONFIG.siteName,
-    template: `%s | ${CONFIG.siteName}`
+    template: `%s | ${CONFIG.siteName}`,
   },
   creator: CONFIG.siteName,
   publisher: CONFIG.siteName,
   applicationName: CONFIG.siteName,
   description: CONFIG.siteDescription,
   keywords: [
-    "berkeley",
-    "uc berkeley",
+    "taiji at berkeley",
+    "tai chi at berkeley",
+    "ncwaa taiji",
+    "ncwaa tai chi",
+    "ncwa tai chi",
+    "ncwa tai chi",
+    "berkeley chinese martial arts",
+    "berkeley martial arts",
+    "bay area chinese martial arts",
+    "bay area martial arts",
+    "bay area taiji",
+    "bay area tai chi",
+    "bryant fong tai chi",
+    "bryant fong taiji",
+    "martial arts taiji bay area",
+    "taiji bay area",
+    "tai chi bay area",
+    "taiji berkeley",
+    "tai chi berkeley",
     "berkeley taiji",
     "berkeley tai chi",
-    "taiji",
-    "tai chi",
-    "uc berkeley taiji",
-    "uc berkeley tai chi",
-    "chinese martial arts",
-    "kung fu",
-    "kungfu",
-    "ucmap",
-    "ucmap taiji",
-    "ucmap tai chi",
-    "uc martial arts program taiji",
-    "uc martial arts program tai chi",
-    "uc martial arts taiji",
-    "uc martial arts tai chi",
-    "caltaiji",
-    "cal taiji",
-    "cal tai chi"
   ],
   metadataBase: new URL(CONFIG.siteUrl),
   openGraph: {
@@ -77,21 +77,21 @@ export const metadata: Metadata = {
     description: CONFIG.siteDescription,
     url: CONFIG.siteUrl,
     type: "website",
-    locale: "en_US"
+    locale: "en_US",
   },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png"
+    apple: "/apple-touch-icon.png",
   },
   robots: {
     follow: true,
-    index: true
-  }
+    index: true,
+  },
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
