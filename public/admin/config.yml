@@ -365,13 +365,9 @@ collections:
                 name: "authors"
                 widget: "list"
                 field:
-                  label: "Author"
-                  name: "author"
-                  widget: "list"
-                  field:
-                    label: "Author Name"
-                    name: "authorName"
-                    widget: "string"
+                  label: "Author Name"
+                  name: "authorName"
+                  widget: "string"
               - label: "Summary"
                 name: "summary"
                 widget: "string"
