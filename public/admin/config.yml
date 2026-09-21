@@ -51,7 +51,7 @@ collections:
     files:
       - label: "Site Config"
         name: "site"
-        file: "content/config/site.yaml"
+        file: "content/config/site.yml"
         fields:
           - label: "Main Tab Title"
             name: "siteTitle"
@@ -67,7 +67,7 @@ collections:
             hint: "This is the first text that appears on the blog tab. It is formatted as <Blog Tab Title> | <Main Tab Title>"
       - label: "Contacts"
         name: "contacts"
-        file: "content/config/contacts.yaml"
+        file: "content/config/contacts.yml"
         fields:
           - label: "Instagram"
             name: "instagram"
@@ -86,7 +86,7 @@ collections:
     files:
       - label: "Info"
         name: "info"
-        file: "content/tabs/info.yaml"
+        file: "content/tabs/info.yml"
         fields:
           - label: "Title"
             name: "title"
@@ -316,7 +316,7 @@ collections:
                     widget: "richtext"
       - label: "Compendium"
         name: "compendium"
-        file: "content/tabs/compendium.yaml"
+        file: "content/tabs/compendium.yml"
         fields:
           - label: "Collections"
             name: "collections"
@@ -344,7 +344,7 @@ collections:
                     hint: "Add forms in the 'Forms' collection first, then organize them here."
       - label: "Blog"
         name: "blog"
-        file: "content/tabs/blog.yaml"
+        file: "content/tabs/blog.yml"
         fields:
           - label: "blogs"
             name: "blogs"
