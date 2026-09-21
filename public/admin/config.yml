@@ -340,7 +340,7 @@ collections:
                   widget: "relation"
                   collection: "forms"
                   search_fields: ["name"]
-                  value_field: "{{slug}}"
+                  value_field: "slug"
                   display_fields: ["name"]
                   hint: "Add forms in the 'Forms' collection first, then organize them here."
       - label: "Blog"
