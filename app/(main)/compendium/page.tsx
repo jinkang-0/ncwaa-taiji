@@ -6,7 +6,7 @@ import {
   featuredCompendiumItems,
   competitionTrack,
   qigong,
-  projectForms
+  projectForms,
 } from "@/data/compendium";
 import CompendiumCatalog from "@/components/compendium/catalog";
 import CompendiumDialog from "@/components/compendium/compendium-dialog";
@@ -14,22 +14,22 @@ import CompendiumDialogContent from "@/components/compendium/compendium-dialog-c
 import { GenerateMetadataProps } from "@/lib/types";
 
 export async function generateMetadata({
-  searchParams
+  searchParams,
 }: GenerateMetadataProps) {
   const { id } = await searchParams;
 
   return {
     title: "Compendium",
     description:
-      "Explore what we practice at CalTaiji, including exercises, qigong, and compulsory forms.",
+      "Explore what we practice at NCWAA Taiji, including exercises, qigong, and compulsory forms.",
     alternates: {
-      canonical: id ? `/compendium?id=${id}` : "/compendium"
-    }
+      canonical: id ? `/compendium?id=${id}` : "/compendium",
+    },
   };
 }
 
 export default async function CompendiumPage({
-  searchParams
+  searchParams,
 }: {
   searchParams: Promise<{ id: string }>;
 }) {

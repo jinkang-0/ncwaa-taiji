@@ -13,25 +13,36 @@ export default function AboutSection() {
         <IntroVideo />
         <YinYang className={styles.yinyang} />
         <p>
-          CalTaiji is the official tai chi club at UC Berkeley, as part of the{" "}
-          <Link href={LINKS.ucmap} about="_blank">
-            UC Martial Arts Program (UCMAP)
-          </Link>
-          .
+          Tai chi, as a practice, is popularly regarded as a health and wellness
+          exercise and martial arts technique. In our class, we place an
+          emphasis on health and wellness to help our students improve their
+          physical abilities and manage daily stress through moving meditation
+          and exercises.
           <br /> <br />
-          The concept of tai chi covers many things. However, situated in the
-          context of a college club, we place an emphasis on health and
-          wellness. That is, we aim to help our students improve their physical
-          abilities and ease stress through tai chi practice.
+          For the advanced or ambitious students, we also offer opportunities to
+          deepen your understanding of tai chi as a martial art. This varies
+          across weapons, unhanded combat techniques, and soft energy skills.
           <br /> <br />
           We welcome all students, regardless of prior experience, age, or
           physical aptitude. Whether you are a beginner or an experienced
           practitioner, you will find a place in our community.
+        </p>
+        <hr />
+        <p className={styles.dim}>
+          The National Chinese Wushu Association of America, headed by Bryant
+          Fong, traces its origins as an established association to 1978, while
+          its official 501(c)(3) federal tax-exempt nonprofit status was
+          formally issued by the IRS in July 2008. It is one of the oldest
+          recorded Wushu associations in the United States, dedicated to
+          traditional and modern wushu promotion.
           <br /> <br />
-          After grasping the basics, members are encouraged to further hone
-          their craft. This can mean mastering complete forms, trying out
-          weapons, using tai chi in application, or deepening your soft energy
-          skills.
+          Our taiji program was established in 1969 as part of the{" "}
+          <Link href={LINKS.ucmap}>
+            University of California Martial Arts Program (UCMAP)
+          </Link>{" "}
+          at the University of California, Berkeley. As such, we have also
+          assumed names such as CalTaiji or UC Berkeley Taiji to represent our
+          affiliation.
         </p>
         <SingleWhip className={styles.singlewhip} />
       </div>

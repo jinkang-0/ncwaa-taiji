@@ -8,7 +8,7 @@ import SessionRefresher from "@/components/auth/session-refresher";
 
 export const metadata: Metadata = {
   title: "Blogs",
-  description: "Read the latest blogs from CalTaiji."
+  description: "Read the latest blogs from NCWAA Taiji.",
 };
 
 export default async function Page() {

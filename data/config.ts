@@ -4,10 +4,10 @@ if (!process.env.NODE_ENV)
 const CONFIG = {
   siteUrl:
     process.env.NODE_ENV === "production"
-      ? "https://caltaiji.org"
+      ? "https://ncwaataiji.org"
       : "http://localhost:3000",
-  siteName: "CalTaiji",
-  siteDescription: "The official tai chi club at UC Berkeley",
+  siteName: "NCWAA Taiji",
+  siteDescription: "The official tai chi program of NCWAA",
   timezone: "America/Los_Angeles"
 };
 
