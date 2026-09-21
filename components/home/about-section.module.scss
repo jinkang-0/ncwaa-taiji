@@ -1,5 +1,6 @@
 @use "sections.module.scss";
 @use "lib/breakpoints";
+@use "lib/colors";
 
 .about {
   position: relative;
@@ -20,7 +21,7 @@
   }
 
   p.dim {
-    opacity: 0.5;
+    color: colors.$gray;
   }
 
   .singlewhip {
