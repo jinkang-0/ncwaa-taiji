@@ -335,14 +335,14 @@ collections:
                 name: "forms"
                 widget: "list"
                 field:
-                  - label: "Form"
-                    name: "form"
-                    widget: "relation"
-                    collection: "forms"
-                    search_fields: ["name"]
-                    value_field: "{{slug}}"
-                    display_fields: ["name"]
-                    hint: "Add forms in the 'Forms' collection first, then organize them here."
+                  label: "Form"
+                  name: "form"
+                  widget: "relation"
+                  collection: "forms"
+                  search_fields: ["name"]
+                  value_field: "{{slug}}"
+                  display_fields: ["name"]
+                  hint: "Add forms in the 'Forms' collection first, then organize them here."
       - label: "Blog"
         name: "blog"
         file: "content/tabs/blog.yml"
@@ -365,13 +365,13 @@ collections:
                 name: "authors"
                 widget: "list"
                 field:
-                  - label: "Author"
-                    name: "author"
-                    widget: "list"
-                    field:
-                      - label: "Author Name"
-                        name: "authorName"
-                        widget: "string"
+                  label: "Author"
+                  name: "author"
+                  widget: "list"
+                  field:
+                    label: "Author Name"
+                    name: "authorName"
+                    widget: "string"
               - label: "Summary"
                 name: "summary"
                 widget: "string"
@@ -401,9 +401,9 @@ collections:
         name: "otherNames"
         widget: "list"
         field:
-          - label: "Name"
-            name: "name"
-            widget: "string"
+          label: "Name"
+          name: "name"
+          widget: "string"
       - label: "Subtitle"
         name: "subtitle"
         widget: "string"
