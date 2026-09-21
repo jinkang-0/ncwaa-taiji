@@ -31,13 +31,12 @@ export default function Gallery({ items }: GalleryProps) {
         centeredSlides
         loop
         autoplay={{
-          delay: 2000
+          delay: 2000,
         }}
         speed={500}
-        pagination={{ clickable: true }}
         mousewheel={{
           enabled: true,
-          forceToAxis: true
+          forceToAxis: true,
         }}
       >
         {items.map((i) => (
