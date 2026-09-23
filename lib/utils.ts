@@ -106,7 +106,7 @@ export const getYTEmbed = (link: string) => {
   if (url.hostname === "youtu.be") videoId = url.pathname;
 
   if (!videoId) return "";
-  return `https://www.youtube.com/embed/${videoId}?mute=1`;
+  return `https://www.youtube.com/embed/${videoId}`;
 };
 
 /**

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ImageConfusedCat from "@/assets/graphics/confused_cat.webp";
 import { LinkButtonPrimary } from "@/components/ui/button";
-import errorStyles from "@/app/error.module.scss";
+import errorStyles from "@/app/(root)/error.module.scss";
 
 export default function NotFoundTemplate() {
   return (
