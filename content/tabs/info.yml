@@ -1,0 +1,339 @@
+title: NCWAA Taiji
+subtitle: A program of the National Chinese Wushu Association of America
+landingPhoto: /uploads/hero.webp
+communityPhotos:
+  - image: /uploads/clark_kerr_sun_guangbo.webp
+    caption: Performing at the Clark Kerr campus
+  - image: /uploads/lunch_after_practice.webp
+    caption: Enjoying lunch after practice
+  - image: /uploads/sf_kungfu_festival_sifu.webp
+    caption: Sifu Bryant Fong at the SF Kungfu Festival
+  - image: /uploads/tenderloin_ruler.webp
+    caption: Performing at the SF Tenderloin Community Center
+  - image: /uploads/banquet.webp
+    caption: UCMAP banquet
+  - image: /uploads/club_photo.webp
+    caption: End of year group photo
+  - image: /uploads/huining.webp
+    caption: Celebration of lineage ancestors
+  - image: /uploads/ymca.webp
+    caption: Performance at the San Francisco YMCA
+  - image: /uploads/crabcove.webp
+    caption: Outdoors practice in Alameda
+  - image: /uploads/picnic.webp
+    caption: Spring picnic with community members
+  - image: /uploads/class.webp
+    caption: Class in session
+aboutSection:
+  section2Text: >-
+    The National Chinese Wushu Association of America, headed by Bryant Fong,
+    traces its origins as an established association to 1978, while its official
+    501(c)(3) federal tax-exempt nonprofit status was formally issued by the IRS
+    in July 2008. It is one of the oldest recorded Wushu associations in the
+    United States, dedicated to traditional and modern wushu promotion.\
+
+    \
+
+    Our taiji program was established in 1969 as part of the [University of California Martial Arts Program (UCMAP)](https://recwell.berkeley.edu/competitive-programs/martial-arts/adult-martial-arts/) at the University of California, Berkeley. As such, we have also assumed names such as CalTaiji or UC Berkeley Taiji to represent our affiliation.
+  title: About
+  introVideo: https://www.youtube.com/watch?v=gaTWVRzd_Ys
+  showIntroVideo: true
+  section1Text: >-
+    Tai chi, as a practice, is popularly regarded as a health and wellness
+    exercise and martial arts technique. In our class, we place an emphasis on
+    health and wellness to help our students improve their physical abilities
+    and manage daily stress through moving meditation and exercises.\
+
+    \
+
+    For the advanced or ambitious students, we also offer opportunities to deepen your understanding of tai chi as a martial art. This varies across weapons, unhanded combat techniques, and soft energy skills.\
+
+    \
+
+    We welcome all students, regardless of prior experience, age, or physical aptitude. Whether you are a beginner or an experienced practitioner, you will find a place in our community.
+scheduleSection:
+  subtext: >-
+    Online-only members and UC Berkeley students, alumni, and faculty can
+    receive discounts. Regular members can attend both in person and online
+    classes.
+
+
+    \* For online-only members, please email us at [taiji@ucmap.org](mailto:taiji@ucmap.org) for the Zoom information after signing up.
+  title: Schedule
+  introText: In person practice is held at the [Recreational Sports Facility
+    (RSF)](https://maps.app.goo.gl/GpMWC5rYSyyKmeB27) on the UC Berkeley campus.
+    All skill levels are welcome! New members can try out their first week of
+    classes for free.
+  showSpecialAnnouncement: true
+  specialAnnouncement: Class has been temporarily cancelled, please check back later for updates.
+  schedule:
+    - day: Sunday
+      startTime: 9:30 AM
+      endTime: 11:00 AM
+      location: Online
+    - day: Tuesday
+      startTime: 6:00 PM
+      endTime: 7:30 PM
+      location: Online
+    - day: Wednesday
+      startTime: 7:00 PM
+      endTime: 9:00 PM
+      location: RSF 135
+      locationAlternative: Combatives Room
+    - day: Friday
+      startTime: 7:00 PM
+      endTime: 9:00 PM
+      location: RSF 135
+      locationAlternative: Combatives Room
+  registrationLink: https://shop.rs.berkeley.edu/Program/GetProgramDetails?courseId=515b4fa9-bde1-47f3-9394-81d30e854c2a
+  registrationLinkSecondary: https://shop.rs.berkeley.edu/Program/GetProgramDetails?courseId=deeacd60-1636-4e00-a991-ec76f8250667
+eventsSection:
+  maxEvents: 15
+  title: Upcoming Events
+  events:
+    - name: "15th Annual Denver Shaolin National Chinese Martial Arts Championship &
+        2026 Shaolin Kung Fu Games  "
+      date: October 2, 2026
+      endDate: October 4, 2026
+      attachments:
+        - type: Website
+          name: Website
+          url: https://www.5280championship.com
+      startTime: 12:00 AM
+      endTime: 12:00 AM
+      location: CU Denver Student Wellness Center, 1355 12th St, Denver, CO 80204
+    - name: "China Today Radio, Medical Taiji First Saturdays, October "
+      date: October 3, 2026
+      startTime: 12:00 AM
+      endTime: 12:00 AM
+      location: "Zoom Meeting ID: 417-016-4036 Passcode: 123456"
+      locationUrl: https://us02web.zoom.us/j/4170164036?pwd=K1BzRkpxVDZ0OGk0cGZwejNVVExtZz09&omn=87567335251
+    - name: Master Chen Bing Bay Area Tai Chi Workshop
+      date: November 4, 2026
+      endDate: November 8, 2026
+      startTime: 12:00 AM
+      endTime: 12:00 AM
+      location: Omei Academi, Cupertino CA 95014
+      attachments:
+        - type: Website
+          url: https://usatcf.org/master-chen-bing-bay-area-tai-chi-workshop/
+          name: Website
+    - name: China Today Radio, Medical Taiji First Saturdays, November
+      date: November 7, 2026
+      startTime: 12:00 AM
+      endTime: 12:00 AM
+      location: "Zoom Meeting ID: 417-016-4036 Passcode: 123456"
+      locationUrl: https://us02web.zoom.us/j/4170164036?pwd=K1BzRkpxVDZ0OGk0cGZwejNVVExtZz09&omn=87567335251
+    - name: China Today Radio, Medical Taiji First Saturdays, December
+      date: December 5, 2026
+      startTime: 12:00 AM
+      endTime: 12:00 AM
+      location: "Zoom Meeting ID: 417-016-4036 Passcode: 123456"
+      locationUrl: https://us02web.zoom.us/j/4170164036?pwd=K1BzRkpxVDZ0OGk0cGZwejNVVExtZz09&omn=87567335251
+faqSection:
+  subtext: Have other questions? Email us at [taiji@ucmap.org](mailto:taiji@ucmap.org)!
+  title: FAQ
+  faqs:
+    - answer: >-
+        Tai chi, or taijiquan, is one of the three major internal Chinese
+        martial arts, alongside Xingyi and Bagua. Tai chi was traditionally
+        developed as a martial art, but is more popularly practiced today as a
+        form of moving meditation and health exercise.\
+
+        \
+
+        As a martial art, tai chi incorporates techniques like spiraling and [qin na](https://en.wikipedia.org/wiki/Chin_Na) to deliver force and neutralize opponents. At advanced levels of neigong practice, it usually involves grounding or redirect the opponent's force, or applying force through the use of internal energy.\
+
+        \
+
+        Unfortunately, advanced understanding of internal energy often takes decades to develop through diligent practice. As such, our class advertises and takes an emphasis on the health and wellness practice of tai chi. But, if you are interested, we are happy to discuss the martial aspects of tai chi, and how it can be applied in self-defense.\
+
+        \
+
+        That said, we still promote the understanding of internal energy as a core part of our practice, as it is not only useful for self-defense, but also a vital enrichment in life! If you are interested in learning more about the neigong aspect, we're happy to discuss it with you in class or over email.
+      question: What is tai chi?
+    - answer: >-
+        Internal energy, or "qi", is a concept in traditional Chinese medicine
+        and martial arts that refers to the vital life force that flows through
+        the body. It is believed that by cultivating and balancing this energy,
+        one can improve their physical and mental health, as well as enhance
+        their martial arts practice.\
+
+        \
+
+        In tai chi, practitioners learn to feel and manipulate this energy through their movements and breathing. This is often done through exercises like qigong, which are designed to help cultivate and balance the flow of qi in the body.\
+
+        \
+
+        It is important to note that the concept of qi is not scientifically understood, and is often viewed as a metaphor for unexplained phenomena in the body. However, with increasing advancements in traditional Chinese medicine and the fascia and nervous systems, we are starting to understand the physiological responses of the body, and this may help explain the concept of qi and its related phenomena in a more scientific way.\
+
+        \
+
+        Note: "qi" is sometimes spelled as "chi" or "ki", depending on the context and tradition. However, this is not the same as the "chi" in tai chi, which directly translates to "supreme ultimate" and refers to the philosophical concept of yin and yang.
+      question: What is internal energy, or qi?
+    - answer: >-
+        To be clear, we are not medical professionals and do not claim that tai
+        chi is a cure for any medical condition. While there are anecdotal
+        evidence that tai chi has helped folks overcome conditions they couldn't
+        with medication, it is important to understand that everyone's situation
+        is different. It is always best to consult with a medical professional
+        if your goal is to use tai chi to treat a specific condition, especially
+        if you are limited by physical ailments.\
+
+        \
+
+        Having said that, there is generally a consensus that tai chi is beneficial for overall health and wellness. It is a low-impact exercise that can be practiced by people of all ages and fitness levels. Below are a few health benefits of tai chi that have been observed from medical studies.\
+
+        \
+
+        Tai chi has been linked to more resistant tendons, stronger muscles, better flexibility, increased spatial awareness, improved balancing, and some degree of aerobic conditioning without raising the heartbeat (see [this article from Harvard Medical School](https://www.health.harvard.edu/staying-healthy/the-health-benefits-of-tai-chi)). Tai chi is also positively linked with [enhanced memory and cognitive function](https://www.alzinfo.org/articles/prevention/tai-chi-for-brain-health/) and [reduced chances of dementia](https://www.health.harvard.edu/mind-and-mood/a-sharper-mind-tai-chi-can-improve-cognitive-function).\
+
+        \
+
+        For readers curious in learning more, you can find more sources online discussing the health benefits of tai chi. A good source to get started on is [The Harvard Medical School Guide to Tai Chi](https://a.co/d/eGcBFL1), published in 2013, which discusses the benefits of tai chi from medical studies. You are also welcome to email us or join in for the first week for free to learn more!\
+
+        \
+
+        As always, one must be careful to not overexert themselves, as tai chi is still a physical activity. If you feel any pain or discomfort while practicing, please stop and rest. It is important to listen to your body and not push yourself too hard.
+      question: What are the health benefits of tai chi?
+    - answer: >-
+        We do not use a belt system or any other ranking system to classify
+        practitioners. In tai chi, we generally recognize your understanding of
+        the essence of the art far more than your ability to memorize and
+        perform a form.\
+
+        \
+
+        That is, are you able to feel energy ("qi")? Perhaps as tingling sensations in your hands, or a sense of heaviness in your limbs? Are you able to express energy through your movements and direct it towards or into your opponent?\
+
+        \
+
+        Of course, memorizing and performing forms is important, but it is not the end goal of tai chi. What is important is your personal growth in the internal arts and your ability to apply tai chi in your life, to shape it to your needs, and to understand the art in a way that is meaningful to you.
+      question: Are there ranks in tai chi?
+    - answer: >-
+        Not at all!\
+
+        \
+
+        For context, we schedule many performance events throughout the year — for holiday occassions, local school demos, or martial arts competitions. These events are a great way to engage with the community, spread awareness of tai chi, and experience the vibrant scene of kung fu practiced in the Bay Area.\
+
+        \
+
+        While we do encourage members to perform at these events, it is certainly not a requirement to be a part of the club. These events are completely optional. We just want to provide the opportunity for those who are interested to showcase their skills and engage with the community.\
+
+        \
+
+        That said, if you are at all interested in performing, we would highly encourage you to join us! It is a great way to build confidence and showcase your skills. Even if you are not performing, we encourage all members to attend these events to support the community and learn from others. You can also volunteer to help out with the event, which is a great way to get involved!
+      question: Are members required to perform at events?
+    - answer: >-
+        We start class with some joint loosening and spiraling exercises, which
+        serves as both a warm up and, for some, a good stress relief. After
+        that, it is usually followed up with a stretch or qigong, which helps
+        practitioners build sensitivity of internal energy ("qi").\
+
+        \
+
+        If you are doing the online class, we will follow it up with either an extended session of qigong or a form practice.\
+
+        \
+
+        For in person classes, we split off into groups. Beginners will practice the fundamental forms while intermediate members work on their own projects under the guidance of Sifu Fong. Sometimes, there will be a group practice where everyone practices the same form together, which is a great way to learn from each other.\
+
+        \
+
+        It's important to note that forms are taught piece by piece. No one is shown a complete form and expected to remember it. You're welcome to take as much time and repetitions as you need to understand the core concepts. Don't be afraid to interrupt and ask questions!
+      question: How are classes organized?
+    - answer: >-
+        If you are new to tai chi, we will start you off by working on your
+        footwork, your sensitivity towards energy, and expression of energy with
+        three fundamental forms. Sun 12 in the Fall, Sun Guangbo in the Spring,
+        and Bafa Wubu in the Summer.\
+
+        \
+
+        For practitioners who already have experience in tai chi, or have completed their fundamentals, they can choose to work on a project. Whether that is a form, a weapon, or an application, it is up to you to decide what you want to work on. If you are unsure, instructors are happy to help you find a project that suits your interests and skill level.\
+
+        \
+
+        We're fortunate to have Sifu Bryant Fong who's knowledgeable in a broad range of traditional Chinese martial arts to provide pointers for Chen, Yang, and Sun style tai chi; for weapons like swords, fans, and staff; and for other martial arts like Baguazhang and Xingyiquan.\
+
+        \
+
+        For a compendium of forms practiced by students currently or in the recent past, you can check out our [Compendium page](https://www.ncwaataiji.org/compendium).
+      question: What forms are practiced?
+    - answer: >-
+        Don't worry! We understand that life (especially as a student) can get
+        busy, and it's not uncommon for members to miss classes from time to
+        time. If you miss a class, you can always catch up by attending the next
+        class.\
+
+        \
+
+        Ultimately, it is up to you to decide how much you want to practice. We encourage you to attend classes regularly, but we also understand that everyone has different schedules and commitments.
+      question: What happens if I miss a class?
+instructorsSection:
+  title: Instructors
+  instructors:
+    - biography: >-
+        Hunyuan Taijiquan master and a 5th generation Bagua master. Sifu Fong
+        has competed nationally and internationally, and served as the coach for
+        the US Wushu Team at the 1st World Wushu Championships. Currently, he is
+        the coach for the San Francisco Wushu Team and head instructor of both
+        CalTaiji and CalWushu at UC Berkeley.\
+
+        \
+
+        Sifu Fong is proficient in both traditional as well as modern Wushu. He is a graduate of the San Francisco Jing-Wu Academy, under the instruction of the famous Grandmaster Jackman Wong, a master of Taijiquan, Xingyiquan, and Northern Shaolin, well known for his fight with the legendary Bruce Lee. Sifu Fong also studied with his uncle, Master Quentin Fong, whose specialty is the Tibetan White Crane System.\
+
+        \
+
+        Sifu Fong was one of the few Americans to perform with China's top Wushu Team, the Beijing Wushu Team, under the direction of Jet Li's coach, Wu Bin. Sifu Fong has also authored many articles for Inside Kung-fu, Tai Chi Journal, Tai Chi Kung-fu Magazine, and Reader's Digest. He is a recognized authority on the history, culture, and techniques of Wushu, both modern and traditional.
+
+
+        Sifu Bryant Fong is a 2nd generation Chen Hunyuan Taijiquan master and a 5th generation Bagua master. Sifu Fong has competed nationally and internationally, and served as the coach for the US Wushu Team at the 1st World Wushu Championships. Currently, he is the coach for the San Francisco Wushu Team and head instructor of both CalTaiji and CalWushu at UC Berkeley.\
+
+        \
+
+        Sifu Fong is proficient in both traditional as well as modern Wushu. He is a graduate of the San Francisco Jing-Wu Academy, under the instruction of the famous Grandmaster Jackman Wong, a master of Taijiquan, Xingyiquan, and Northern Shaolin, well known for his fight with the legendary Bruce Lee. Sifu Fong also studied with his uncle, Master Quentin Fong, whose specialty is the Tibetan White Crane System.\
+
+        \
+
+        Sifu Fong was one of the few Americans to perform with China's top Wushu Team, the Beijing Wushu Team, under the direction of Jet Li's coach, Wu Bin. Sifu Fong has also authored many articles for Inside Kung-fu, Tai Chi Journal, Tai Chi Kung-fu Magazine, and Reader's Digest. He is a recognized authority on the history, culture, and techniques of Wushu, both modern and traditional.
+      portrait: /uploads/sifu_fong.webp
+      fullName: Bryant Fong
+      role: Head Instructor
+    - biography: >-
+        Mason developed under his Neigong coach, Frank Lum, deepening his
+        understanding of soft energy work. In April 2019, Mason Tong was
+        accepted as a disciple of Sifu Bryant Fong, becoming a 6th generation
+        legacy holder of Li Ziming Baguazhang.\
+
+        \
+
+        In 2019, Mason was invited to train in Beijing at the Baguazhang Wushu Culture Museum, Renmin University of China, and the Capital University of Physical Education and Sports Medicine, meeting his teacher's Baguazhang master, Zhao Dayuan, the 4th generation grandmaster of Liang style Baguazhang.\
+
+        \
+
+        Mason became a Certified Trainer of Medical Taiji under the US Collegiate Taiji Federation (USCTF) in 2022 and has since served as a teacher for the USCTF at the behest of Dr. Daniel Chi-Hsing Weng, in their ongoing training courses for therapists and instructors.\
+
+        \
+
+        Today, Mason pursues Taiji, Bagua, and Xingyi with a keen interest in health, wellness, and tradition. He has found a focus in sharing these treasures with the larger community through the UC Berkeley Martial Arts Program.
+
+
+        In 2010, Mason began formal instruction with Sifu William Dere at UC Berkeley in taijiquan (taiji/tai chi) and is currently on staff as an instructor for the UC Martial Arts Program. Mason developed under his Neigong coach, Frank Lum, deepening his understanding of soft energy work. In April 2019, Mason Tong was accepted as a disciple of Sifu Bryant Fong, becoming a 6th generation legacy holder of Li Ziming Baguazhang.\
+
+        \
+
+        In 2019, Mason was invited to train in Beijing at the Baguazhang Wushu Culture Museum, Renmin University of China, and the Capital University of Physical Education and Sports Medicine, meeting his teacher's Baguazhang master, Zhao Dayuan, the 4th generation grandmaster of Liang style Baguazhang.\
+
+        \
+
+        Mason became a Certified Trainer of Medical Taiji under the US Collegiate Taiji Federation (USCTF) in 2022 and has since served as a teacher for the USCTF at the behest of Dr. Daniel Chi-Hsing Weng, in their ongoing training courses for therapists and instructors.\
+
+        \
+
+        Today, Mason pursues Taiji, Bagua, and Xingyi with a keen interest in health, wellness, and tradition. He has found a focus in sharing these treasures with the larger community through the UC Berkeley Martial Arts Program.
+      fullName: Mason Tong
+      role: Assistant Instructor
+      portrait: /uploads/mason.webp
