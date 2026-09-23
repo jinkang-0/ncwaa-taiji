@@ -111,6 +111,7 @@ collections:
               - label: "Image"
                 name: "image"
                 widget: "image"
+                hint: "Image will be truncated to 1028x771"
                 media_processing:
                   enabled: true
                   format:
@@ -275,6 +276,7 @@ collections:
               - label: "Max Events"
                 name: "maxEvents"
                 widget: "number"
+                hint: "The maximum number of visible events when visitors expand the events list."
                 value_type: "int"
                 min: 1
                 step: 1

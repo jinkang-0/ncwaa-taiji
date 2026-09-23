@@ -1,4 +1,4 @@
-import NotFound from "@/app/not-found";
+import NotFound from "@/app/(root)/not-found";
 import styles from "./content.module.scss";
 
 export default async function CompendiumDialogContent({ id }: { id: string }) {

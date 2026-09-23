@@ -2,7 +2,7 @@ import { getBlogs } from "@/actions/db";
 import BlogCard from "./blog-card";
 import { isAdminSession } from "@/actions/auth";
 import InkAndQuill from "@/icons/ink-and-quill";
-import styles from "@/app/(main)/blog/feed.module.scss";
+import styles from "@/app/(root)/(main)/blog/feed.module.scss";
 
 export default async function BlogFeed() {
   const isAdmin = await isAdminSession();
