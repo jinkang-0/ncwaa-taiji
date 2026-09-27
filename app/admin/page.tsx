@@ -1,13 +1,5 @@
-"use client";
-
-import dynamic from "next/dynamic";
-
-const CMSLoader = dynamic(() => import("@/components/admin/loader"), {
-  ssr: false,
-});
+import { CMSCoreLoader } from "@/components/admin/loader";
 
 export default function Page() {
-  if (typeof window === "undefined") return;
-
-  return <CMSLoader />;
+  return <CMSCoreLoader />;
 }

@@ -1,23 +1,29 @@
-"use client";
+import type { Metadata, Viewport } from "next";
 
-export default function RootLayout({
+// site metadata
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
+export const metadata: Metadata = {
+  title: "Content Manager",
+  robots: {
+    follow: false,
+    index: false,
+  },
+};
+
+export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
     <html>
-      <head
-        dangerouslySetInnerHTML={{
-          __html: `
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <meta name="robots" content="noindex" />
-            <title>Content Manager</title>
-            <link href="admin/config.yml" type="text/yaml" rel="cms-config-url">
-          `,
-        }}
-      />
+      <head>
+        <link href="admin/config.yml" type="text/yaml" rel="cms-config-url" />
+      </head>
       <body>{children}</body>
     </html>
   );
