@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useBlogContext } from "../context-blog";
 import LoadingIcon from "@/icons/loading";
 import Checkmark from "@/icons/checkmark";
@@ -35,28 +35,28 @@ function Indicator({ status }: { status: "saving" | "saved" | "unsaved" }) {
 }
 
 export default function SavingIndicator() {
-  const blogContext = useBlogContext();
-  const { status } = blogContext;
+  const { status } = useBlogContext();
   const [visible, setVisible] = useState(false);
-  const [, setTimer] = useState<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Note: This can be refactored to use an event-trigger instead of simple timer.
+  // This will be deprecated soon in favor of DecapCMS, rather than in-app editor.
   useEffect(() => {
-    if (status === "unsaved") {
-      setVisible(true);
-    } else if (status === "saving") {
-      setVisible(true);
-      setTimer((prev) => {
-        if (prev) clearTimeout(prev);
-        return null;
-      });
-    } else if (visible) {
-      setTimer(
-        setTimeout(() => {
-          setVisible(false);
-        }, 2000)
-      );
+    // Reset previous timer
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
     }
-  }, [status, visible]);
+
+    if (status === "unsaved" || status === "saving") {
+      // eslint-disable-next-line
+      setVisible(true);
+    } else {
+      timerRef.current = setTimeout(() => {
+        setVisible(false);
+      }, 2000);
+    }
+  }, [status]);
 
   return (
     <div className={`${styles.container} ${visible ? styles.visible : ""}`}>

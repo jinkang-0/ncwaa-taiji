@@ -6,20 +6,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Mousewheel } from "swiper/modules";
 
 import styles from "./gallery.module.scss";
-import { useEffect, useState } from "react";
 import clsx from "clsx";
+import { useIsMounted } from "@/hooks";
 
 interface GalleryProps {
   items: GalleryItem[];
 }
 
 export default function Gallery({ items }: GalleryProps) {
-  const [isReady, setIsReady] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    setIsReady(true);
-  }, []);
+  const isReady = useIsMounted();
 
   return (
     <div className={styles.container}>

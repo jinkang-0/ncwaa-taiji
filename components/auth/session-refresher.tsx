@@ -1,11 +1,11 @@
 "use client";
 
-import useSessionRefresh from "@/hooks/useSessionRefresh";
+import { useSessionRefresh } from "@/hooks";
 import { UserSession } from "@/lib/types";
 
 export default function SessionRefresher({
   user,
-  children
+  children,
 }: {
   user: UserSession;
   children?: React.ReactNode;

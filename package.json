@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@next/eslint-plugin-next": "^15.5.14",
     "@types/escape-html": "^1.0.4",
     "@types/html-to-text": "^9.0.4",
     "@types/jsonwebtoken": "^9.0.9",
@@ -53,7 +54,8 @@
     "@types/react-dom": "^19",
     "@types/sanitize-html": "^2.16.0",
     "eslint": "^9",
-    "eslint-config-next": "15.1.3",
+    "eslint-config-next": "15.5.14",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "netlify-ts": "^3.0.1",
     "sass": "^1.83.0",
     "typescript": "5.7.3"
