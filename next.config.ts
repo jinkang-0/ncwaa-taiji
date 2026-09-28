@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
         pathname: "/vi/**/maxresdefault.jpg"
       }
     ]
-  }
+  },
 };
 
 export default nextConfig;
