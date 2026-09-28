@@ -5,8 +5,8 @@ export default function IntroVideo() {
     <div className={styles.container}>
       <iframe
         className={styles.embed}
-        width="560"
-        height="315"
+        width="1280"
+        height="720"
         src="https://www.youtube.com/embed/gaTWVRzd_Ys?si=HBz8V4mgSKBUbPHs"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
