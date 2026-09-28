@@ -11,7 +11,7 @@ export function CMSCoreLoader() {
   useEffect(() => {
     // Modify error function to suppress legacy DecapCMS prop-type warning
     const originalErrorFn = console.error;
-    console.error = (...args: any[]) => {
+    console.error = (...args: unknown[]) => {
       if (
         typeof args[0] === "string" &&
         args[0].includes("Invalid prop `children` supplied to `ErrorBoundary`")
