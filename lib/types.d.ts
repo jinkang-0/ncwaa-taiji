@@ -2,7 +2,7 @@ import type { StaticImageData } from "next/image";
 import type {
   DefaultSchemaOptions,
   Schema as SchemaType,
-  Types
+  Types,
 } from "mongoose";
 import { getBlogByBlogId } from "@/actions/db";
 
@@ -28,6 +28,8 @@ type CompendiumCategory =
   | "Core"
   | "Competition"
   | "Project";
+
+type CompendiumCardAlignment = "left" | "middle" | "right";
 
 interface CompendiumItem {
   id: string;

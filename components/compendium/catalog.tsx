@@ -13,11 +13,11 @@ import styles from "./catalog.module.scss";
 const alignments = [
   ["middle"],
   ["left", "right"],
-  ["left", "middle", "right"]
+  ["left", "middle", "right"],
 ] as const;
 
 export default function CompendiumCatalog({
-  items
+  items,
 }: {
   items: CompendiumItem[];
 }) {
@@ -53,9 +53,9 @@ export default function CompendiumCatalog({
 
     // initial check
     if (smBreakpoint.matches) {
-      setGroupSize(1);
+      handleSmallBreakpoint(new MediaQueryListEvent("", { matches: true }));
     } else if (mdBreakpoint.matches) {
-      setGroupSize(2);
+      handleMediumBreakpoint(new MediaQueryListEvent("", { matches: true }));
     }
 
     return () => {
@@ -75,7 +75,7 @@ export default function CompendiumCatalog({
         acc[groupIndex].push(item);
         return acc;
       }, []),
-    [items, groupSize]
+    [items, groupSize],
   );
 
   return (
@@ -92,7 +92,7 @@ export default function CompendiumCatalog({
           pagination={{ clickable: true }}
           mousewheel={{
             enabled: true,
-            forceToAxis: true
+            forceToAxis: true,
           }}
           ref={swiperRef}
         >
@@ -127,7 +127,7 @@ export default function CompendiumCatalog({
 }
 
 function CarouselControlLeft({
-  swiperRef
+  swiperRef,
 }: {
   swiperRef: React.RefObject<SwiperRef | null>;
 }) {
@@ -143,7 +143,7 @@ function CarouselControlLeft({
 }
 
 function CarouselControlRight({
-  swiperRef
+  swiperRef,
 }: {
   swiperRef: React.RefObject<SwiperRef | null>;
 }) {
