@@ -1,0 +1,39 @@
+subtext: >-
+  Online-only members and UC Berkeley students, alumni, and faculty can
+  receive discounts. Regular members can attend both in person and online
+  classes.
+
+
+  \* For online-only members, please email us at [taiji@ucmap.org](mailto:taiji@ucmap.org) for the Zoom information after signing up.
+title: Schedule
+introText: In person practice is held at the [Recreational Sports Facility
+  (RSF)](https://maps.app.goo.gl/GpMWC5rYSyyKmeB27) on the UC Berkeley campus.
+  All skill levels are welcome! New members can try out their first week of
+  classes for free.
+showSpecialAnnouncement: true
+specialAnnouncement: Class has been temporarily cancelled, please check back later for updates.
+schedule:
+  - day: Sunday
+    startTime: 9:30 AM
+    endTime: 11:00 AM
+    location: Online
+  - day: Tuesday
+    startTime: 6:00 PM
+    endTime: 7:30 PM
+    location: Online
+  - day: Wednesday
+    startTime: 7:00 PM
+    endTime: 9:00 PM
+    location: RSF 135
+    locationAlternative: Combatives Room
+  - day: Friday
+    startTime: 7:00 PM
+    endTime: 9:00 PM
+    location: RSF 135
+    locationAlternative: Combatives Room
+registrationLink: https://shop.rs.berkeley.edu/Program/GetProgramDetails?courseId=515b4fa9-bde1-47f3-9394-81d30e854c2a
+registrationLinkSecondary: https://shop.rs.berkeley.edu/Program/GetProgramDetails?courseId=deeacd60-1636-4e00-a991-ec76f8250667
+classStartDate: August 26, 2026
+classEndDate: December 12, 2026
+forceClassInSession: false
+showSchedule: false

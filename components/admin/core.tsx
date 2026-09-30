@@ -3,7 +3,7 @@ import InfoPagePreview from "./info/info-page-preview";
 
 CMS.init();
 CMS.registerPreviewStyle("admin/global.css");
-CMS.registerPreviewTemplate("info", InfoPagePreview);
+CMS.registerPreviewTemplate("homePage", InfoPagePreview);
 
 export default function CMSCore() {
   return null;

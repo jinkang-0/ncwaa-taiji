@@ -1,0 +1,43 @@
+maxEvents: 15
+title: Upcoming Events
+events:
+  - name:
+      "15th Annual Denver Shaolin National Chinese Martial Arts Championship &
+      2026 Shaolin Kung Fu Games"
+    date: October 2, 2026
+    endDate: October 4, 2026
+    attachments:
+      - type: Website
+        name: Website
+        url: https://www.5280championship.com
+    startTime: 12:00 AM
+    endTime: 12:00 AM
+    location: CU Denver Student Wellness Center, 1355 12th St, Denver, CO 80204
+  - name: "China Today Radio, Medical Taiji First Saturdays, October "
+    date: October 3, 2026
+    startTime: 12:00 AM
+    endTime: 12:00 AM
+    location: "Zoom Meeting ID: 417-016-4036 Passcode: 123456"
+    locationUrl: https://us02web.zoom.us/j/4170164036?pwd=K1BzRkpxVDZ0OGk0cGZwejNVVExtZz09&omn=87567335251
+  - name: Master Chen Bing Bay Area Tai Chi Workshop
+    date: November 4, 2026
+    endDate: November 8, 2026
+    startTime: 12:00 AM
+    endTime: 12:00 AM
+    location: Omei Academi, Cupertino CA 95014
+    attachments:
+      - type: Website
+        url: https://usatcf.org/master-chen-bing-bay-area-tai-chi-workshop/
+        name: Website
+  - name: China Today Radio, Medical Taiji First Saturdays, November
+    date: November 7, 2026
+    startTime: 12:00 AM
+    endTime: 12:00 AM
+    location: "Zoom Meeting ID: 417-016-4036 Passcode: 123456"
+    locationUrl: https://us02web.zoom.us/j/4170164036?pwd=K1BzRkpxVDZ0OGk0cGZwejNVVExtZz09&omn=87567335251
+  - name: China Today Radio, Medical Taiji First Saturdays, December
+    date: December 5, 2026
+    startTime: 12:00 AM
+    endTime: 12:00 AM
+    location: "Zoom Meeting ID: 417-016-4036 Passcode: 123456"
+    locationUrl: https://us02web.zoom.us/j/4170164036?pwd=K1BzRkpxVDZ0OGk0cGZwejNVVExtZz09&omn=87567335251
