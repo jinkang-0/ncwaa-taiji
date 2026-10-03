@@ -249,7 +249,7 @@ collections:
               - label: "End Date"
                 name: "endDate"
                 widget: "datetime"
-                time_format: "LT"
+                date_format: "LL"
                 required: false
                 hint: "The end date of the event, optional if the event is only one day. The displayed time is in your timezone."
               - label: "Start Time"
