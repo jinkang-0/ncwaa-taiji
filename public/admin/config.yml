@@ -412,7 +412,12 @@ collections:
     name: "forms"
     folder: "content/forms"
     create: true
+    identifier_field: id
     fields:
+      - label: "ID"
+        name: "id"
+        widget: "string"
+        hint: "A unique ID for this form, usually the name in kebab case (e.g. name-of-the-form)"
       - label: "Name"
         name: "name"
         widget: "string"
