@@ -1,5 +1,46 @@
 collections:
+  - type: Featured
+    title: Featured
+    forms:
+      - spiraling-exercises
+      - taoist-yoga-stretches
+      - taiji-bagua-fan
+      - yang-32-sword
+      - yang-24
+      - chen-hunyuan-24
+      - yang-stationary-qigong
+      - bafa-wubu
   - type: Default
     title: Exercises
     forms:
       - spiraling-exercises
+      - taoist-yoga-stretches
+      - temple-guardian-exercises
+  - type: Default
+    title: Qigong
+    forms:
+      - yang-stationary-qigong
+      - chen-hunyuan-qigong
+      - thirteen-words
+      - eight-brocades
+  - type: Default
+    title: Core
+    forms:
+      - sun-12
+      - bafa-wubu
+      - sun-guangbo
+  - type: Default
+    title: Competition
+    forms:
+      - yang-24
+      - taiji-bagua-fan
+      - yang-32-sword
+      - chen-hunyuan-ruler-10
+  - type: Default
+    title: Project
+    forms:
+      - xingyi-five-elements-drills
+      - chen-hunyuan-24
+      - tiger-taming-cane
+      - yang-staff-13
+      - bagua-fan-1

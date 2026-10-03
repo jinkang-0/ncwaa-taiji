@@ -10,20 +10,20 @@ events:
       - type: Website
         name: Website
         url: https://www.5280championship.com
-    startTime: 12:00 AM
-    endTime: 12:00 AM
+    startTime: 9:00 AM
+    endTime: 5:00 PM
     location: CU Denver Student Wellness Center, 1355 12th St, Denver, CO 80204
   - name: "China Today Radio, Medical Taiji First Saturdays, October "
     date: October 3, 2026
-    startTime: 12:00 AM
-    endTime: 12:00 AM
+    startTime: 6:00 PM
+    endTime: 7:00 PM
     location: "Zoom Meeting ID: 417-016-4036 Passcode: 123456"
     locationUrl: https://us02web.zoom.us/j/4170164036?pwd=K1BzRkpxVDZ0OGk0cGZwejNVVExtZz09&omn=87567335251
   - name: Master Chen Bing Bay Area Tai Chi Workshop
     date: November 4, 2026
     endDate: November 8, 2026
-    startTime: 12:00 AM
-    endTime: 12:00 AM
+    startTime: 9:30 AM
+    endTime: 4:30 PM
     location: Omei Academi, Cupertino CA 95014
     attachments:
       - type: Website
@@ -31,13 +31,17 @@ events:
         name: Website
   - name: China Today Radio, Medical Taiji First Saturdays, November
     date: November 7, 2026
-    startTime: 12:00 AM
-    endTime: 12:00 AM
+    startTime: 6:00 PM
+    endTime: 7:00 PM
     location: "Zoom Meeting ID: 417-016-4036 Passcode: 123456"
     locationUrl: https://us02web.zoom.us/j/4170164036?pwd=K1BzRkpxVDZ0OGk0cGZwejNVVExtZz09&omn=87567335251
+  - name: EAU Fall Night Market
+    date: November 16, 2026
+    startTime: 6:00 PM
+    location: "Tentative: Lower Sproul Hall, in front of Zellerbach, on Cal"
   - name: China Today Radio, Medical Taiji First Saturdays, December
     date: December 5, 2026
-    startTime: 12:00 AM
-    endTime: 12:00 AM
+    startTime: 6:00 PM
+    endTime: 7:00 PM
     location: "Zoom Meeting ID: 417-016-4036 Passcode: 123456"
     locationUrl: https://us02web.zoom.us/j/4170164036?pwd=K1BzRkpxVDZ0OGk0cGZwejNVVExtZz09&omn=87567335251
