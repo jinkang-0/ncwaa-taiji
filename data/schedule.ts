@@ -1,30 +1,25 @@
 const PRACTICE_SCHEDULE = [
   {
-    Day: "Sunday",
-    From: "9:30 AM",
-    To: "11:00 AM",
-    Location: "Online"
-  },
-  {
-    Day: "Tuesday",
-    From: "6:00 PM",
-    To: "7:30 PM",
-    Location: "Online"
+    Day: "Monday",
+    From: "7:30 PM",
+    To: "9:00 PM",
+    Location: "RSF 135",
+    Alternative: "Combatives Room",
   },
   {
     Day: "Wednesday",
-    From: "7:00 PM",
+    From: "7:30 PM",
     To: "9:00 PM",
     Location: "RSF 135",
-    Alternative: "Combatives Room"
+    Alternative: "Combatives Room",
   },
   {
     Day: "Friday",
-    From: "7:00 PM",
+    From: "7:30 PM",
     To: "9:00 PM",
     Location: "RSF 135",
-    Alternative: "Combatives Room"
-  }
+    Alternative: "Combatives Room",
+  },
 ];
 
 export default PRACTICE_SCHEDULE;
