@@ -1,4 +1,4 @@
-import styles from "./page.module.scss";
+import styles from "../page.module.scss";
 import Gallery from "@/components/ui/gallery";
 import { COMMUNITY_PHOTOS } from "@/data/images";
 import AboutSection from "@/components/home/about-section";

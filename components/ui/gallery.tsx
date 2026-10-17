@@ -40,13 +40,19 @@ export default function Gallery({ items }: GalleryProps) {
               <Image
                 src={i.image}
                 placeholder="blur"
+                blurDataURL={typeof i.image == "string" ? i.image : undefined}
                 alt={i.caption ?? "alt"}
+                width={1028}
+                height={771}
               />
               <Image
                 className={styles.ambiance}
                 src={i.image}
                 placeholder="blur"
+                blurDataURL={typeof i.image == "string" ? i.image : undefined}
                 alt={"ambiance image"}
+                width={1028}
+                height={771}
                 aria-hidden
               />
               <p className={styles.caption}>{i.caption}</p>
