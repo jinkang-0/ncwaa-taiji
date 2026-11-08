@@ -4,8 +4,7 @@ import { MouseEvent as ReactMouseEvent, useCallback, useState } from "react";
 import styles from "./button.module.scss";
 import LoadingIcon from "@/icons/loading";
 
-interface ButtonSingleProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonSingleProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: React.ReactNode;
   afterClick?: () => void;
 }
@@ -30,7 +29,7 @@ function ButtonSingle({
       setDisabled(false);
       afterClick?.();
     },
-    [onClick, isDisabled]
+    [onClick, isDisabled, afterClick],
   );
 
   return (

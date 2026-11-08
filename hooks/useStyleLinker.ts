@@ -31,7 +31,7 @@ export const useStyleLinker = (props: PreviewTemplateComponentProps) => {
         const node = n as HTMLElement;
         if (!isSiteStyle(node)) return;
 
-        const key = node.getAttribute("href") || node.textContent;
+        const key = (node.getAttribute("href") || node.textContent) as string;
         if (existing.has(key)) return;
 
         const clone = node.cloneNode(true) as HTMLElement;
