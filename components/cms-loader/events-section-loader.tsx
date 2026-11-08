@@ -4,6 +4,7 @@ import {
   EventsSection_Events,
 } from "@/lib/cms";
 import EventsSection from "../home/events-section";
+import { compareDate } from "@/lib/utils";
 
 const eventsContent = rawEventsContent as unknown as EventsSectionType;
 
@@ -16,13 +17,7 @@ export function filterUpcomingEvents(
     .filter((ev) => {
       const dateStr = ev.endDate || ev.date;
       const timeStr = ev.endTime || ev.startTime || "23:59:59";
-      const end = new Date(`${dateStr} ${timeStr}`);
-      if (!isNaN(end.getTime())) {
-        return end >= now;
-      }
-      const fallback = new Date(dateStr);
-      fallback.setHours(23, 59, 59, 999);
-      return !isNaN(fallback.getTime()) ? fallback >= now : true;
+      return compareDate(now, dateStr, timeStr);
     })
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     .slice(0, maxEvents);

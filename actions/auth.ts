@@ -7,12 +7,11 @@ import jwt from "jsonwebtoken";
 import { ResponseCookie } from "next/dist/compiled/@edge-runtime/cookies";
 import { UserRefreshClient } from "google-auth-library";
 import { UserSession } from "@/lib/types";
-import CONFIG from "@/data/config";
 
 // ensure environmental variables are imported
 if (!process.env.AUTH_GOOGLE_ID)
   throw new Error(
-    "Google OAuth Client ID not included in environment variables."
+    "Google OAuth Client ID not included in environment variables.",
   );
 
 if (!process.env.JWT_SECRET)
@@ -20,7 +19,7 @@ if (!process.env.JWT_SECRET)
 
 if (!process.env.AUTH_GOOGLE_SECRET)
   throw new Error(
-    "Google OAuth Client secret not included in environment variables."
+    "Google OAuth Client secret not included in environment variables.",
   );
 
 if (!process.env.ADMIN_KEY)
@@ -33,14 +32,14 @@ const expirationDays = 30;
 const refreshThreshold = 7 * 24 * 60 * 60 * 1000; // 7 days
 
 const jwtOptions: jwt.SignOptions = {
-  expiresIn: `${expirationDays}d`
+  expiresIn: `${expirationDays}d`,
 };
 
 const cookieOptions: Partial<ResponseCookie> = {
   httpOnly: true,
   secure: process.env.NODE_ENV === "production",
   path: "/",
-  maxAge: 60 * 60 * 24 * expirationDays
+  maxAge: 60 * 60 * 24 * expirationDays,
 };
 
 //
@@ -75,7 +74,7 @@ export async function loginWithGoogle(authCode: string) {
   // verify token
   const ticket = await oauthClient.verifyIdToken({
     idToken: tokens.id_token,
-    audience: process.env.AUTH_GOOGLE_ID
+    audience: process.env.AUTH_GOOGLE_ID,
   });
 
   // check email exists and is verified
@@ -97,7 +96,7 @@ export async function loginWithGoogle(authCode: string) {
     name: payload.name,
     sub: payload.sub,
     tokens,
-    lastRefreshed: Date.now()
+    lastRefreshed: Date.now(),
   };
 
   const cookieStore = await cookies();
@@ -122,7 +121,7 @@ export async function getSession() {
   // verify JWT token
   try {
     const decoded = jwt.verify(session.value, process.env.JWT_SECRET!, {
-      maxAge: `${expirationDays}d`
+      maxAge: `${expirationDays}d`,
     });
 
     if (typeof decoded === "string")
@@ -144,7 +143,7 @@ export async function getSession() {
       name: decoded.name,
       sub: decoded.sub,
       tokens: decoded.tokens,
-      lastRefreshed: decoded.lastRefreshed
+      lastRefreshed: decoded.lastRefreshed,
     };
 
     // check admin status
@@ -199,7 +198,7 @@ export async function refreshUser(user: UserSession) {
   const client = new UserRefreshClient(
     process.env.AUTH_GOOGLE_ID,
     process.env.AUTH_GOOGLE_SECRET,
-    user.tokens.refresh_token
+    user.tokens.refresh_token,
   );
 
   const { credentials } = await client.refreshAccessToken();
@@ -210,9 +209,9 @@ export async function refreshUser(user: UserSession) {
       ...user.tokens,
       access_token: credentials.access_token,
       expiry_date: credentials.expiry_date,
-      refresh_token: credentials.refresh_token
+      refresh_token: credentials.refresh_token,
     },
-    lastRefreshed: Date.now()
+    lastRefreshed: Date.now(),
   };
 
   // update session cookie

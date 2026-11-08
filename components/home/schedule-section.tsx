@@ -22,14 +22,6 @@ export interface ScheduleSectionProps {
   registrationLinkSecondary?: string;
 }
 
-function parseDateString(dateStr: string): Date | undefined {
-  if (!dateStr) return undefined;
-  const d = new Date(dateStr);
-  if (!isNaN(d.getTime())) return d;
-  const dWithTime = new Date(`${dateStr}T00:00`);
-  return !isNaN(dWithTime.getTime()) ? dWithTime : undefined;
-}
-
 function ScheduleTable({ items }: { items: ScheduleSection_Schedule[] }) {
   return (
     <div className={styles.scheduleTable}>
@@ -69,24 +61,19 @@ export default function ScheduleSection({
   registrationLink,
   registrationLinkSecondary,
 }: ScheduleSectionProps) {
-  const startDate = classStartDate
-    ? parseDateString(classStartDate)
-    : undefined;
-  const endDate = classEndDate ? parseDateString(classEndDate) : undefined;
+  const startDate = classStartDate ? new Date(classStartDate) : undefined;
+  const endDate = classEndDate ? new Date(classEndDate) : undefined;
   const regStartDate = registrationStartDate
-    ? parseDateString(registrationStartDate)
+    ? new Date(registrationStartDate)
     : undefined;
 
   const today = new Date();
 
-  const classUpcoming = Boolean(startDate && today < startDate);
-  const classEnded = Boolean(endDate && today > endDate);
-  let classInSession = Boolean(
-    startDate && endDate && today >= startDate && today <= endDate,
-  );
-  if (forceClassInSession) {
-    classInSession = true;
-  }
+  const classUpcoming = startDate && today < startDate;
+  const classEnded = endDate && today > endDate;
+  const classInSession =
+    forceClassInSession ||
+    (startDate && endDate && today >= startDate && today <= endDate);
 
   // Derive registration open from registrationStartDate when present;
   // otherwise keep enabled whenever class has not ended.
@@ -123,6 +110,9 @@ export default function ScheduleSection({
                     : "Classes start soon."}
                 </>
               )}
+              {!classEnded && !classUpcoming ? (
+                <>Class is currently not in session, please check back later.</>
+              ) : null}
             </Callout>
           ) : null}
           <div className={styles.buttonGroup}>

@@ -31,7 +31,6 @@
     "html-to-text": "^9.0.5",
     "immutable": "^5.1.9",
     "jsonwebtoken": "^9.0.3",
-    "luxon": "^3.7.2",
     "mongoose": "^8.13.1",
     "motion": "^12.23.3",
     "next": "^15.5.14",

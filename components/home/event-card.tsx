@@ -1,15 +1,9 @@
 import MapIcon from "@/icons/map";
 import { getDate, getMonth } from "@/lib/utils";
 import styles from "./events-section.module.scss";
-import AttachmentIcon from "@/icons/attachment";
-import ExternalIcon from "@/icons/external";
-import { LinkButtonGhost } from "../ui/button";
-
-export interface EventAttachmentItem {
-  name: string;
-  url: string;
-  type?: "Website" | "File" | "Image" | "General";
-}
+import EventAttachmentItem, {
+  EventAttachmentItemType,
+} from "./event-attachment-item";
 
 export interface EventItem {
   name: string;
@@ -19,7 +13,7 @@ export interface EventItem {
   endTime?: string;
   location: string;
   locationUrl?: string;
-  attachments?: EventAttachmentItem[];
+  attachments?: EventAttachmentItemType[];
 }
 
 interface EventCardProps {
@@ -61,21 +55,31 @@ function EventDate({ event }: EventCardProps) {
   );
 }
 
-export default function EventCard({ event }: EventCardProps) {
-  const timeText =
-    event.startTime && event.endTime
-      ? event.startTime === event.endTime
+function EventTime({ event }: EventCardProps) {
+  if (event.startTime && event.endTime) {
+    const timeText =
+      event.startTime === event.endTime
         ? event.startTime
-        : `${event.startTime} - ${event.endTime}`
-      : event.startTime || event.endTime || "";
+        : `${event.startTime} - ${event.endTime}`;
+    return <span>{timeText}</span>;
+  }
+  if (event.startTime) {
+    return <span>{event.startTime}</span>;
+  }
+  if (event.endTime) {
+    return <span>{event.endTime}</span>;
+  }
+  return null;
+}
 
+export default function EventCard({ event }: EventCardProps) {
   return (
     <div className={styles.card}>
       <EventDate event={event} />
       <div className={styles.cardBody}>
         <div className={styles.cardDetails}>
           <b>{event.name}</b>
-          {timeText ? <span>{timeText}</span> : null}
+          <EventTime event={event} />
           <div className={styles.locationBox}>
             <div>
               <MapIcon />
@@ -96,16 +100,8 @@ export default function EventCard({ event }: EventCardProps) {
         <div className={styles.cardAttachments}>
           {event.attachments &&
             event.attachments.length > 0 &&
-            event.attachments.map((att) => (
-              <LinkButtonGhost
-                key={att.url}
-                href={att.url}
-                target="_blank"
-                title={att.name || "Attachment"}
-                aria-label={att.name || "Attachment"}
-              >
-                {att.type === "Website" ? <ExternalIcon /> : <AttachmentIcon />}
-              </LinkButtonGhost>
+            event.attachments.map((item) => (
+              <EventAttachmentItem key={item.url} item={item} />
             ))}
         </div>
       </div>

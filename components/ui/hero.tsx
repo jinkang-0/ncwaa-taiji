@@ -20,14 +20,9 @@ export function Hero({ heroImage, title, subtitle }: HeroProps) {
         src={heroImage}
         alt="hero image"
         fill
-        sizes="100vw"
-        placeholder={
-          typeof heroImage === "string" || !heroImage.blurDataURL
-            ? "empty"
-            : "blur"
-        }
+        placeholder="blur"
         blurDataURL={
-          typeof heroImage === "string" ? undefined : heroImage.blurDataURL
+          typeof heroImage === "string" ? heroImage : heroImage.blurDataURL
         }
       />
       <div className={styles.imageCover}></div>

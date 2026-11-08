@@ -37,32 +37,32 @@ export default function Gallery({ items }: GalleryProps) {
         {items.map((i) => {
           const src = typeof i.image === "string" ? i.image : i.image.src;
           const blurDataURL =
-            typeof i.image === "string" ? undefined : i.image.blurDataURL;
+            typeof i.image === "string" ? i.image : i.image.blurDataURL;
 
           return (
-          <SwiperSlide key={src} className={styles.carouselItemWrapper}>
-            <div className={styles.carouselItem}>
-              <Image
-                src={i.image}
-                placeholder={blurDataURL ? "blur" : "empty"}
-                blurDataURL={blurDataURL}
-                alt={i.caption ?? "alt"}
-                width={1028}
-                height={771}
-              />
-              <Image
-                className={styles.ambiance}
-                src={i.image}
-                placeholder={blurDataURL ? "blur" : "empty"}
-                blurDataURL={blurDataURL}
-                alt={"ambiance image"}
-                width={1028}
-                height={771}
-                aria-hidden
-              />
-              <p className={styles.caption}>{i.caption}</p>
-            </div>
-          </SwiperSlide>
+            <SwiperSlide key={src} className={styles.carouselItemWrapper}>
+              <div className={styles.carouselItem}>
+                <Image
+                  src={i.image}
+                  placeholder="blur"
+                  blurDataURL={blurDataURL}
+                  alt={i.caption ?? "alt"}
+                  width={1028}
+                  height={771}
+                />
+                <Image
+                  className={styles.ambiance}
+                  src={i.image}
+                  placeholder="blur"
+                  blurDataURL={blurDataURL}
+                  alt={"ambiance image"}
+                  width={1028}
+                  height={771}
+                  aria-hidden
+                />
+                <p className={styles.caption}>{i.caption}</p>
+              </div>
+            </SwiperSlide>
           );
         })}
       </Swiper>
