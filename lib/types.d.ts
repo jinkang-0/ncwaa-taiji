@@ -5,6 +5,7 @@ import type {
   Types,
 } from "mongoose";
 import { getBlogByBlogId } from "@/actions/db";
+import { PreviewTemplateComponentProps } from "decap-cms-core";
 
 // nextjs metadata generation props
 interface GenerateMetadataProps {
@@ -84,6 +85,8 @@ interface ScheduleSettings {
 type PopulatedBlog = Awaited<ReturnType<typeof getBlogByBlogId>>[0];
 
 // utility types
+
+type PreviewTemplateProps<T> = PreviewTemplateComponentProps & { data: T };
 
 type ModelTypeFromSchema<S> =
   S extends SchemaType<unknown, infer Model> ? Model : never;

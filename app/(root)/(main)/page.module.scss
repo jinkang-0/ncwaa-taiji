@@ -33,6 +33,10 @@
   }
 }
 
+.centeredContainer {
+  justify-content: center;
+}
+
 .aboutContent {
   display: grid;
   grid-template-columns: 3fr 2fr;

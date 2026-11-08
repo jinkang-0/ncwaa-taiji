@@ -1,4 +1,6 @@
 import { nth } from "./generic";
+import { DateTime } from "luxon";
+import CONFIG from "@/data/config";
 
 /**
  * Get the month from a string of the format "Jan 1, 2025"
@@ -52,13 +54,14 @@ export const parseDateObj = (dateObj: Date) => {
  */
 export const compareDate = (base: Date, date: string, t: string) => {
   // try with date and time
-  const dt = new Date(`${date} ${t}`);
-  if (!isNaN(dt.getTime())) return dt >= base;
+  const dt = DateTime.fromFormat(`${date} ${t}`, "DDD t", {
+    zone: CONFIG.timezone,
+  });
+  if (dt.isValid) return base.getTime() < dt.toMillis();
 
   // try with date only
-  const d = new Date(date);
-  d.setHours(23, 59, 59, 999);
-  if (!isNaN(d.getTime())) return d >= base;
+  const d = DateTime.fromFormat(date, "DDD", { zone: CONFIG.timezone });
+  if (d.isValid) return base.getTime() < d.toMillis();
 
   // invalid date
   return false;

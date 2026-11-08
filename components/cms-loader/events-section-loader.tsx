@@ -8,11 +8,11 @@ import { compareDate } from "@/lib/utils";
 
 const eventsContent = rawEventsContent as unknown as EventsSectionType;
 
-export function filterUpcomingEvents(
+function filterUpcomingEvents(
   events: EventsSection_Events[],
   maxEvents: number,
-  now: Date = new Date(),
 ): EventsSection_Events[] {
+  const now = new Date();
   return events
     .filter((ev) => {
       const dateStr = ev.endDate || ev.date;
