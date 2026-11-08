@@ -1,21 +1,32 @@
-import { Event } from "@/lib/types";
 import MapIcon from "@/icons/map";
 import { getDate, getMonth } from "@/lib/utils";
 import styles from "./events-section.module.scss";
-import AttachmentIcon from "@/icons/attachment";
-import { LinkButtonGhost } from "../ui/button";
+import EventAttachmentItem, {
+  EventAttachmentItemType,
+} from "./event-attachment-item";
+
+export interface EventItem {
+  name: string;
+  date: string;
+  endDate?: string;
+  startTime?: string;
+  endTime?: string;
+  location: string;
+  locationUrl?: string;
+  attachments?: EventAttachmentItemType[];
+}
 
 interface EventCardProps {
-  event: Event;
+  event: EventItem;
 }
 
 function EventDate({ event }: EventCardProps) {
-  const fromMonth = getMonth(event.fromDate);
-  const fromDate = getDate(event.fromDate);
-  const toMonth = event.toDate ? getMonth(event.toDate) : "";
-  const toDate = event.toDate ? getDate(event.toDate) : "";
+  const fromMonth = getMonth(event.date);
+  const fromDate = getDate(event.date);
+  const toMonth = event.endDate ? getMonth(event.endDate) : "";
+  const toDate = event.endDate ? getDate(event.endDate) : "";
 
-  if (!event.toDate)
+  if (!event.endDate)
     return (
       <div className={styles.cardHeader}>
         <p>{fromMonth}</p>
@@ -44,6 +55,23 @@ function EventDate({ event }: EventCardProps) {
   );
 }
 
+function EventTime({ event }: EventCardProps) {
+  if (event.startTime && event.endTime) {
+    const timeText =
+      event.startTime === event.endTime
+        ? event.startTime
+        : `${event.startTime} - ${event.endTime}`;
+    return <span>{timeText}</span>;
+  }
+  if (event.startTime) {
+    return <span>{event.startTime}</span>;
+  }
+  if (event.endTime) {
+    return <span>{event.endTime}</span>;
+  }
+  return null;
+}
+
 export default function EventCard({ event }: EventCardProps) {
   return (
     <div className={styles.card}>
@@ -51,24 +79,29 @@ export default function EventCard({ event }: EventCardProps) {
       <div className={styles.cardBody}>
         <div className={styles.cardDetails}>
           <b>{event.name}</b>
-          <span>
-            {event.from === event.to
-              ? event.from
-              : `${event.from} - ${event.to}`}
-          </span>
+          <EventTime event={event} />
           <div className={styles.locationBox}>
             <div>
               <MapIcon />
             </div>
-            <p>{event.location}</p>
+            {event.locationUrl ? (
+              <a
+                href={event.locationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {event.location}
+              </a>
+            ) : (
+              <p>{event.location}</p>
+            )}
           </div>
         </div>
         <div className={styles.cardAttachments}>
-          {event.attachments.length > 0 &&
-            event.attachments.map((att) => (
-              <LinkButtonGhost key={att} href={att} target="_blank">
-                <AttachmentIcon />
-              </LinkButtonGhost>
+          {event.attachments &&
+            event.attachments.length > 0 &&
+            event.attachments.map((item) => (
+              <EventAttachmentItem key={item.url} item={item} />
             ))}
         </div>
       </div>

@@ -1,18 +1,39 @@
-import { Info } from "@/lib/cms";
+"use client";
 
-export default function FAQSectionPreview(data: Info["faqSection"]) {
+import { FAQSection as FAQSectionType } from "@/lib/cms";
+import FAQSection from "@/components/home/faq-section";
+import { PreviewTemplateComponentProps } from "decap-cms-core";
+import { PreviewTemplateProps } from "@/lib/types";
+import { useStyleLinker } from "@/hooks";
+import BaseTemplatePreview from "../base-template-preview";
+import HomePreview from "./home-preview";
+import HomeContentPreview from "./home-content-preview";
+
+export function FAQSectionPreviewTemplate(
+  props: PreviewTemplateComponentProps,
+) {
+  const data = props.entry.get("data")?.toJS() as FAQSectionType;
+  if (!data) return null;
+  return <FAQSectionPreview data={data} {...props} />;
+}
+
+export default function FAQSectionPreview({
+  data,
+  ...props
+}: PreviewTemplateProps<FAQSectionType>) {
+  useStyleLinker(props);
+
   return (
-    <section className="padded">
-      <h1 className="text-center">{data.title}</h1>
-      {data.faqs.map((faq) => (
-        <div key={faq.question}>
-          <p>
-            <strong>{faq.question}</strong>
-          </p>
-          <p>{faq.answer}</p>
-        </div>
-      ))}
-      <p>{data.subtext}</p>
-    </section>
+    <BaseTemplatePreview>
+      <HomePreview centered>
+        <HomeContentPreview>
+          <FAQSection
+            title={data.title}
+            subtext={data.subtext}
+            faqs={data.faqs || []}
+          />
+        </HomeContentPreview>
+      </HomePreview>
+    </BaseTemplatePreview>
   );
 }

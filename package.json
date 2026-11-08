@@ -38,6 +38,9 @@
     "radix-ui": "^1.4.2",
     "react": "^19.0.1",
     "react-dom": "^19.0.1",
+    "react-markdown": "^10.1.0",
+    "remark-breaks": "^4.0.0",
+    "remark-gfm": "^4.0.1",
     "sharp": "^0.34.2",
     "swiper": "^12.1.2",
     "unsplash-js": "^7.0.19"
@@ -58,7 +61,8 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "netlify-ts": "^3.0.1",
     "sass": "^1.83.0",
-    "typescript": "5.7.3"
+    "typescript": "5.7.3",
+    "yaml-loader": "^0.9.0"
   },
   "engines": {
     "node": ">=20.0.0",

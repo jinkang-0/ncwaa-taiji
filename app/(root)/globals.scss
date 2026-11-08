@@ -6,7 +6,8 @@
   color-scheme: dark;
 }
 
-body {
+body,
+.siteContainer {
   color: colors.$fg;
   background: colors.$bg;
   font-family: fonts.$sans;

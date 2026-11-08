@@ -2,7 +2,8 @@
 @use "lib/colors";
 
 .faq {
-  & > span {
+  & > span,
+  .subtext {
     color: colors.$gray;
 
     a {

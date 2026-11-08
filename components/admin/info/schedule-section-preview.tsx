@@ -1,39 +1,49 @@
-import { Info } from "@/lib/cms";
+"use client";
 
-export default function ScheduleSectionPreview(data: Info["scheduleSection"]) {
+import { ScheduleSection as ScheduleSectionType } from "@/lib/cms";
+import ScheduleSection from "@/components/home/schedule-section";
+import { PreviewTemplateComponentProps } from "decap-cms-core";
+import { PreviewTemplateProps } from "@/lib/types";
+import { useStyleLinker } from "@/hooks";
+import BaseTemplatePreview from "../base-template-preview";
+import HomePreview from "./home-preview";
+import HomeContentPreview from "./home-content-preview";
+
+export function ScheduleSectionPreviewTemplate(
+  props: PreviewTemplateComponentProps,
+) {
+  const data = props.entry.get("data")?.toJS() as ScheduleSectionType;
+  if (!data) return null;
+  return <ScheduleSectionPreview data={data} {...props} />;
+}
+
+export default function ScheduleSectionPreview({
+  data,
+  ...props
+}: PreviewTemplateProps<ScheduleSectionType>) {
+  useStyleLinker(props);
+
   return (
-    <section className="padded">
-      <h1 className="text-center">{data.title}</h1>
-      <p>{data.introText}</p>
-      <table>
-        <tr>
-          <th>Day</th>
-          <th>Start Time</th>
-          <th>End Time</th>
-          <th>Location</th>
-        </tr>
-        {data.schedule.map((row) => (
-          <tr key={row.day}>
-            <td>{row.day}</td>
-            <td>{row.startTime}</td>
-            <td>{row.endTime}</td>
-            <td>
-              {row.location}
-              {row.locationAlternative && ` (${row.locationAlternative})`}
-            </td>
-          </tr>
-        ))}
-      </table>
-      {data.showSpecialAnnouncement && <p>{data.specialAnnouncement}</p>}
-      <div className="flex gap-2">
-        <a className=".button" href={data.registrationLink}>
-          Register
-        </a>
-        <a className=".button" href={data.registrationLinkSecondary}>
-          Register for online-only*
-        </a>
-      </div>
-      <p>{data.subtext}</p>
-    </section>
+    <BaseTemplatePreview>
+      <HomePreview centered>
+        <HomeContentPreview>
+          <ScheduleSection
+            title={data.title}
+            introText={data.introText}
+            subtext={data.subtext}
+            showSchedule={data.showSchedule}
+            schedule={data.schedule || []}
+            showSpecialAnnouncement={data.showSpecialAnnouncement}
+            specialAnnouncement={data.specialAnnouncement}
+            classStartDate={data.classStartDate}
+            classEndDate={data.classEndDate}
+            registrationStartDate={data.registrationStartDate}
+            forceClassInSession={data.forceClassInSession}
+            registrationLink={data.registrationLink}
+            registrationLinkSecondary={data.registrationLinkSecondary}
+          />
+        </HomeContentPreview>
+      </HomePreview>
+    </BaseTemplatePreview>
   );
 }

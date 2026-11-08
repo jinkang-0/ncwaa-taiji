@@ -1,27 +1,41 @@
-import { Info } from "@/lib/cms";
-import { getYTEmbed } from "@/lib/utils";
+"use client";
 
-export default function AboutSectionPreview(data: Info["aboutSection"]) {
+import { AboutSection as AboutSectionType } from "@/lib/cms";
+import { AboutSection } from "@/components/home/about-section";
+import { PreviewTemplateComponentProps } from "decap-cms-core";
+import { useStyleLinker } from "@/hooks";
+import { PreviewTemplateProps } from "@/lib/types";
+import BaseTemplatePreview from "../base-template-preview";
+import HomePreview from "./home-preview";
+import HomeContentPreview from "./home-content-preview";
+
+export function AboutSectionPreviewTemplate(
+  props: PreviewTemplateComponentProps,
+) {
+  const data = props.entry.get("data")?.toJS() as AboutSectionType;
+  if (!data) return null;
+  return <AboutSectionPreview data={data} {...props} />;
+}
+
+export default function AboutSectionPreview({
+  data,
+  ...props
+}: PreviewTemplateProps<AboutSectionType>) {
+  useStyleLinker(props);
+
   return (
-    <section className="padded">
-      <h1 className="text-center">{data.title}</h1>
-      {data.showIntroVideo && (
-        <iframe
-          width="560"
-          height="315"
-          src={getYTEmbed(data.introVideo)}
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        ></iframe>
-      )}
-      <p dangerouslySetInnerHTML={{ __html: data.section1Text }} />
-      <hr />
-      <p
-        className="text-gray"
-        dangerouslySetInnerHTML={{ __html: data.section2Text }}
-      />
-    </section>
+    <BaseTemplatePreview>
+      <HomePreview centered>
+        <HomeContentPreview>
+          <AboutSection
+            title={data.title}
+            introVideo={data.introVideo}
+            showIntroVideo={data.showIntroVideo}
+            sectionOneText={data.section1Text}
+            sectionTwoText={data.section2Text}
+          />
+        </HomeContentPreview>
+      </HomePreview>
+    </BaseTemplatePreview>
   );
 }

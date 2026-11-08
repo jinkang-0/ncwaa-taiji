@@ -1,30 +1,38 @@
-import { Info } from "@/lib/cms";
+"use client";
 
-export default function InstructorSectionPreview(
-  data: Info["instructorsSection"],
+import { InstructorsSection as InstructorsSectionType } from "@/lib/cms";
+import InstructorsSection from "@/components/home/instructors-section";
+import { PreviewTemplateComponentProps } from "decap-cms-core";
+import { PreviewTemplateProps } from "@/lib/types";
+import { useStyleLinker } from "@/hooks";
+import BaseTemplatePreview from "../base-template-preview";
+import HomeContentPreview from "./home-content-preview";
+import HomePreview from "./home-preview";
+
+export function InstructorSectionPreviewTemplate(
+  props: PreviewTemplateComponentProps,
 ) {
+  const data = props.entry.get("data")?.toJS() as InstructorsSectionType;
+  if (!data) return null;
+  return <InstructorSectionPreview data={data} {...props} />;
+}
+
+export default function InstructorSectionPreview({
+  data,
+  ...props
+}: PreviewTemplateProps<InstructorsSectionType>) {
+  useStyleLinker(props);
+
   return (
-    <section className="padded">
-      <h1 className="text-center">{data.title}</h1>
-      {data.instructors.map((inst) => (
-        <div key={inst.fullName} className="flex gap-2">
-          <div>
-            <img
-              width={300}
-              height={400}
-              src={inst.portrait}
-              alt="Instructor profile"
-            />
-          </div>
-          <div>
-            <p>
-              <strong>{inst.fullName}</strong>
-            </p>
-            <span>{inst.role}</span>
-            <p>{inst.biography}</p>
-          </div>
-        </div>
-      ))}
-    </section>
+    <BaseTemplatePreview>
+      <HomePreview centered>
+        <HomeContentPreview>
+          <InstructorsSection
+            title={data.title}
+            instructors={data.instructors || []}
+          />
+        </HomeContentPreview>
+      </HomePreview>
+    </BaseTemplatePreview>
   );
 }

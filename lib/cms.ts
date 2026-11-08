@@ -12,12 +12,19 @@ export interface Contacts {
   email: string;
 }
 
-export interface Info_CommunityPhotos {
+export interface Landing_CommunityPhotos {
   image: string;
   caption: string;
 }
 
-export interface Info_AboutSection {
+export interface Landing {
+  title: string;
+  subtitle: string;
+  landingPhoto: string;
+  communityPhotos: Landing_CommunityPhotos[];
+}
+
+export interface AboutSection {
   title: string;
   introVideo: string;
   showIntroVideo: boolean;
@@ -25,15 +32,17 @@ export interface Info_AboutSection {
   section2Text: any;
 }
 
-export interface Info_ScheduleSection_Schedule {
-  day: string;
+export type ScheduleSection_Schedule_DayOfTheWeek_options = "Sunday" | "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday";
+
+export interface ScheduleSection_Schedule {
+  day: ScheduleSection_Schedule_DayOfTheWeek_options;
   startTime: string;
   endTime: string;
   location: string;
   locationAlternative?: string;
 }
 
-export interface Info_ScheduleSection {
+export interface ScheduleSection {
   title: string;
   introText: any;
   showSpecialAnnouncement: boolean;
@@ -43,21 +52,21 @@ export interface Info_ScheduleSection {
   registrationStartDate: string;
   forceClassInSession: boolean;
   showSchedule: boolean;
-  schedule: Info_ScheduleSection_Schedule[];
+  schedule: ScheduleSection_Schedule[];
   registrationLink: string;
   registrationLinkSecondary: string;
   subtext: any;
 }
 
-export type Info_EventsSection_Events_Attachments_Type_options = "Website" | "File" | "Image" | "General";
+export type EventsSection_Events_Attachments_Type_options = "Website" | "File" | "Image" | "General";
 
-export interface Info_EventsSection_Events_Attachments {
+export interface EventsSection_Events_Attachments {
   name: string;
   url: string;
-  type: Info_EventsSection_Events_Attachments_Type_options;
+  type: EventsSection_Events_Attachments_Type_options;
 }
 
-export interface Info_EventsSection_Events {
+export interface EventsSection_Events {
   name: string;
   date: string;
   endDate?: string;
@@ -65,48 +74,36 @@ export interface Info_EventsSection_Events {
   endTime: string;
   location: string;
   locationUrl?: string;
-  attachments: Info_EventsSection_Events_Attachments[];
+  attachments: EventsSection_Events_Attachments[];
 }
 
-export interface Info_EventsSection {
+export interface EventsSection {
   title: string;
-  events: Info_EventsSection_Events[];
+  events: EventsSection_Events[];
   maxEvents: number;
 }
 
-export interface Info_FAQSection_FAQs {
-  question: string;
-  answer: any;
-}
-
-export interface Info_FAQSection {
-  title: string;
-  subtext: any;
-  faqs: Info_FAQSection_FAQs[];
-}
-
-export interface Info_InstructorsSection_Instructors {
+export interface InstructorsSection_Instructors {
   portrait: string;
   fullName: string;
   role: string;
   biography: any;
 }
 
-export interface Info_InstructorsSection {
+export interface InstructorsSection {
   title: string;
-  instructors: Info_InstructorsSection_Instructors[];
+  instructors: InstructorsSection_Instructors[];
 }
 
-export interface Info {
+export interface FAQSection_FAQs {
+  question: string;
+  answer: any;
+}
+
+export interface FAQSection {
   title: string;
-  subtitle: string;
-  landingPhoto: string;
-  communityPhotos: Info_CommunityPhotos[];
-  aboutSection: Info_AboutSection;
-  scheduleSection: Info_ScheduleSection;
-  eventsSection: Info_EventsSection;
-  faqSection: Info_FAQSection;
-  instructorsSection: Info_InstructorsSection;
+  subtext: any;
+  faqs: FAQSection_FAQs[];
 }
 
 export type Compendium_Collections_Type_options = "Featured" | "Default";
@@ -121,7 +118,7 @@ export interface Compendium {
   collections: Compendium_Collections[];
 }
 
-export interface Blog_blogs {
+export interface Blogs {
   title: string;
   thumbnail: string;
   authors: string[];
@@ -129,16 +126,13 @@ export interface Blog_blogs {
   content: any;
 }
 
-export interface Blog {
-  blogs: Blog_blogs[];
-}
+export type CompendiumForms_Type_options = "Exercise" | "Project" | "Competition" | "Qigong" | "Core";
 
-export type Forms_Type_options = "Exercise" | "Project" | "Competition" | "Qigong" | "Core";
-
-export interface Forms {
+export interface CompendiumForms {
+  id: string;
   name: string;
   thumbnail: string;
-  type: Forms_Type_options;
+  type: CompendiumForms_Type_options;
   otherNames: string[];
   subtitle: string;
   description: any;

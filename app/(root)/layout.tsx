@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Kaushan_Script, Sen } from "next/font/google";
 import CONFIG from "@/data/config";
 import { jsonLd } from "@/data/json-ld";
 import ProgressBarProvider from "@/components/ui/progress-bar";
@@ -12,24 +11,13 @@ import "swiper/css";
 import "swiper/css/mousewheel";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
+import { kaushanScript, sen } from "@/lib/fonts";
 
 // ensure environmental variables are imported
 if (!process.env.AUTH_GOOGLE_ID)
   throw new Error(
     "Google OAuth Client ID not included in environment variables.",
   );
-
-// import fonts
-const kaushanScript = Kaushan_Script({
-  variable: "--font-kaushan-script",
-  weight: "400",
-  subsets: ["latin"],
-});
-
-const sen = Sen({
-  variable: "--font-sen",
-  subsets: ["latin", "latin-ext"],
-});
 
 // site metadata
 export const viewport: Viewport = {

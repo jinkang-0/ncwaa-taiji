@@ -91,7 +91,7 @@ collections:
             widget: "string"
           - label: "Subtitle"
             name: "subtitle"
-            widget: "string"
+            widget: "richtext"
           - label: "Landing Photo"
             name: "landingPhoto"
             widget: "image"
