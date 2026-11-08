@@ -1,26 +1,25 @@
 import styles from "../page.module.scss";
-import Gallery from "@/components/ui/gallery";
-import { COMMUNITY_PHOTOS } from "@/data/images";
-import { DefaultAboutSection } from "@/components/home/about-section";
-import ScheduleSection from "@/components/home/schedule-section";
-import EventsSection from "@/components/home/events-section";
-import FAQSection from "@/components/home/faq-section";
-import InstructorsSection from "@/components/home/instructors-section";
+import { GalleryLoader } from "@/components/cms-loader/landing-loader";
+import AboutSectionLoader from "@/components/cms-loader/about-section-loader";
+import ScheduleSectionLoader from "@/components/cms-loader/schedule-section-loader";
+import EventsSectionLoader from "@/components/cms-loader/events-section-loader";
+import FAQSectionLoader from "@/components/cms-loader/faq-section-loader";
+import InstructorsSectionLoader from "@/components/cms-loader/instructors-section-loader";
 
 export const revalidate = 3600;
 
 export default function Home() {
   return (
     <>
-      <Gallery items={COMMUNITY_PHOTOS} />
+      <GalleryLoader />
 
       <div className={styles.content}>
         <article>
-          <DefaultAboutSection />
-          <ScheduleSection />
-          <EventsSection />
-          <FAQSection />
-          <InstructorsSection />
+          <AboutSectionLoader />
+          <ScheduleSectionLoader />
+          <EventsSectionLoader />
+          <FAQSectionLoader />
+          <InstructorsSectionLoader />
         </article>
       </div>
     </>

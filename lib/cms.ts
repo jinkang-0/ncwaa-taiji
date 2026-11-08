@@ -17,6 +17,13 @@ export interface Info_CommunityPhotos {
   caption: string;
 }
 
+export interface Info_LandingSection {
+  title: string;
+  subtitle: string;
+  landingPhoto: string;
+  communityPhotos: Info_CommunityPhotos[];
+}
+
 export interface Info_AboutSection {
   title: string;
   introVideo: string;
@@ -28,7 +35,7 @@ export interface Info_AboutSection {
 export interface Info_ScheduleSection_Schedule {
   day: string;
   startTime: string;
-  endTime: string;
+  endTime?: string;
   location: string;
   locationAlternative?: string;
 }
@@ -65,7 +72,7 @@ export interface Info_EventsSection_Events {
   endTime: string;
   location: string;
   locationUrl?: string;
-  attachments: Info_EventsSection_Events_Attachments[];
+  attachments?: Info_EventsSection_Events_Attachments[];
 }
 
 export interface Info_EventsSection {

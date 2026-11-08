@@ -1,155 +1,149 @@
-import { EMAIL, LINKS } from "@/data/links";
 import styles from "./schedule-section.module.scss";
-import Link from "next/link";
-import { LinkButtonPrimary } from "../ui/button";
+import { LinkButtonOutline, LinkButtonPrimary } from "../ui/button";
 import ExternalIcon from "@/icons/external";
-import PRACTICE_SCHEDULE from "@/data/schedule";
-import { getSchedule, loadScheduleSettings } from "@/actions/spreadsheet";
-import { Suspense } from "react";
-import { ScheduleItem, ScheduleSettings } from "@/lib/types";
 import Callout from "../ui/callout";
 import { parseDateObj } from "@/lib/utils";
+import MarkdownParser from "../ui/markdown";
+import { Info_ScheduleSection_Schedule } from "@/lib/cms";
 
-//
-// Class Schedule Components
-//
-
-interface ScheduleProps {
-  items: ScheduleItem[];
+export interface ScheduleSectionProps {
+  title: string;
+  introText: string;
+  subtext: string;
+  showSchedule: boolean;
+  schedule: Info_ScheduleSection_Schedule[];
+  showSpecialAnnouncement: boolean;
+  specialAnnouncement: string;
+  classStartDate?: string;
+  classEndDate?: string;
+  registrationStartDate?: string;
+  forceClassInSession?: boolean;
+  registrationLink: string;
+  registrationLinkSecondary?: string;
 }
 
-function ScheduleTemplate({ items }: ScheduleProps) {
+function parseDateString(dateStr: string): Date | undefined {
+  if (!dateStr) return undefined;
+  const d = new Date(dateStr);
+  if (!isNaN(d.getTime())) return d;
+  const dWithTime = new Date(`${dateStr}T00:00`);
+  return !isNaN(dWithTime.getTime()) ? dWithTime : undefined;
+}
+
+function ScheduleTable({ items }: { items: Info_ScheduleSection_Schedule[] }) {
   return (
     <div className={styles.scheduleTable}>
-      <div className={styles.scheduleTable}>
-        {items.map((sched) => (
-          <div
-            key={sched.Day + sched.From + sched.To}
-            className={styles.scheduleBlock}
-          >
-            <p>{sched.Day}</p>
-            <span>
-              {sched.From} - {sched.To}
-            </span>
-            <div>
-              <p>{sched.Location}</p>
-              {sched.Alternative ? <p>({sched.Alternative})</p> : null}
-            </div>
+      {items.map((sched) => (
+        <div
+          key={sched.day + sched.startTime + sched.endTime}
+          className={styles.scheduleBlock}
+        >
+          <p>{sched.day}</p>
+          <span>
+            {sched.startTime} - {sched.endTime}
+          </span>
+          <div>
+            <p>{sched.location}</p>
+            {sched.locationAlternative ? (
+              <p>({sched.locationAlternative})</p>
+            ) : null}
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 }
 
-function DefaultSchedule() {
-  return <ScheduleTemplate items={PRACTICE_SCHEDULE} />;
-}
+export default function ScheduleSection({
+  title,
+  introText,
+  subtext,
+  showSchedule,
+  schedule,
+  showSpecialAnnouncement,
+  specialAnnouncement,
+  classStartDate,
+  classEndDate,
+  registrationStartDate,
+  forceClassInSession,
+  registrationLink,
+  registrationLinkSecondary,
+}: ScheduleSectionProps) {
+  const startDate = classStartDate ? parseDateString(classStartDate) : undefined;
+  const endDate = classEndDate ? parseDateString(classEndDate) : undefined;
+  const regStartDate = registrationStartDate
+    ? parseDateString(registrationStartDate)
+    : undefined;
 
-async function Schedule() {
-  const schedule = (await getSchedule()) as ScheduleItem[];
-  const config = await loadScheduleSettings();
-
-  return config.showSchedule ? <ScheduleTemplate items={schedule} /> : null;
-}
-
-//
-// Registration Components
-//
-
-function RegistrationTemplate({ config }: { config: ScheduleSettings }) {
   const today = new Date();
 
-  const classUpcoming = config.classStartDate && today < config.classStartDate;
-  const classEnded = config.classEndDate && today > config.classEndDate;
-  const classInSession =
-    config.classStartDate &&
-    config.classEndDate &&
-    today > config.classStartDate &&
-    today < config.classEndDate;
-
-  const registrationOpen = config.registrationOpen;
-
-  return (
-    <>
-      {config.announcement ? (
-        <Callout type="warning">{config.announcement}</Callout>
-      ) : null}
-      {!classInSession ? (
-        <Callout type={config.registrationOpen ? "success" : "warning"}>
-          {/* class ended */}
-          {classEnded && (
-            <>
-              Class has ended!{" "}
-              {config.classStartDate &&
-              config.classEndDate &&
-              today < config.classEndDate
-                ? `We will resume on ${parseDateObj(config.classStartDate)}.`
-                : "We will resume next semester."}
-            </>
-          )}
-          {/* class upcoming */}
-          {classUpcoming && (
-            <>
-              Registration is open!{" "}
-              {config.classStartDate
-                ? `Classes start ${parseDateObj(config.classStartDate)}.`
-                : "Classes start soon."}
-            </>
-          )}
-        </Callout>
-      ) : null}
-      <div className={styles.buttonGroup}>
-        <LinkButtonPrimary
-          className={registrationOpen && !classEnded ? "" : "disabled"}
-          href={LINKS.registration}
-          target="_blank"
-        >
-          Register <ExternalIcon />
-        </LinkButtonPrimary>
-        {/* <LinkButtonOutline
-          className={registrationOpen && !classEnded ? "" : "disabled"}
-          href={LINKS.registration_online_only}
-          target="_blank"
-        >
-          Register for Online-only* <ExternalIcon />
-        </LinkButtonOutline> */}
-      </div>
-    </>
+  const classUpcoming = Boolean(startDate && today < startDate);
+  const classEnded = Boolean(endDate && today > endDate);
+  let classInSession = Boolean(
+    startDate && endDate && today >= startDate && today <= endDate
   );
-}
+  if (forceClassInSession) {
+    classInSession = true;
+  }
 
-async function Registration() {
-  const config = await loadScheduleSettings();
+  // Derive registration open from registrationStartDate when present;
+  // otherwise keep enabled whenever class has not ended.
+  const registrationOpen = regStartDate ? today >= regStartDate : !classEnded;
+  const isRegistrationEnabled = registrationOpen && !classEnded;
 
-  return <RegistrationTemplate config={config} />;
-}
-
-//
-// Main Schedule Section Component
-//
-
-export default function ScheduleSection() {
   return (
     <section className={styles.section}>
-      <h3>Schedule</h3>
+      <h3>{title}</h3>
       <div className={styles.schedule}>
-        <p>
-          In person practice is held at the{" "}
-          <Link href={LINKS.location}>Recreational Sports Facility (RSF)</Link>{" "}
-          on the UC Berkeley campus. All skill levels are welcome! New members
-          can try out their first week of classes for free.
-        </p>
-        <Suspense fallback={<DefaultSchedule />}>
-          <Schedule />
-        </Suspense>
+        <MarkdownParser>{introText}</MarkdownParser>
+        {showSchedule && schedule && schedule.length > 0 ? (
+          <ScheduleTable items={schedule} />
+        ) : null}
         <footer>
-          <Registration />
-          <p className={styles.note}>
-            We are now offering online classes for free as part of NCWAA Taiji!
-            Please email us at <Link href={`mailto:${EMAIL}`}>{EMAIL}</Link> for
-            more information.
-          </p>
+          {showSpecialAnnouncement && specialAnnouncement ? (
+            <Callout type="warning">{specialAnnouncement}</Callout>
+          ) : null}
+          {!classInSession ? (
+            <Callout type={registrationOpen ? "success" : "warning"}>
+              {classEnded && (
+                <>
+                  Class has ended!{" "}
+                  {startDate && endDate && today < endDate
+                    ? `We will resume on ${parseDateObj(startDate)}.`
+                    : "We will resume next semester."}
+                </>
+              )}
+              {classUpcoming && (
+                <>
+                  Registration is open!{" "}
+                  {startDate
+                    ? `Classes start ${parseDateObj(startDate)}.`
+                    : "Classes start soon."}
+                </>
+              )}
+            </Callout>
+          ) : null}
+          <div className={styles.buttonGroup}>
+            <LinkButtonPrimary
+              className={isRegistrationEnabled ? "" : "disabled"}
+              href={registrationLink}
+              target="_blank"
+            >
+              Register <ExternalIcon />
+            </LinkButtonPrimary>
+            {registrationLinkSecondary ? (
+              <LinkButtonOutline
+                className={isRegistrationEnabled ? "" : "disabled"}
+                href={registrationLinkSecondary}
+                target="_blank"
+              >
+                Register for Online-only* <ExternalIcon />
+              </LinkButtonOutline>
+            ) : null}
+          </div>
+          <div className={styles.note}>
+            <MarkdownParser>{subtext}</MarkdownParser>
+          </div>
         </footer>
       </div>
     </section>

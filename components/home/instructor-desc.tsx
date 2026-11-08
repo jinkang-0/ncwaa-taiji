@@ -14,10 +14,10 @@ export default function InstructorDescription({ children }: DescriptionProps) {
   return (
     <div className={styles.desc}>
       <div className={`${styles.textbox} ${expanded ? styles.expanded : ""}`}>
-        <p className={styles.truncated} aria-hidden>
+        <div className={styles.truncated} aria-hidden>
           {children}
-        </p>
-        <p className={styles.text}>{children}</p>
+        </div>
+        <div className={styles.text}>{children}</div>
       </div>
       <footer>
         <ButtonGhost onClick={() => setExpanded((prev) => !prev)}>

@@ -52,7 +52,7 @@ interface Event {
 }
 
 interface GalleryItem {
-  image: StaticImageData;
+  image: string | StaticImageData;
   caption: string;
 }
 

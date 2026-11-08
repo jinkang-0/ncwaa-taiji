@@ -1,14 +1,13 @@
 import styles from "./hero.module.scss";
-import Image, { StaticImageData } from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import InstagramIcon from "@/icons/instagram";
 import FacebookIcon from "@/icons/facebook";
 import YoutubeIcon from "@/icons/youtube";
 import Link from "next/link";
-import HeroImage from "@/assets/hero.webp";
 import { CONTACT_CONFIG } from "@/data/cms-config";
 
 interface HeroProps {
-  heroImage: StaticImageData;
+  heroImage: string | StaticImageData;
   title: string;
   subtitle: string;
 }
@@ -19,9 +18,17 @@ export function Hero({ heroImage, title, subtitle }: HeroProps) {
       <Image
         className={styles.image}
         src={heroImage}
-        blurDataURL={typeof heroImage === "string" ? heroImage : undefined}
-        placeholder="blur"
         alt="hero image"
+        fill
+        sizes="100vw"
+        placeholder={
+          typeof heroImage === "string" || !heroImage.blurDataURL
+            ? "empty"
+            : "blur"
+        }
+        blurDataURL={
+          typeof heroImage === "string" ? undefined : heroImage.blurDataURL
+        }
       />
       <div className={styles.imageCover}></div>
       <div className={styles.content}>
@@ -43,15 +50,5 @@ export function Hero({ heroImage, title, subtitle }: HeroProps) {
       </div>
       <div className={styles.transition}></div>
     </div>
-  );
-}
-
-export function DefaultHero() {
-  return (
-    <Hero
-      heroImage={HeroImage}
-      title="NCWAA Taiji"
-      subtitle="A program of the National Chinese Wushu Association of America"
-    />
   );
 }

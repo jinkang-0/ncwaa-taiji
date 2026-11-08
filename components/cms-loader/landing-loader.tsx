@@ -1,19 +1,20 @@
-import landingContent from "@/content/page/landing.yml";
+import rawLandingContent from "@/content/page/landing.yml";
 import Gallery from "../ui/gallery";
-import { GalleryItem } from "@/lib/types";
 import { Hero } from "../ui/hero";
-import { StaticImageData } from "next/image";
+import { Info_LandingSection } from "@/lib/cms";
+
+const landingContent = rawLandingContent as unknown as Info_LandingSection;
 
 export function GalleryLoader() {
-  return <Gallery items={landingContent.communityPhotos as GalleryItem[]} />;
+  return <Gallery items={landingContent.communityPhotos} />;
 }
 
 export function HeroLoader() {
   return (
     <Hero
-      heroImage={landingContent.landingPhoto as StaticImageData}
-      title={landingContent.title as string}
-      subtitle={landingContent.subtitle as string}
+      heroImage={landingContent.landingPhoto}
+      title={landingContent.title}
+      subtitle={landingContent.subtitle}
     />
   );
 }

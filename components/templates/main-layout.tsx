@@ -1,5 +1,5 @@
 import Footer from "../ui/footer";
-import { DefaultHero } from "../ui/hero";
+import { HeroLoader } from "../cms-loader/landing-loader";
 import Navbar from "../ui/navbar";
 
 export default function MainLayout({
@@ -11,7 +11,7 @@ export default function MainLayout({
 }) {
   return (
     <>
-      {showHero ? <DefaultHero /> : null}
+      {showHero ? <HeroLoader /> : null}
       <Navbar />
       {children}
       <Footer />

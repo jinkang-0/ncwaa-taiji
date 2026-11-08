@@ -51,7 +51,7 @@
       overflow: hidden;
       transition: max-height 300ms ease-in-out;
 
-      p.truncated {
+      .truncated {
         display: -webkit-box;
         -webkit-line-clamp: $lines;
         line-clamp: $lines;
@@ -65,7 +65,7 @@
         z-index: 1;
       }
 
-      p.text {
+      .text {
         position: relative;
         opacity: 0;
         transition: opacity 200ms linear;
@@ -74,12 +74,12 @@
       &.expanded {
         max-height: $maxh;
 
-        p.truncated {
+        .truncated {
           opacity: 0;
           transition: opacity 0ms;
         }
 
-        p.text {
+        .text {
           opacity: 1;
           transition: opacity 0ms;
         }
@@ -102,7 +102,7 @@
   .card {
     .desc {
       .textbox {
-        p.truncated {
+        .truncated {
           background: colors.$bg;
         }
       }

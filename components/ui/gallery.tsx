@@ -34,13 +34,18 @@ export default function Gallery({ items }: GalleryProps) {
           forceToAxis: true,
         }}
       >
-        {items.map((i) => (
-          <SwiperSlide key={i.image.src} className={styles.carouselItemWrapper}>
+        {items.map((i) => {
+          const src = typeof i.image === "string" ? i.image : i.image.src;
+          const blurDataURL =
+            typeof i.image === "string" ? undefined : i.image.blurDataURL;
+
+          return (
+          <SwiperSlide key={src} className={styles.carouselItemWrapper}>
             <div className={styles.carouselItem}>
               <Image
                 src={i.image}
-                placeholder="blur"
-                blurDataURL={typeof i.image == "string" ? i.image : undefined}
+                placeholder={blurDataURL ? "blur" : "empty"}
+                blurDataURL={blurDataURL}
                 alt={i.caption ?? "alt"}
                 width={1028}
                 height={771}
@@ -48,8 +53,8 @@ export default function Gallery({ items }: GalleryProps) {
               <Image
                 className={styles.ambiance}
                 src={i.image}
-                placeholder="blur"
-                blurDataURL={typeof i.image == "string" ? i.image : undefined}
+                placeholder={blurDataURL ? "blur" : "empty"}
+                blurDataURL={blurDataURL}
                 alt={"ambiance image"}
                 width={1028}
                 height={771}
@@ -58,7 +63,8 @@ export default function Gallery({ items }: GalleryProps) {
               <p className={styles.caption}>{i.caption}</p>
             </div>
           </SwiperSlide>
-        ))}
+          );
+        })}
       </Swiper>
     </div>
   );

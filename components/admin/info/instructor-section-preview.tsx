@@ -1,30 +1,24 @@
-import { Info } from "@/lib/cms";
+"use client";
+
+import { Info_InstructorsSection } from "@/lib/cms";
+import InstructorsSection from "@/components/home/instructors-section";
+import { PreviewTemplateComponentProps } from "decap-cms-core";
+
+export function InstructorSectionPreviewTemplate({
+  entry,
+}: PreviewTemplateComponentProps) {
+  const data = entry.get("data")?.toJS() as Info_InstructorsSection;
+  if (!data) return null;
+  return <InstructorSectionPreview {...data} />;
+}
 
 export default function InstructorSectionPreview(
-  data: Info["instructorsSection"],
+  data: Info_InstructorsSection
 ) {
   return (
-    <section className="padded">
-      <h1 className="text-center">{data.title}</h1>
-      {data.instructors.map((inst) => (
-        <div key={inst.fullName} className="flex gap-2">
-          <div>
-            <img
-              width={300}
-              height={400}
-              src={inst.portrait}
-              alt="Instructor profile"
-            />
-          </div>
-          <div>
-            <p>
-              <strong>{inst.fullName}</strong>
-            </p>
-            <span>{inst.role}</span>
-            <p>{inst.biography}</p>
-          </div>
-        </div>
-      ))}
-    </section>
+    <InstructorsSection
+      title={data.title}
+      instructors={data.instructors || []}
+    />
   );
 }
