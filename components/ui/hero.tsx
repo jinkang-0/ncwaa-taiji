@@ -5,6 +5,7 @@ import FacebookIcon from "@/icons/facebook";
 import YoutubeIcon from "@/icons/youtube";
 import Link from "next/link";
 import { CONTACT_CONFIG } from "@/data/cms-config";
+import MarkdownParser from "./markdown";
 
 interface HeroProps {
   heroImage: string | StaticImageData;
@@ -29,7 +30,7 @@ export function Hero({ heroImage, title, subtitle }: HeroProps) {
       <div className={styles.content}>
         <h1>{title}</h1>
         <div>
-          <p>{subtitle}</p>
+          <MarkdownParser>{subtitle}</MarkdownParser>
         </div>
         <div className={styles.links}>
           <Link href={CONTACT_CONFIG.instagram} target="_blank">

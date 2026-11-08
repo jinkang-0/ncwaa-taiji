@@ -4,13 +4,8 @@ import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
 import styles from "./markdown.module.scss";
 import clsx from "clsx";
-import CONFIG from "@/data/config";
 
 function isExternalHref(href: string) {
-  const url = new URL(href);
-  if (url.hostname === `${url.protocol}//${CONFIG.siteUrl}`) {
-    return false;
-  }
   return (
     href.startsWith("http://") ||
     href.startsWith("https://") ||
