@@ -1,18 +1,18 @@
 "use client";
 
-import { Info_ScheduleSection } from "@/lib/cms";
+import { ScheduleSection as ScheduleSectionType } from "@/lib/cms";
 import ScheduleSection from "@/components/home/schedule-section";
 import { PreviewTemplateComponentProps } from "decap-cms-core";
 
 export function ScheduleSectionPreviewTemplate({
   entry,
 }: PreviewTemplateComponentProps) {
-  const data = entry.get("data")?.toJS() as Info_ScheduleSection;
+  const data = entry.get("data")?.toJS() as ScheduleSectionType;
   if (!data) return null;
   return <ScheduleSectionPreview {...data} />;
 }
 
-export default function ScheduleSectionPreview(data: Info_ScheduleSection) {
+export default function ScheduleSectionPreview(data: ScheduleSectionType) {
   return (
     <ScheduleSection
       title={data.title}

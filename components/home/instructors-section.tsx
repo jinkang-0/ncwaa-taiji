@@ -2,11 +2,11 @@ import Image from "next/image";
 import styles from "./instructors-section.module.scss";
 import InstructorDescription from "./instructor-desc";
 import MarkdownParser from "../ui/markdown";
-import { Info_InstructorsSection_Instructors } from "@/lib/cms";
+import { InstructorsSection_Instructors } from "@/lib/cms";
 
 export interface InstructorsSectionProps {
   title: string;
-  instructors: Info_InstructorsSection_Instructors[];
+  instructors: InstructorsSection_Instructors[];
 }
 
 export default function InstructorsSection({

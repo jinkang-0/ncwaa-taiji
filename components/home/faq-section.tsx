@@ -1,12 +1,12 @@
 import styles from "./faq-section.module.scss";
 import FAQCard, { FAQList } from "./faq-card";
 import MarkdownParser from "../ui/markdown";
-import { Info_FAQSection_FAQs } from "@/lib/cms";
+import { FAQSection_FAQs } from "@/lib/cms";
 
 export interface FAQSectionProps {
   title: string;
   subtext: string;
-  faqs: Info_FAQSection_FAQs[];
+  faqs: FAQSection_FAQs[];
 }
 
 export default function FAQSection({ title, subtext, faqs }: FAQSectionProps) {

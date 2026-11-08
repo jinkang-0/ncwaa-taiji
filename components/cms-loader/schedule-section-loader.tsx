@@ -1,8 +1,8 @@
 import rawScheduleContent from "@/content/page/schedule.yml";
-import { Info_ScheduleSection } from "@/lib/cms";
+import { ScheduleSection as ScheduleSectionType } from "@/lib/cms";
 import ScheduleSection from "../home/schedule-section";
 
-const scheduleContent = rawScheduleContent as unknown as Info_ScheduleSection;
+const scheduleContent = rawScheduleContent as unknown as ScheduleSectionType;
 
 export default function ScheduleSectionLoader() {
   return (

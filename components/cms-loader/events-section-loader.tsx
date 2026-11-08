@@ -1,14 +1,17 @@
 import rawEventsContent from "@/content/page/events.yml";
-import { Info_EventsSection, Info_EventsSection_Events } from "@/lib/cms";
+import {
+  EventsSection as EventsSectionType,
+  EventsSection_Events,
+} from "@/lib/cms";
 import EventsSection from "../home/events-section";
 
-const eventsContent = rawEventsContent as unknown as Info_EventsSection;
+const eventsContent = rawEventsContent as unknown as EventsSectionType;
 
 export function filterUpcomingEvents(
-  events: Info_EventsSection_Events[],
+  events: EventsSection_Events[],
   maxEvents: number,
-  now: Date = new Date()
-): Info_EventsSection_Events[] {
+  now: Date = new Date(),
+): EventsSection_Events[] {
   return events
     .filter((ev) => {
       const dateStr = ev.endDate || ev.date;
@@ -28,13 +31,8 @@ export function filterUpcomingEvents(
 export default function EventsSectionLoader() {
   const upcomingEvents = filterUpcomingEvents(
     eventsContent.events || [],
-    eventsContent.maxEvents || 15
+    eventsContent.maxEvents || 15,
   );
 
-  return (
-    <EventsSection
-      title={eventsContent.title}
-      events={upcomingEvents}
-    />
-  );
+  return <EventsSection title={eventsContent.title} events={upcomingEvents} />;
 }

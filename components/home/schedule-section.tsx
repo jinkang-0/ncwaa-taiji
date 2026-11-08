@@ -4,14 +4,14 @@ import ExternalIcon from "@/icons/external";
 import Callout from "../ui/callout";
 import { parseDateObj } from "@/lib/utils";
 import MarkdownParser from "../ui/markdown";
-import { Info_ScheduleSection_Schedule } from "@/lib/cms";
+import { ScheduleSection_Schedule } from "@/lib/cms";
 
 export interface ScheduleSectionProps {
   title: string;
   introText: string;
   subtext: string;
   showSchedule: boolean;
-  schedule: Info_ScheduleSection_Schedule[];
+  schedule: ScheduleSection_Schedule[];
   showSpecialAnnouncement: boolean;
   specialAnnouncement: string;
   classStartDate?: string;
@@ -30,7 +30,7 @@ function parseDateString(dateStr: string): Date | undefined {
   return !isNaN(dWithTime.getTime()) ? dWithTime : undefined;
 }
 
-function ScheduleTable({ items }: { items: Info_ScheduleSection_Schedule[] }) {
+function ScheduleTable({ items }: { items: ScheduleSection_Schedule[] }) {
   return (
     <div className={styles.scheduleTable}>
       {items.map((sched) => (
@@ -69,7 +69,9 @@ export default function ScheduleSection({
   registrationLink,
   registrationLinkSecondary,
 }: ScheduleSectionProps) {
-  const startDate = classStartDate ? parseDateString(classStartDate) : undefined;
+  const startDate = classStartDate
+    ? parseDateString(classStartDate)
+    : undefined;
   const endDate = classEndDate ? parseDateString(classEndDate) : undefined;
   const regStartDate = registrationStartDate
     ? parseDateString(registrationStartDate)
@@ -80,7 +82,7 @@ export default function ScheduleSection({
   const classUpcoming = Boolean(startDate && today < startDate);
   const classEnded = Boolean(endDate && today > endDate);
   let classInSession = Boolean(
-    startDate && endDate && today >= startDate && today <= endDate
+    startDate && endDate && today >= startDate && today <= endDate,
   );
   if (forceClassInSession) {
     classInSession = true;

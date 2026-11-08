@@ -1,8 +1,8 @@
 import rawFAQContent from "@/content/page/faqs.yml";
-import { Info_FAQSection } from "@/lib/cms";
+import { FAQSection as FAQSectionType } from "@/lib/cms";
 import FAQSection from "../home/faq-section";
 
-const faqContent = rawFAQContent as unknown as Info_FAQSection;
+const faqContent = rawFAQContent as unknown as FAQSectionType;
 
 export default function FAQSectionLoader() {
   return (

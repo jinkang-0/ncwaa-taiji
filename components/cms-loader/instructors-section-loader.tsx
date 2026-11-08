@@ -1,8 +1,9 @@
 import rawInstructorsContent from "@/content/page/instructors.yml";
-import { Info_InstructorsSection } from "@/lib/cms";
+import { InstructorsSection as InstructorsSectionType } from "@/lib/cms";
 import InstructorsSection from "../home/instructors-section";
 
-const instructorsContent = rawInstructorsContent as unknown as Info_InstructorsSection;
+const instructorsContent =
+  rawInstructorsContent as unknown as InstructorsSectionType;
 
 export default function InstructorsSectionLoader() {
   return (
