@@ -24,7 +24,7 @@ interface UserSession {
 
 // compendium
 type CompendiumCategory =
-  | "Exercises"
+  | "Exercise"
   | "Qigong"
   | "Core"
   | "Competition"
@@ -34,11 +34,12 @@ type CompendiumCardAlignment = "left" | "middle" | "right";
 
 interface CompendiumItem {
   id: string;
-  title: string;
+  name: string;
+  subtitle: string;
   description: string;
   otherNames: string[];
-  category: CompendiumCategory;
-  image: string | StaticImageData;
+  type: CompendiumCategory;
+  thumbnail: string | StaticImageData;
 }
 
 // types for home page data

@@ -1,4 +1,3 @@
----
 id: bafa-wubu
 name: Bafa Wubu
 thumbnail: /uploads/bafawubu.webp
@@ -18,8 +17,6 @@ description: >-
 
 
   For beginners, this is a great form to start with to build a solid foundation in tai chi. For more advanced practitioners, it is also great to practice your expression of the eight powers in different directions, and you can slow it down to practice it as qigong.
-
-
-
-  #### Videos
----
+videos:
+  - title: "Yang style Bafa Wubu"
+    url: "https://youtu.be/XoW25w-Uusg?si=Z9d9k9ji-kI3uj-Z"

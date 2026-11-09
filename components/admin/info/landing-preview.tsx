@@ -4,7 +4,7 @@ import { PreviewTemplateProps } from "@/lib/types";
 import { PreviewTemplateComponentProps } from "decap-cms-core";
 import BaseTemplatePreview from "../base-template-preview";
 import { Hero } from "@/components/ui/hero";
-import HomePreview from "./home-preview";
+import MainPreview from "../main-preview";
 import Gallery from "@/components/ui/gallery";
 
 export function LandingPreviewTemplate(props: PreviewTemplateComponentProps) {
@@ -26,9 +26,9 @@ export default function LandingPreview({
         subtitle={data.subtitle}
         heroImage={data.landingPhoto}
       />
-      <HomePreview>
+      <MainPreview>
         <Gallery items={data.communityPhotos} />
-      </HomePreview>
+      </MainPreview>
     </BaseTemplatePreview>
   );
 }

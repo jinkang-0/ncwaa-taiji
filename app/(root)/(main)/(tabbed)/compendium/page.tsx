@@ -1,17 +1,8 @@
-import CompendiumCarousel from "@/components/compendium/carousel";
 import styles from "./page.module.scss";
-import {
-  coreExercises,
-  exercises,
-  featuredCompendiumItems,
-  competitionTrack,
-  qigong,
-  projectForms,
-} from "@/data/compendium";
-import CompendiumCatalog from "@/components/compendium/catalog";
 import CompendiumDialog from "@/components/compendium/compendium-dialog";
-import CompendiumDialogContent from "@/components/compendium/compendium-dialog-content";
 import { GenerateMetadataProps } from "@/lib/types";
+import CompendiumPageLoader from "@/components/cms-loader/compendium-loader";
+import { getForm } from "@/components/cms-loader/form-loader";
 
 export async function generateMetadata({
   searchParams,
@@ -34,40 +25,13 @@ export default async function CompendiumPage({
   searchParams: Promise<{ id: string }>;
 }) {
   const { id } = await searchParams;
+  const selectedForm = await getForm(id);
 
   return (
     <div className={styles.container}>
-      <CompendiumDialog>
-        {id && <CompendiumDialogContent id={id} />}
-      </CompendiumDialog>
+      <CompendiumDialog form={selectedForm} />
 
-      <h3>Currently Practiced</h3>
-      <CompendiumCarousel items={featuredCompendiumItems} />
-
-      <div className={styles.catalog}>
-        <h3>Exercises</h3>
-        <CompendiumCatalog items={exercises} />
-      </div>
-
-      <div className={styles.catalog}>
-        <h3>Qigong</h3>
-        <CompendiumCatalog items={qigong} />
-      </div>
-
-      <div className={styles.catalog}>
-        <h3>Core</h3>
-        <CompendiumCatalog items={coreExercises} />
-      </div>
-
-      <div className={styles.catalog}>
-        <h3>Competition</h3>
-        <CompendiumCatalog items={competitionTrack} />
-      </div>
-
-      <div className={styles.catalog}>
-        <h3>Projects</h3>
-        <CompendiumCatalog items={projectForms} />
-      </div>
+      <CompendiumPageLoader />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { CompendiumCardAlignment, CompendiumItem } from "@/lib/types";
+import { useCompendiumContext } from "./compendium-context";
 
 interface CatalogCardOverlayProps {
   item: CompendiumItem;
@@ -19,6 +20,7 @@ export default function CatalogCardOverlay({
   elementRef,
   handleOpenModal,
 }: CatalogCardOverlayProps) {
+  const { isCardDisabled } = useCompendiumContext();
   const [element, setElement] = useState<HTMLAnchorElement | null>(null);
 
   useEffect(() => {
@@ -55,22 +57,24 @@ export default function CatalogCardOverlay({
       }}
     >
       <Link
-        href={`?id=${item.id}`}
-        className={styles.overlayLink}
-        onNavigate={handleOpenModal}
+        href={isCardDisabled ? "#" : `?id=${item.id}`}
+        className={clsx(styles.overlayLink, isCardDisabled && styles.disabled)}
+        onNavigate={isCardDisabled ? undefined : handleOpenModal}
         scroll={false}
       >
         <Image
-          src={item.image}
-          blurDataURL={typeof item.image === "string" ? item.image : undefined}
+          src={item.thumbnail}
+          blurDataURL={
+            typeof item.thumbnail === "string" ? item.thumbnail : undefined
+          }
           placeholder="blur"
           className={styles.itemImage}
-          alt={item.title}
+          alt={item.name}
           width="800"
           height="450"
         />
         <div className={styles.carouselItemContent}>
-          <h6 className={styles.title}>{item.title}</h6>
+          <h6 className={styles.title}>{item.name}</h6>
           {item.otherNames && item.otherNames.length > 0 && (
             <div className={styles.tags}>
               {item.otherNames.map((tag) => (

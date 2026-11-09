@@ -43,7 +43,9 @@
     "remark-gfm": "^4.0.1",
     "sharp": "^0.34.2",
     "swiper": "^12.1.2",
-    "unsplash-js": "^7.0.19"
+    "swr": "^2.5.1",
+    "unsplash-js": "^7.0.19",
+    "yaml": "^2.9.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

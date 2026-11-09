@@ -413,6 +413,7 @@ collections:
     folder: "content/forms"
     create: true
     identifier_field: id
+    summary: "{{name}}"
     fields:
       - label: "ID"
         name: "id"
@@ -451,3 +452,26 @@ collections:
       - label: "Description"
         name: "description"
         widget: "richtext"
+      - label: "Videos"
+        name: "videos"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Title"
+            name: "title"
+            required: false
+            widget: "string"
+          - label: "URL"
+            name: "url"
+            widget: "string"
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "URL"
+            name: "url"
+            widget: "string"

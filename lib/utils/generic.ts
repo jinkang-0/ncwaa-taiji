@@ -73,3 +73,21 @@ export const formalizeLink = (link: string) => {
   if (link.match(/^https?:\/\//)) return link;
   return `https://${link}`;
 };
+
+/**
+ * Duplicates the same object by a specified amount, modifying a specified key for each clone.
+ * Returns a list of the clones, with the original object in index 0.
+ */
+export const enumerateData = <T>(
+  object: T,
+  amt: number,
+  transformer: (v: T, idx: number) => T,
+): T[] => {
+  const clones = [object];
+  let current = object;
+  for (let i = 1; i < amt; i++) {
+    current = transformer(current, i);
+    clones.push(current);
+  }
+  return clones;
+};

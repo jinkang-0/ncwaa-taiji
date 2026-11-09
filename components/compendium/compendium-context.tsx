@@ -15,6 +15,7 @@ import { createContext, useContext, useState } from "react";
 interface CompendiumContextValues {
   dialogOpenedNaturally: boolean;
   setDialogOpenedNaturally: (value: boolean) => void;
+  isCardDisabled: boolean;
 }
 
 const CompendiumContext = createContext<CompendiumContextValues | null>(null);
@@ -23,22 +24,28 @@ export const useCompendiumContext = () => {
   const context = useContext(CompendiumContext);
   if (!context) {
     throw new Error(
-      "useCompendiumContext must be used within a CompendiumProvider"
+      "useCompendiumContext must be used within a CompendiumProvider",
     );
   }
   return context;
 };
 
 export function CompendiumProvider({
-  children
+  children,
+  cardDisabled = false,
 }: {
   children: React.ReactNode;
+  cardDisabled?: boolean;
 }) {
   const [dialogOpenedNaturally, setDialogOpenedNaturally] = useState(false);
 
   return (
     <CompendiumContext.Provider
-      value={{ dialogOpenedNaturally, setDialogOpenedNaturally }}
+      value={{
+        dialogOpenedNaturally,
+        setDialogOpenedNaturally,
+        isCardDisabled: cardDisabled,
+      }}
     >
       {children}
     </CompendiumContext.Provider>

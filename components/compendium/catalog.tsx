@@ -98,13 +98,13 @@ export default function CompendiumCatalog({
         >
           {groupedItems.map((grp) => (
             <SwiperSlide
-              key={grp[0].title}
+              key={grp[0].name}
               className={styles.carouselItemWrapper}
             >
               <div className={styles.itemGroup}>
                 {grp.map((i, idx) => (
                   <CatalogCard
-                    key={i.title}
+                    key={i.name}
                     item={i}
                     alignment={alignments[groupSize - 1][idx % groupSize]}
                     overlayPortalRef={overlayPortalRef}

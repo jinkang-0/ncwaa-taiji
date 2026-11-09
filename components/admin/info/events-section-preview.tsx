@@ -6,7 +6,7 @@ import { PreviewTemplateComponentProps } from "decap-cms-core";
 import { PreviewTemplateProps } from "@/lib/types";
 import { useStyleLinker } from "@/hooks";
 import BaseTemplatePreview from "../base-template-preview";
-import HomePreview from "./home-preview";
+import MainPreview from "../main-preview";
 import HomeContentPreview from "./home-content-preview";
 
 export function EventsSectionPreviewTemplate(
@@ -25,11 +25,11 @@ export default function EventsSectionPreview({
 
   return (
     <BaseTemplatePreview>
-      <HomePreview centered>
+      <MainPreview centered>
         <HomeContentPreview>
           <EventsSection title={data.title} events={data.events || []} />
         </HomeContentPreview>
-      </HomePreview>
+      </MainPreview>
     </BaseTemplatePreview>
   );
 }

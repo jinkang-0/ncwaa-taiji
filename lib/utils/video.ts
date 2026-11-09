@@ -19,11 +19,11 @@ export const getYTEmbed = (link: string) => {
 export const getVideoId = (link: string) => {
   const url = new URL(link);
   if (url.hostname === "www.youtube.com" || url.hostname === "youtube.com") {
-    return url.searchParams.get("v");
+    return url.searchParams.get("v") ?? "";
   } else if (url.hostname === "youtu.be") {
-    return url.pathname.split("/")[1];
+    return url.pathname.split("/")[1] ?? "";
   }
-  return null;
+  return "";
 };
 
 export const getThumbnail = (link: string) => {
