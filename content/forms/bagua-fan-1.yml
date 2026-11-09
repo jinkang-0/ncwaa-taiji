@@ -1,4 +1,3 @@
----
 id: bagua-fan-1
 name: Kun Lun Fan
 thumbnail: /uploads/bagua-fan-1.webp
@@ -12,16 +11,9 @@ description: >-
   the [Taiji Bagua Fan](/compendium?id=taiji-bagua-fan), but is easier in comparison to the other two fan sets in Bagua. The
   Bagua fan is notoriously famous for its difficulty to learn, which is
   why it could be a lifelong pursuit for some practitioners.
-
-
-
-  #### Videos
-
-
-
-  #### Resources
-
-
-
-  - [Wikipedia on Baguazhang](https://en.wikipedia.org/wiki/Baguazhang)
----
+resources:
+  - title: "Wikipedia on Baguazhang"
+    url: "https://en.wikipedia.org/wiki/Baguazhang"
+videos:
+  - title: "Kun Lun Fan by Sifu Dere in 2012"
+    url: "https://youtu.be/tp1COJNH40E?si=TZlnbZIAWbXuOBPF"

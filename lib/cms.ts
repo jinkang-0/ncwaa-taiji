@@ -19,7 +19,7 @@ export interface Landing_CommunityPhotos {
 
 export interface Landing {
   title: string;
-  subtitle: string;
+  subtitle: any;
   landingPhoto: string;
   communityPhotos: Landing_CommunityPhotos[];
 }
@@ -32,7 +32,14 @@ export interface AboutSection {
   section2Text: any;
 }
 
-export type ScheduleSection_Schedule_DayOfTheWeek_options = "Sunday" | "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday";
+export type ScheduleSection_Schedule_DayOfTheWeek_options =
+  | "Sunday"
+  | "Monday"
+  | "Tuesday"
+  | "Wednesday"
+  | "Thursday"
+  | "Friday"
+  | "Saturday";
 
 export interface ScheduleSection_Schedule {
   day: ScheduleSection_Schedule_DayOfTheWeek_options;
@@ -58,7 +65,11 @@ export interface ScheduleSection {
   subtext: any;
 }
 
-export type EventsSection_Events_Attachments_Type_options = "Website" | "File" | "Image" | "General";
+export type EventsSection_Events_Attachments_Type_options =
+  | "Website"
+  | "File"
+  | "Image"
+  | "General";
 
 export interface EventsSection_Events_Attachments {
   name: string;
@@ -126,7 +137,22 @@ export interface Blogs {
   content: any;
 }
 
-export type CompendiumForms_Type_options = "Exercise" | "Project" | "Competition" | "Qigong" | "Core";
+export type CompendiumForms_Type_options =
+  | "Exercise"
+  | "Project"
+  | "Competition"
+  | "Qigong"
+  | "Core";
+
+export interface CompendiumForms_Videos {
+  title?: string;
+  url: string;
+}
+
+export interface CompendiumForms_Resources {
+  title: string;
+  url: string;
+}
 
 export interface CompendiumForms {
   id: string;
@@ -136,4 +162,6 @@ export interface CompendiumForms {
   otherNames: string[];
   subtitle: string;
   description: any;
+  videos?: CompendiumForms_Videos[];
+  resources?: CompendiumForms_Resources[];
 }

@@ -11,7 +11,7 @@ import Link from "next/link";
 import styles from "./carousel.module.scss";
 
 export default function CompendiumCarousel({
-  items
+  items,
 }: {
   items: CompendiumItem[];
 }) {
@@ -19,14 +19,15 @@ export default function CompendiumCarousel({
 
   const carouselItems = items.map((item) => ({
     image: {
-      src: item.image,
-      blurDataURL: typeof item.image === "string" ? item.image : undefined,
-      alt: item.title
+      src: item.thumbnail,
+      blurDataURL:
+        typeof item.thumbnail === "string" ? item.thumbnail : undefined,
+      alt: item.name,
     },
-    title: item.title,
-    description: item.description,
-    tags: [item.category, ...item.otherNames],
-    link: `?id=${item.id}`
+    title: item.name,
+    description: item.subtitle,
+    tags: [item.type, ...item.otherNames],
+    link: `?id=${item.id}`,
   }));
 
   return (
@@ -39,13 +40,13 @@ export default function CompendiumCarousel({
         loop
         slidesPerView="auto"
         autoplay={{
-          delay: 5000
+          delay: 5000,
         }}
         speed={500}
         pagination={{ clickable: true }}
         mousewheel={{
           enabled: true,
-          forceToAxis: true
+          forceToAxis: true,
         }}
         ref={swiperRef}
         resistance={false}
@@ -85,7 +86,7 @@ export default function CompendiumCarousel({
 }
 
 function CarouselControlLeft({
-  swiperRef
+  swiperRef,
 }: {
   swiperRef: React.RefObject<SwiperRef | null>;
 }) {
@@ -101,7 +102,7 @@ function CarouselControlLeft({
 }
 
 function CarouselControlRight({
-  swiperRef
+  swiperRef,
 }: {
   swiperRef: React.RefObject<SwiperRef | null>;
 }) {

@@ -265,6 +265,9 @@ importers:
       unsplash-js:
         specifier: ^7.0.19
         version: 7.0.19
+      yaml:
+        specifier: ^2.9.1
+        version: 2.9.1
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3

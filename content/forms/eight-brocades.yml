@@ -1,4 +1,3 @@
----
 id: eight-brocades
 name: Eight Brocades
 thumbnail: /uploads/eight_brocades.webp
@@ -13,12 +12,6 @@ description: >-
 
 
   While it is often practiced as a medical qigong exercise, it also has its place in martial arts training to supplement external exertion of force with internal energy training.
-
-
-
-  #### Resources
-
-
-
-  - [Wikipedia on Baduanjin](https://en.wikipedia.org/wiki/Baduanjin_qigong)
----
+resources:
+  - title: "Wikipedia on Baduanjin"
+    url: "https://en.wikipedia.org/wiki/Baduanjin_qigong"

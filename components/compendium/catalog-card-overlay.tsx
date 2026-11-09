@@ -61,16 +61,18 @@ export default function CatalogCardOverlay({
         scroll={false}
       >
         <Image
-          src={item.image}
-          blurDataURL={typeof item.image === "string" ? item.image : undefined}
+          src={item.thumbnail}
+          blurDataURL={
+            typeof item.thumbnail === "string" ? item.thumbnail : undefined
+          }
           placeholder="blur"
           className={styles.itemImage}
-          alt={item.title}
+          alt={item.name}
           width="800"
           height="450"
         />
         <div className={styles.carouselItemContent}>
-          <h6 className={styles.title}>{item.title}</h6>
+          <h6 className={styles.title}>{item.name}</h6>
           {item.otherNames && item.otherNames.length > 0 && (
             <div className={styles.tags}>
               {item.otherNames.map((tag) => (

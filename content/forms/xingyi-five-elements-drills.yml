@@ -1,4 +1,3 @@
----
 id: xingyi-five-elements-drills
 name: Xingyi Five Element Dao
 thumbnail: /uploads/xingyi_drills.webp
@@ -22,20 +21,15 @@ description: >-
 
 
 
-  We usually practice these drills with wooden <i>miao daos</i> (Chinese
-  long sabers) (苗刀) and <i>bokkens</i> (Japanese wooden sword) to
-  develop <i>yi</i> (intention) and use of <i>qi</i> through the
+  We usually practice these drills with wooden *miao daos* (Chinese
+  long sabers) (苗刀) and *bokkens* (Japanese wooden sword) to
+  develop *yi* (intention) and use of *qi* through the
   implements.
-
-
-
-  #### Videos
-
-
-
-  #### Resources
-
-
-
-  - [Wikipedia on Xingyiquan](https://en.wikipedia.org/wiki/Xingyiquan)
----
+videos:
+  - title: "Xingyi Five Element Drills"
+    url: "https://youtu.be/D6A9WHOYia4?si=3MC8tgapz08OZxRT"
+  - title: "2025 NCCCAF Championship, Mason's Xingyi Linked Five Elements Miao Dao"
+    url: "https://youtu.be/K9NkeicoLIM?si=EIOTJf3pSp-BFYXz"
+resources:
+  - title: "Wikipedia on Xingyiquan"
+    url: "https://en.wikipedia.org/wiki/Xingyiquan"

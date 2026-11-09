@@ -1,4 +1,3 @@
----
 id: taoist-yoga-stretches
 name: Taoist Yoga Stretches
 thumbnail: /uploads/taoist_yoga.webp
@@ -17,12 +16,6 @@ description: >-
 
 
   If you are interested in practicing these stretches, feel free to ask our instructor for guidance.
-
-
-
-  #### Resources
-
-
-
-  - [Wikipedia on Daoyin](https://en.wikipedia.org/wiki/Daoyin)
----
+resources:
+  - title: "Wikipedia on Daoyin"
+    url: "https://en.wikipedia.org/wiki/Daoyin"
