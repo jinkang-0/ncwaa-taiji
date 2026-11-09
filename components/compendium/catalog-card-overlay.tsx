@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { CompendiumCardAlignment, CompendiumItem } from "@/lib/types";
+import { useCompendiumContext } from "./compendium-context";
 
 interface CatalogCardOverlayProps {
   item: CompendiumItem;
@@ -19,6 +20,7 @@ export default function CatalogCardOverlay({
   elementRef,
   handleOpenModal,
 }: CatalogCardOverlayProps) {
+  const { isCardDisabled } = useCompendiumContext();
   const [element, setElement] = useState<HTMLAnchorElement | null>(null);
 
   useEffect(() => {
@@ -55,9 +57,9 @@ export default function CatalogCardOverlay({
       }}
     >
       <Link
-        href={`?id=${item.id}`}
-        className={styles.overlayLink}
-        onNavigate={handleOpenModal}
+        href={isCardDisabled ? "#" : `?id=${item.id}`}
+        className={clsx(styles.overlayLink, isCardDisabled && styles.disabled)}
+        onNavigate={isCardDisabled ? undefined : handleOpenModal}
         scroll={false}
       >
         <Image

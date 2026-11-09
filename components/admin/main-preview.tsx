@@ -1,7 +1,7 @@
 import styles from "@/app/(root)/(main)/page.module.scss";
 import clsx from "clsx";
 
-export default function HomePreview({
+export default function MainPreview({
   children,
   centered,
 }: {

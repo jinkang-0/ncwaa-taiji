@@ -5,6 +5,7 @@ import { EventsSectionPreviewTemplate } from "./info/events-section-preview";
 import { FAQSectionPreviewTemplate } from "./info/faq-section-preview";
 import { InstructorSectionPreviewTemplate } from "./info/instructor-section-preview";
 import { LandingPreviewTemplate } from "./info/landing-preview";
+import { CompendiumPreviewTemplate } from "./compendium/compendium-preview";
 
 CMS.registerPreviewTemplate("landing", LandingPreviewTemplate);
 CMS.registerPreviewTemplate("aboutSection", AboutSectionPreviewTemplate);
@@ -15,6 +16,8 @@ CMS.registerPreviewTemplate(
   "instructorsSection",
   InstructorSectionPreviewTemplate,
 );
+
+CMS.registerPreviewTemplate("compendium", CompendiumPreviewTemplate);
 
 CMS.init();
 

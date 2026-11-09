@@ -1,7 +1,9 @@
 import { CompendiumItem } from "@/lib/types";
 import CompendiumCarousel from "./carousel";
 import styles from "@/app/(root)/(main)/(tabbed)/compendium/page.module.scss";
+import catalogStyles from "@/components/compendium/catalog.module.scss";
 import CompendiumCatalog from "./catalog";
+import clsx from "clsx";
 
 interface CompendiumShelfProps {
   type: "Featured" | "Default";
@@ -25,6 +27,14 @@ function StandardShelf({ items, title }: ShelfProps) {
     <div className={styles.catalog}>
       <h3>{title}</h3>
       <CompendiumCatalog items={items} />
+    </div>
+  );
+}
+
+export function CompendiumShelfPlaceholder() {
+  return (
+    <div className={styles.catalog}>
+      <div className={clsx(styles.container, catalogStyles.placeholder)}></div>
     </div>
   );
 }

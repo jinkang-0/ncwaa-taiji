@@ -7,7 +7,7 @@ import { PreviewTemplateProps } from "@/lib/types";
 import { useStyleLinker } from "@/hooks";
 import BaseTemplatePreview from "../base-template-preview";
 import HomeContentPreview from "./home-content-preview";
-import HomePreview from "./home-preview";
+import MainPreview from "../main-preview";
 
 export function InstructorSectionPreviewTemplate(
   props: PreviewTemplateComponentProps,
@@ -25,14 +25,14 @@ export default function InstructorSectionPreview({
 
   return (
     <BaseTemplatePreview>
-      <HomePreview centered>
+      <MainPreview centered>
         <HomeContentPreview>
           <InstructorsSection
             title={data.title}
             instructors={data.instructors || []}
           />
         </HomeContentPreview>
-      </HomePreview>
+      </MainPreview>
     </BaseTemplatePreview>
   );
 }

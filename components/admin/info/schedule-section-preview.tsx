@@ -6,7 +6,7 @@ import { PreviewTemplateComponentProps } from "decap-cms-core";
 import { PreviewTemplateProps } from "@/lib/types";
 import { useStyleLinker } from "@/hooks";
 import BaseTemplatePreview from "../base-template-preview";
-import HomePreview from "./home-preview";
+import MainPreview from "../main-preview";
 import HomeContentPreview from "./home-content-preview";
 
 export function ScheduleSectionPreviewTemplate(
@@ -25,7 +25,7 @@ export default function ScheduleSectionPreview({
 
   return (
     <BaseTemplatePreview>
-      <HomePreview centered>
+      <MainPreview centered>
         <HomeContentPreview>
           <ScheduleSection
             title={data.title}
@@ -43,7 +43,7 @@ export default function ScheduleSectionPreview({
             registrationLinkSecondary={data.registrationLinkSecondary}
           />
         </HomeContentPreview>
-      </HomePreview>
+      </MainPreview>
     </BaseTemplatePreview>
   );
 }

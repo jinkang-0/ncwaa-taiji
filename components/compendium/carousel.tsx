@@ -9,12 +9,15 @@ import ChevronLeft from "@/icons/chevron-left";
 import ChevronRight from "@/icons/chevron-right";
 import Link from "next/link";
 import styles from "./carousel.module.scss";
+import { useCompendiumContext } from "./compendium-context";
+import clsx from "clsx";
 
 export default function CompendiumCarousel({
   items,
 }: {
   items: CompendiumItem[];
 }) {
+  const { isCardDisabled } = useCompendiumContext();
   const swiperRef = useRef<SwiperRef>(null);
 
   const carouselItems = items.map((item) => ({
@@ -53,7 +56,13 @@ export default function CompendiumCarousel({
       >
         {carouselItems.map((i) => (
           <SwiperSlide key={i.title}>
-            <Link className={styles.carouselItem} href={i.link}>
+            <Link
+              className={clsx(
+                styles.carouselItem,
+                isCardDisabled && styles.disabled,
+              )}
+              href={i.link}
+            >
               <Image
                 src={i.image.src}
                 blurDataURL={i.image.blurDataURL}

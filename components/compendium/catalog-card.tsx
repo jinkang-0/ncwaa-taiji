@@ -29,7 +29,7 @@ export default function CatalogCard({
   const [overlayPortal, setOverlayPortal] = useState<HTMLDivElement | null>(
     null,
   );
-  const { setDialogOpenedNaturally } = useCompendiumContext();
+  const { setDialogOpenedNaturally, isCardDisabled } = useCompendiumContext();
 
   const handleMouseEnter = useCallback(() => {
     setIsCardHovered(true);
@@ -59,11 +59,12 @@ export default function CatalogCard({
     >
       <Link
         ref={elemRef}
-        onNavigate={handleOpenModal}
-        href={`?id=${item.id}`}
+        onNavigate={isCardDisabled ? undefined : handleOpenModal}
+        href={isCardDisabled ? "#" : `?id=${item.id}`}
         className={clsx(
           styles.carouselCard,
           isCardHovered && !isHovering && styles.lowerPresence,
+          isCardDisabled && styles.disabled,
         )}
         scroll={false}
       >
