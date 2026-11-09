@@ -1,29 +1,20 @@
 "use client";
 
-import Image from "next/image";
 import { Dialog, VisuallyHidden } from "radix-ui";
-import CancelIcon from "@/icons/cancel";
 import { useRouter } from "next/navigation";
-import { useMemo } from "react";
 import styles from "./content.module.scss";
 import { useCompendiumContext } from "./compendium-context";
 import { CompendiumForms } from "@/lib/cms";
+import CompendiumDialogContent from "./compendium-dialog-content";
 
-export default function CompendiumDialog({
-  children,
-  form,
-}: {
-  children?: React.ReactNode;
+interface CompendiumDialogProps {
   form: CompendiumForms;
-}) {
+}
+
+export default function CompendiumDialog({ form }: CompendiumDialogProps) {
   const router = useRouter();
   const { dialogOpenedNaturally, setDialogOpenedNaturally } =
     useCompendiumContext();
-
-  const tags = useMemo(
-    () => (form ? [form.type, ...form.otherNames] : []),
-    [form],
-  );
 
   const goBack = () => {
     if (dialogOpenedNaturally) {
@@ -50,38 +41,7 @@ export default function CompendiumDialog({
               <Dialog.Description>{form?.subtitle}</Dialog.Description>
             </VisuallyHidden.Root>
             {form ? (
-              <div className={styles.dialogMain}>
-                {/* close button */}
-                <button
-                  onClick={() => goBack()}
-                  className={styles.dialogCloseButton}
-                >
-                  <CancelIcon />
-                </button>
-                {/* main content */}
-                <main>
-                  <header>
-                    <Image
-                      src={form.thumbnail}
-                      alt={`${form.name} cover`}
-                      width={800}
-                      height={450}
-                    />
-                    <h3>{form.name}</h3>
-                    {tags.length > 0 && (
-                      <div className={styles.tags}>
-                        {tags.map((tag) => (
-                          <span key={tag} className={styles.tag}>
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                    <p className={styles.description}>{form.subtitle}</p>
-                  </header>
-                  {children}
-                </main>
-              </div>
+              <CompendiumDialogContent form={form} closeFn={goBack} />
             ) : null}
           </Dialog.Content>
         </Dialog.Overlay>

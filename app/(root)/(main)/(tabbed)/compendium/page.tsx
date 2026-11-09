@@ -1,7 +1,6 @@
 import styles from "./page.module.scss";
 import CompendiumDialog from "@/components/compendium/compendium-dialog";
 import { GenerateMetadataProps } from "@/lib/types";
-import CompendiumFormLoader from "@/components/cms-loader/compendium-form-loader";
 import CompendiumPageLoader from "@/components/cms-loader/compendium-loader";
 import { getForm } from "@/components/cms-loader/form-loader";
 
@@ -30,9 +29,7 @@ export default async function CompendiumPage({
 
   return (
     <div className={styles.container}>
-      <CompendiumDialog form={selectedForm}>
-        {selectedForm && <CompendiumFormLoader form={selectedForm} />}
-      </CompendiumDialog>
+      <CompendiumDialog form={selectedForm} />
 
       <CompendiumPageLoader />
     </div>
