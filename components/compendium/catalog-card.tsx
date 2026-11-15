@@ -81,7 +81,7 @@ export default function CatalogCard({
         />
         <div className={styles.carouselItemContent}>
           <h6 className={styles.title}>{item.name}</h6>
-          {item.otherNames.length > 0 && (
+          {item.otherNames && item.otherNames.length > 0 && (
             <div className={styles.tags}>
               {item.otherNames.map((name) => (
                 <span key={name} className={styles.tag}>

@@ -1,3 +1,4 @@
+---
 id: chen-hunyuan-ruler-10
 name: Chen Hunyuan Ruler 10
 thumbnail: /uploads/ruler.webp
@@ -19,3 +20,4 @@ description: >-
   tai chi, developing coordination and precision in movements.
 videos:
   - url: "https://youtu.be/CczCUMiJKso?si=WYc_jfxY2fb_1ec4"
+---

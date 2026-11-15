@@ -1,3 +1,4 @@
+---
 id: tiger-taming-cane
 name: Tiger Taming Dragon Cane
 thumbnail: /uploads/tiger-taming-cane.webp
@@ -12,3 +13,4 @@ description: >-
 videos:
   - title: "Tiger Taming Dragon Cane taught by Sifu Dere"
     url: "https://youtu.be/VbAAslfcvoo?si=zub_zgU9An3WjPdh"
+---

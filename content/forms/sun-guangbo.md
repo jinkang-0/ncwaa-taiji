@@ -1,3 +1,4 @@
+---
 id: sun-guangbo
 name: Sun Guangbo
 thumbnail: /uploads/guangbo.webp
@@ -12,3 +13,4 @@ videos:
     url: "https://youtu.be/U6fGm8ungYg"
   - title: "Version 2 of Sun Guangbo"
     url: "https://youtu.be/uFr6aFwMw1E"
+---

@@ -1,3 +1,4 @@
+---
 id: xingyi-five-elements-drills
 name: Xingyi Five Element Dao
 thumbnail: /uploads/xingyi_drills.webp
@@ -33,3 +34,4 @@ videos:
 resources:
   - title: "Wikipedia on Xingyiquan"
     url: "https://en.wikipedia.org/wiki/Xingyiquan"
+---

@@ -1,3 +1,4 @@
+---
 id: bagua-fan-1
 name: Kun Lun Fan
 thumbnail: /uploads/bagua-fan-1.webp
@@ -17,3 +18,4 @@ resources:
 videos:
   - title: "Kun Lun Fan by Sifu Dere in 2012"
     url: "https://youtu.be/tp1COJNH40E?si=TZlnbZIAWbXuOBPF"
+---

@@ -5,25 +5,35 @@
  * Input 3: https://www.youtube.com/embed/fRA7bMWEpjo?si=nZDt7KKhKbociiLQ
  */
 export const getYTEmbed = (link: string) => {
-  const url = new URL(link);
+  try {
+    const url = new URL(link);
 
-  let videoId: string | null = null;
-  if (url.pathname.startsWith("/embed")) videoId = url.pathname.split("/")[2];
-  if (url.pathname.startsWith("/watch")) videoId = url.searchParams.get("v");
-  if (url.hostname === "youtu.be") videoId = url.pathname.replace(/^\//, "");
+    let videoId: string | null = null;
+    if (url.pathname.startsWith("/embed")) videoId = url.pathname.split("/")[2];
+    if (url.pathname.startsWith("/watch")) videoId = url.searchParams.get("v");
+    if (url.hostname === "youtu.be") videoId = url.pathname.replace(/^\//, "");
 
-  if (!videoId) return "";
-  return `https://www.youtube.com/embed/${videoId}`;
+    if (!videoId) return "";
+    return `https://www.youtube.com/embed/${videoId}`;
+  } catch (error) {
+    console.error(error);
+    return "";
+  }
 };
 
 export const getVideoId = (link: string) => {
-  const url = new URL(link);
-  if (url.hostname === "www.youtube.com" || url.hostname === "youtube.com") {
-    return url.searchParams.get("v") ?? "";
-  } else if (url.hostname === "youtu.be") {
-    return url.pathname.split("/")[1] ?? "";
+  try {
+    const url = new URL(link);
+    if (url.hostname === "www.youtube.com" || url.hostname === "youtube.com") {
+      return url.searchParams.get("v") ?? "";
+    } else if (url.hostname === "youtu.be") {
+      return url.pathname.split("/")[1] ?? "";
+    }
+  } catch (error) {
+    console.error(error);
+  } finally {
+    return "";
   }
-  return "";
 };
 
 export const getThumbnail = (link: string) => {

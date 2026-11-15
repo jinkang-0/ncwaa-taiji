@@ -1,3 +1,4 @@
+---
 id: taoist-yoga-stretches
 name: Taoist Yoga Stretches
 thumbnail: /uploads/taoist_yoga.webp
@@ -19,3 +20,4 @@ description: >-
 resources:
   - title: "Wikipedia on Daoyin"
     url: "https://en.wikipedia.org/wiki/Daoyin"
+---

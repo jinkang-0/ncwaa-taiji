@@ -1,3 +1,4 @@
+---
 id: taiji-bagua-fan
 name: Taiji Bagua Fan
 thumbnail: /uploads/fan.webp
@@ -35,3 +36,4 @@ videos:
     url: "https://youtu.be/K72qsZavBN0?si=22QQjIpZN9E0Wr4J"
   - title: "Front and Back View"
     url: "https://youtu.be/a2I1_OwcLI0?si=xKeBff6EdAMcIsly"
+---

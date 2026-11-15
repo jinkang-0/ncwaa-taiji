@@ -1,8 +1,9 @@
+import { getYTEmbed } from "@/lib/utils";
 import styles from "./content.module.scss";
 
 export default function ContentEmbed({
   id,
-  title
+  title,
 }: {
   id: string;
   title?: string;
@@ -12,7 +13,7 @@ export default function ContentEmbed({
       <iframe
         width="560"
         height="315"
-        src={`https://www.youtube.com/embed/${id}?mute=1`}
+        src={getYTEmbed(id)}
         title="YouTube video player"
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"

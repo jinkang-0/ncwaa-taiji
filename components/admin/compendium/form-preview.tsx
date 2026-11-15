@@ -10,6 +10,7 @@ import CompendiumDialogContent from "@/components/compendium/compendium-dialog-c
 import CompendiumShelf from "@/components/compendium/compendium-shelf";
 import CompendiumPagePreviewWrapper from "./compendium-page-wrapper";
 import { enumerateData } from "@/lib/utils";
+import FormDialogWrapper from "./form-dialog-wrapper";
 
 export function FormPreviewTemplate(props: PreviewTemplateComponentProps) {
   const data = props.entry.get("data").toJS() as CompendiumForms;
@@ -24,10 +25,10 @@ export default function FormPreview({
   useStyleLinker(props);
 
   return (
-    <BaseTemplatePreview>
-      <MainPreview>
-        <FormsContextProvider>
-          <CompendiumProvider cardDisabled>
+    <FormsContextProvider>
+      <CompendiumProvider cardDisabled>
+        <BaseTemplatePreview>
+          <MainPreview>
             <CompendiumPagePreviewWrapper>
               <CompendiumShelf
                 items={[data]}
@@ -37,17 +38,19 @@ export default function FormPreview({
               <CompendiumShelf
                 items={enumerateData(data, 3, (data) => ({
                   ...data,
-                  name: `_${data.name}`,
+                  id: `_${data.id}`,
                 }))}
                 title={data.type}
                 type="Default"
               />
-
-              <CompendiumDialogContent form={data} />
             </CompendiumPagePreviewWrapper>
-          </CompendiumProvider>
-        </FormsContextProvider>
-      </MainPreview>
-    </BaseTemplatePreview>
+          </MainPreview>
+
+          <FormDialogWrapper>
+            <CompendiumDialogContent form={data} />
+          </FormDialogWrapper>
+        </BaseTemplatePreview>
+      </CompendiumProvider>
+    </FormsContextProvider>
   );
 }

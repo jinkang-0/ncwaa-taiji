@@ -1,3 +1,4 @@
+---
 id: spiraling-exercises
 name: Spiraling Exercises
 thumbnail: /uploads/spiraling.webp
@@ -16,3 +17,4 @@ description: >-
 resources:
   - title: "Reeling Silk Energy Exercises Book by Grandmaster Feng Zhiqiang"
     url: "https://austinchentaichi.com/wp-content/uploads/2009/10/ReelingSilkBook.pdf"
+---

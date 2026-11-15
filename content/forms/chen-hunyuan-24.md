@@ -1,3 +1,4 @@
+---
 id: chen-hunyuan-24
 name: Chen Hunyuan 24
 thumbnail: /uploads/chenhunyuan24.webp
@@ -16,3 +17,4 @@ videos:
 resources:
   - title: "Wikipedia on Chen Hunyuan tai chi"
     url: "https://en.m.wikipedia.org/wiki/Chen-style_tai_chi#Xinyi_Hunyuan_tai_chi"
+---

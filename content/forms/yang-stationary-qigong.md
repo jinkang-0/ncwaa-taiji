@@ -1,3 +1,4 @@
+---
 id: yang-stationary-qigong
 name: Yang Style Stationary Taiji Qigong
 thumbnail: /uploads/yang-stationary-qigong.webp
@@ -51,3 +52,4 @@ description: >-
 videos:
   - title: "Yang Style Stationary Taiji Qigong"
     url: "https://youtu.be/4NBRvPSN60o?si=hkE2egqpPYssPR9v"
+---

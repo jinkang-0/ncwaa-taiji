@@ -1,3 +1,4 @@
+---
 id: temple-guardian-exercises
 name: Temple Guardian Exercises
 thumbnail: /uploads/temple_guardian.webp
@@ -31,3 +32,4 @@ description: >-
   practice, you can hold each posture for about a minute or maybe more.
   Of course, always listen to your body and do not push beyond your
   limits. If you feel any pain or discomfort, stop and rest.
+---
