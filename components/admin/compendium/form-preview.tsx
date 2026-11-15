@@ -37,7 +37,7 @@ export default function FormPreview({
               <CompendiumShelf
                 items={enumerateData(data, 3, (data) => ({
                   ...data,
-                  name: `_${data.name}`,
+                  id: `_${data.id}`,
                 }))}
                 title={data.type}
                 type="Default"

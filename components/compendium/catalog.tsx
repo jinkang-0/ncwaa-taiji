@@ -104,7 +104,7 @@ export default function CompendiumCatalog({
               <div className={styles.itemGroup}>
                 {grp.map((i, idx) => (
                   <CatalogCard
-                    key={i.name}
+                    key={i.id}
                     item={i}
                     alignment={alignments[groupSize - 1][idx % groupSize]}
                     overlayPortalRef={overlayPortalRef}
