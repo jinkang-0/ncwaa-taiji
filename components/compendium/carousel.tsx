@@ -11,6 +11,7 @@ import Link from "next/link";
 import styles from "./carousel.module.scss";
 import { useCompendiumContext } from "./compendium-context";
 import clsx from "clsx";
+import { optionalJoin } from "@/lib/utils";
 
 export default function CompendiumCarousel({
   items,
@@ -29,7 +30,7 @@ export default function CompendiumCarousel({
     },
     title: item.name,
     description: item.subtitle,
-    tags: [item.type, ...item.otherNames],
+    tags: optionalJoin([item.type], item.otherNames),
     link: `?id=${item.id}`,
   }));
 

@@ -1,4 +1,4 @@
-import { getVideoId } from "@/lib/utils";
+import { getVideoId, optionalJoin } from "@/lib/utils";
 import ContentEmbed from "../compendium/content-embed";
 import styles from "@/components/compendium/content.module.scss";
 import { Fragment } from "react";
@@ -16,7 +16,7 @@ export default function CompendiumDialogContent({
 }) {
   if (!form) return null;
 
-  const tags = [form.type, ...form.otherNames];
+  const tags = optionalJoin([form.type], form.otherNames);
 
   return (
     <div className={styles.dialogMain}>

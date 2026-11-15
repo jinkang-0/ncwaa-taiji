@@ -1,3 +1,4 @@
+---
 id: sun-12
 name: Sun 12
 thumbnail: /uploads/sun12.webp
@@ -14,3 +15,4 @@ videos:
 resources:
   - title: "Wikipedia on Sun style tai chi"
     url: "https://en.wikipedia.org/wiki/Sun-style_tai_chi"
+---

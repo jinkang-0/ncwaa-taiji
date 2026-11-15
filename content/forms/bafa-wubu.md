@@ -1,3 +1,4 @@
+---
 id: bafa-wubu
 name: Bafa Wubu
 thumbnail: /uploads/bafawubu.webp
@@ -20,3 +21,4 @@ description: >-
 videos:
   - title: "Yang style Bafa Wubu"
     url: "https://youtu.be/XoW25w-Uusg?si=Z9d9k9ji-kI3uj-Z"
+---

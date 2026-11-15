@@ -442,6 +442,8 @@ collections:
       - label: "Other Names"
         name: "otherNames"
         widget: "list"
+        required: false
+        default: []
         field:
           label: "Name"
           name: "name"

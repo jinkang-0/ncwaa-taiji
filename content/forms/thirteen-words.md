@@ -1,3 +1,4 @@
+---
 id: thirteen-words
 name: Thirteen Words
 thumbnail: /uploads/thirteen_words.webp
@@ -13,3 +14,4 @@ description: >-
   One can practice this qigong as moving meditation, that is, using the movements to help focus the mind, calm the spirit, and regulate breathing. This is also a great exercise to help improve flexibility, strength, and balance.
 videos:
   - url: "https://youtu.be/_0_lwrfgC_Q?si=fLRkbtUeyb6RlxcF"
+---

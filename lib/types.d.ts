@@ -37,7 +37,7 @@ interface CompendiumItem {
   name: string;
   subtitle: string;
   description: string;
-  otherNames: string[];
+  otherNames?: string[];
   type: CompendiumCategory;
   thumbnail: string | StaticImageData;
 }

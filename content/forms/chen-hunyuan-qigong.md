@@ -1,3 +1,4 @@
+---
 id: chen-hunyuan-qigong
 name: Chen Hunyuan Qigong
 thumbnail: /uploads/hunyuan.webp
@@ -22,3 +23,4 @@ description: >-
 resources:
   - title: "Wikipedia on Chen Hunyuan tai chi"
     url: "https://en.m.wikipedia.org/wiki/Chen-style_tai_chi#Xinyi_Hunyuan_tai_chi"
+---

@@ -1,3 +1,4 @@
+---
 id: eight-brocades
 name: Eight Brocades
 thumbnail: /uploads/eight_brocades.webp
@@ -15,3 +16,4 @@ description: >-
 resources:
   - title: "Wikipedia on Baduanjin"
     url: "https://en.wikipedia.org/wiki/Baduanjin_qigong"
+---

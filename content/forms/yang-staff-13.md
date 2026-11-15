@@ -1,3 +1,4 @@
+---
 id: yang-staff-13
 name: Yang Thirteen Staff
 thumbnail: /uploads/yang-staff-13.webp
@@ -13,3 +14,4 @@ description: >-
 videos:
   - title: "Yang 13 Staff taught by Sifu Dere"
     url: "https://youtu.be/UL-vCzaBwZo?si=wI0k0Kei-pMy4_oh"
+---

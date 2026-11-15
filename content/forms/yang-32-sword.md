@@ -1,3 +1,4 @@
+---
 id: yang-32-sword
 name: Yang 32 Straight Sword
 thumbnail: /uploads/yang32.webp
@@ -20,3 +21,4 @@ videos:
     url: "https://youtu.be/4Qf2zk7FLuo?si=HY9lsW8K8U9_Q5Nn"
   - title: "2025 NCCCAF Championship, Mason's Yang 32 Sword"
     url: "https://youtu.be/5q2gIH3H5do?si=iCX5ahUyHojG3jbN"
+---

@@ -1,3 +1,4 @@
+---
 id: yang-24
 name: Yang 24
 thumbnail: /uploads/yang24.webp
@@ -19,3 +20,4 @@ videos:
 resources:
   - title: "Wikipedia on 24-form tai chi"
     url: "https://en.wikipedia.org/wiki/24-form_tai_chi"
+---

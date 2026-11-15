@@ -91,3 +91,22 @@ export const enumerateData = <T>(
   }
   return clones;
 };
+
+/**
+ * Creates a new array with contents from both arrays if they are valid and non-empty.
+ * Items are placed in order, elements from array A first, then array B.
+ * If both arrays are invalid, outputs an empty array.
+ */
+export const optionalJoin = <E, T extends Array<E> | undefined>(
+  arrA: T,
+  arrB: T,
+) => {
+  if (arrA && arrB && arrA.length > 0 && arrB.length > 0) {
+    return [...arrA, ...arrB];
+  } else if (arrA && arrA.length > 0) {
+    return arrA;
+  } else if (arrB && arrB.length > 0) {
+    return arrB;
+  }
+  return [];
+};
