@@ -46,7 +46,6 @@
     "swiper": "^12.1.2",
     "swr": "^2.5.1",
     "unsplash-js": "^7.0.19",
-    "yaml": "^2.9.1",
     "zod": "^4.6.7"
   },
   "devDependencies": {
