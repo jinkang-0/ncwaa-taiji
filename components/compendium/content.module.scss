@@ -2,6 +2,13 @@
 @use "lib/fonts";
 @use "lib/breakpoints";
 
+.dialogWrapper {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding-bottom: 8rem;
+}
+
 // dialog
 
 .dialogOverlay {

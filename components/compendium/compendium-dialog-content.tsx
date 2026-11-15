@@ -1,4 +1,4 @@
-import { getVideoId, optionalJoin } from "@/lib/utils";
+import { optionalJoin } from "@/lib/utils";
 import ContentEmbed from "../compendium/content-embed";
 import styles from "@/components/compendium/content.module.scss";
 import { Fragment } from "react";
@@ -55,10 +55,7 @@ export default function CompendiumDialogContent({
                 <h4>Videos</h4>
                 {form.videos.map((video) => (
                   <Fragment key={video.url}>
-                    <ContentEmbed
-                      id={getVideoId(video.url)}
-                      title={video.title}
-                    />
+                    <ContentEmbed id={video.url} title={video.title} />
                   </Fragment>
                 ))}
               </section>
