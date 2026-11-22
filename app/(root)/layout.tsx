@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { SITE_CONFIG } from "@/data/cms-config";
 import { jsonLd } from "@/data/json-ld";
 import ProgressBarProvider from "@/components/ui/progress-bar";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 // load global styles
@@ -12,12 +11,6 @@ import "swiper/css/mousewheel";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import { kaushanScript, sen } from "@/lib/fonts";
-
-// ensure environmental variables are imported
-if (!process.env.AUTH_GOOGLE_ID)
-  throw new Error(
-    "Google OAuth Client ID not included in environment variables.",
-  );
 
 // site metadata
 export const viewport: Viewport = {
@@ -103,9 +96,7 @@ export default function AppLayout({
         />
       </head>
       <body className={`${kaushanScript.variable} ${sen.variable}`}>
-        <GoogleOAuthProvider clientId={process.env.AUTH_GOOGLE_ID || ""}>
-          <ProgressBarProvider>{children}</ProgressBarProvider>
-        </GoogleOAuthProvider>
+        <ProgressBarProvider>{children}</ProgressBarProvider>
       </body>
       <GoogleAnalytics gaId="G-3TN3Q2XMMR" />
     </html>
