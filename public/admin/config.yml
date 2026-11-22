@@ -418,6 +418,9 @@ collections:
       - label: "Authors"
         name: "authors"
         widget: "list"
+        required: true
+        min: 1
+        max: 100
         field:
           label: "Author Name"
           name: "authorName"

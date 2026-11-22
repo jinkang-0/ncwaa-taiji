@@ -34,7 +34,7 @@ export default function BlogReader({
             </Link>
           ) : null}
           <Image
-            src={blog.thumbnail ?? null}
+            src={blog.thumbnail}
             alt={blog.title}
             width="400"
             height="200"
