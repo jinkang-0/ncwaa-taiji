@@ -3,14 +3,22 @@
 
 .container {
   width: 100%;
-  display: flex;
   flex: 1;
+
+  &.minimal {
+    margin: auto;
+  }
 }
 
 .article {
   width: 60%;
   margin-left: clamp(20px, 16%, 200px);
   margin-bottom: 32px;
+
+  &.minimal {
+    margin-left: 0;
+    margin-top: 32px;
+  }
 }
 
 .header {

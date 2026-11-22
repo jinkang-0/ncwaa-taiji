@@ -1,20 +1,38 @@
 import Link from "next/link";
 import styles from "./blog.module.scss";
+import contentStyles from "./blog-content.module.scss";
 import Image from "next/image";
 import LeftArrow from "@/icons/left-arrow";
 import { formatList } from "@/lib/utils";
 import { Blogs } from "@/lib/cms";
 import BlogTimestamp from "./blog-timestamp";
 import MarkdownParser from "../ui/markdown";
+import clsx from "clsx";
 
-export default async function BlogReader({ blog }: { blog: Blogs }) {
+interface BlogReaderProps {
+  blog: Blogs;
+  showBackLink?: boolean;
+  style?: "default" | "minimal";
+}
+
+export default function BlogReader({
+  blog,
+  showBackLink = true,
+  style,
+}: BlogReaderProps) {
   return (
-    <div className={styles.container}>
-      <article className={styles.article}>
+    <div
+      className={clsx(styles.container, style === "minimal" && styles.minimal)}
+    >
+      <article
+        className={clsx(styles.article, style === "minimal" && styles.minimal)}
+      >
         <header className={styles.header}>
-          <Link href="/blog">
-            <LeftArrow /> Back to blogs
-          </Link>
+          {showBackLink ? (
+            <Link href="/blog">
+              <LeftArrow /> Back to blogs
+            </Link>
+          ) : null}
           <Image
             src={blog.thumbnail}
             alt={blog.title}
@@ -37,7 +55,9 @@ export default async function BlogReader({ blog }: { blog: Blogs }) {
             </span>
           </div>
         </header>
-        <MarkdownParser>{blog.content}</MarkdownParser>
+        <div className={contentStyles.content}>
+          <MarkdownParser>{blog.content}</MarkdownParser>
+        </div>
       </article>
     </div>
   );
