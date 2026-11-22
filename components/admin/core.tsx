@@ -29,27 +29,19 @@ CMS.registerPreviewTemplate("blogs", BlogPreviewTemplate);
 
 // event listeners
 CMS.registerEventListener({
-  name: "prePublish",
-  handler: ({ entry }) => {
-    const collection = entry.get("collection");
-
-    if (collection === "blogs") {
-      const timestamp = new Date().toISOString();
-      return entry.get("data").set("timeCreated", timestamp);
-    }
-
-    return entry;
-  },
-});
-
-CMS.registerEventListener({
   name: "preSave",
   handler: ({ entry }) => {
     const collection = entry.get("collection");
 
     if (collection === "blogs") {
       const timestamp = new Date().toISOString();
-      return entry.get("data").set("timeEdited", timestamp);
+      let data = entry.get("data");
+
+      if (!data.get("timeCreated")) {
+        data = data.set("timeCreated", timestamp);
+      }
+
+      return data.set("timeEdited", timestamp);
     }
 
     return entry;
