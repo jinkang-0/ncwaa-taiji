@@ -6,20 +6,15 @@ import { Blogs } from "@/lib/cms";
 export default async function BlogFeed({ blogs }: { blogs: Blogs[] }) {
   const hasBlogs = blogs.length > 0;
 
+  if (hasBlogs) return blogs.map((b) => <BlogCard key={b.id} blog={b} />);
+
   return (
-    <>
-      {hasBlogs && <h6>Published</h6>}
-      {hasBlogs ? (
-        blogs.map((b) => <BlogCard key={b.id} blog={b} />)
-      ) : (
-        <div className={styles.noBlogs}>
-          <InkAndQuill />
-          <p>
-            We don&apos;t have any blogs yet,
-            <br /> check back later!
-          </p>
-        </div>
-      )}
-    </>
+    <div className={styles.noBlogs}>
+      <InkAndQuill />
+      <p>
+        We don&apos;t have any blogs yet,
+        <br /> check back later!
+      </p>
+    </div>
   );
 }

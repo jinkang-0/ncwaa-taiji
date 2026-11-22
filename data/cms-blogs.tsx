@@ -38,7 +38,7 @@ export const getBlogs = async () => {
     );
   }
 
-  return Object.values(blogs).toSorted((a, b) => a.timeCreated - b.timeCreated);
+  return Object.values(blogs).toSorted((a, b) => b.timeCreated - a.timeCreated);
 };
 
 export const getBlog = async (id: string) => {

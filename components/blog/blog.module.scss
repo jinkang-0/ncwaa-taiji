@@ -3,6 +3,9 @@
 
 .container {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
   flex: 1;
 
   &.minimal {
@@ -11,9 +14,7 @@
 }
 
 .article {
-  width: 60%;
-  margin-left: clamp(20px, 16%, 200px);
-  margin-bottom: 32px;
+  width: clamp(300px, 60%, 800px);
 
   &.minimal {
     margin-left: 0;
