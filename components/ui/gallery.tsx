@@ -1,16 +1,15 @@
 "use client";
 
-import { GalleryItem } from "@/lib/types";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Mousewheel } from "swiper/modules";
-
 import styles from "./gallery.module.scss";
 import clsx from "clsx";
 import { useIsMounted } from "@/hooks";
+import { Landing_CommunityPhotos } from "@/lib/cms";
 
 interface GalleryProps {
-  items: GalleryItem[];
+  items: Landing_CommunityPhotos[];
 }
 
 export default function Gallery({ items }: GalleryProps) {
@@ -35,17 +34,13 @@ export default function Gallery({ items }: GalleryProps) {
         }}
       >
         {items.map((i) => {
-          const src = typeof i.image === "string" ? i.image : i.image.src;
-          const blurDataURL =
-            typeof i.image === "string" ? i.image : i.image.blurDataURL;
-
           return (
-            <SwiperSlide key={src} className={styles.carouselItemWrapper}>
+            <SwiperSlide key={i.image} className={styles.carouselItemWrapper}>
               <div className={styles.carouselItem}>
                 <Image
                   src={i.image}
                   placeholder="blur"
-                  blurDataURL={blurDataURL}
+                  blurDataURL={i.image}
                   alt={i.caption ?? "alt"}
                   width={1028}
                   height={771}
@@ -54,7 +49,7 @@ export default function Gallery({ items }: GalleryProps) {
                   className={styles.ambiance}
                   src={i.image}
                   placeholder="blur"
-                  blurDataURL={blurDataURL}
+                  blurDataURL={i.image}
                   alt={"ambiance image"}
                   width={1028}
                   height={771}
