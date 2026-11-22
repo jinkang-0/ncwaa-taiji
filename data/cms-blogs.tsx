@@ -6,6 +6,7 @@ import z from "zod";
 
 const blogsDir = path.join(process.cwd(), "content", "blogs");
 const blogs: Record<string, Blogs> = {};
+let blogRetrieved = false;
 
 const blogSchema = z.object({
   id: z.string(),
@@ -21,7 +22,7 @@ const blogSchema = z.object({
 }) satisfies z.ZodType<Blogs, unknown>;
 
 export const getBlogs = async () => {
-  if (Object.keys(blogs).length === 0) {
+  if (!blogRetrieved) {
     const blogPaths = (await fs.readdir(blogsDir)).filter((f) =>
       /\.md$/.test(f),
     );
@@ -36,6 +37,8 @@ export const getBlogs = async () => {
         }
       }),
     );
+
+    blogRetrieved = true;
   }
 
   return Object.values(blogs).toSorted((a, b) => b.timeCreated - a.timeCreated);
