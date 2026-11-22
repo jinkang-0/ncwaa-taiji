@@ -31,11 +31,20 @@ CMS.registerPreviewTemplate("blogs", BlogPreviewTemplate);
 CMS.registerEventListener({
   name: "preSave",
   handler: ({ entry }) => {
-    const data = entry.get("data");
+    const collection = entry.get("collection");
 
-    if (data.test("timeEdited")) {
-      entry.get("data").set("timeEdited", new Date());
+    if (collection === "blogs") {
+      const data = entry.get("data");
+      const timestamp = new Date().toISOString();
+
+      if (!data.get("timeCreated")) {
+        entry.get("data").set("timeCreated", timestamp);
+      }
+
+      entry.get("data").set("timeEdited", timestamp);
     }
+
+    return entry;
   },
 });
 

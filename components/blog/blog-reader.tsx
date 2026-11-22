@@ -34,11 +34,11 @@ export default function BlogReader({
             </Link>
           ) : null}
           <Image
-            src={blog.thumbnail}
+            src={blog.thumbnail ?? null}
             alt={blog.title}
             width="400"
             height="200"
-            blurDataURL={blog.thumbnail}
+            blurDataURL={blog.thumbnail ?? undefined}
             style={{
               objectPosition: `0% ${blog.imageOffset}%`,
             }}
@@ -46,7 +46,7 @@ export default function BlogReader({
           <div className={styles.titles}>
             <h2>{blog.title}</h2>
             <span>
-              {formatList(blog.authors.map((a) => a))} ·{" "}
+              {blog.authors && formatList(blog.authors.map((a) => a))} ·{" "}
               <BlogTimestamp
                 visible={blog.visible}
                 timeCreated={blog.timeCreated}
