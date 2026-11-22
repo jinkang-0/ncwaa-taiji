@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Mousewheel, Pagination } from "swiper/modules";
-import { CompendiumItem } from "@/lib/types";
 import { useRef } from "react";
 import ChevronLeft from "@/icons/chevron-left";
 import ChevronRight from "@/icons/chevron-right";
@@ -12,11 +11,12 @@ import styles from "./carousel.module.scss";
 import { useCompendiumContext } from "./compendium-context";
 import clsx from "clsx";
 import { optionalJoin } from "@/lib/utils";
+import { CompendiumForms } from "@/lib/cms";
 
 export default function CompendiumCarousel({
   items,
 }: {
-  items: CompendiumItem[];
+  items: CompendiumForms[];
 }) {
   const { isCardDisabled } = useCompendiumContext();
   const swiperRef = useRef<SwiperRef>(null);

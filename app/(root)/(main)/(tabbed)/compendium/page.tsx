@@ -2,7 +2,7 @@ import styles from "./page.module.scss";
 import CompendiumDialog from "@/components/compendium/compendium-dialog";
 import { GenerateMetadataProps } from "@/lib/types";
 import CompendiumPageLoader from "@/components/cms-loader/compendium-loader";
-import { getForm } from "@/components/cms-loader/form-loader";
+import { getForm } from "@/data/cms-forms";
 
 export async function generateMetadata({
   searchParams,

@@ -3,6 +3,8 @@ export interface SiteConfig {
   siteTitle: string;
   compendiumTabTitle: string;
   blogTabTitle: string;
+  siteDescription: any;
+  siteUrl: string;
 }
 
 export interface Contacts {
@@ -119,11 +121,16 @@ export interface Compendium {
 }
 
 export interface Blogs {
+  id: string;
   title: string;
   thumbnail: string;
+  imageOffset: number;
   authors: string[];
   summary: string;
   content: any;
+  visible: boolean;
+  timeCreated: any;
+  timeEdited: any;
 }
 
 export type CompendiumForms_Type_options = "Exercise" | "Project" | "Competition" | "Qigong" | "Core";

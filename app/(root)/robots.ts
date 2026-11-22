@@ -1,4 +1,4 @@
-import CONFIG from "@/data/config";
+import { SITE_CONFIG } from "@/data/cms-config";
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
@@ -6,9 +6,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/admin-login", "/refresh", "/blog/draft"]
+      disallow: ["/admin-login", "/refresh", "/blog/draft"],
     },
-    sitemap: `${CONFIG.siteUrl}/sitemap.xml`,
-    host: CONFIG.siteUrl
+    sitemap: `${SITE_CONFIG.siteUrl}/sitemap.xml`,
+    host: SITE_CONFIG.siteUrl,
   };
 }

@@ -1,4 +1,4 @@
-import CONFIG from "@/data/config";
+import { SITE_CONFIG } from "@/data/cms-config";
 import { MetadataRoute } from "next";
 
 export const dynamic = "force-dynamic";
@@ -6,23 +6,23 @@ export const dynamic = "force-dynamic";
 export default function sitemap(): MetadataRoute.Sitemap {
   const sitemap: MetadataRoute.Sitemap = [
     {
-      url: CONFIG.siteUrl,
+      url: SITE_CONFIG.siteUrl,
       lastModified: new Date().toISOString(),
       changeFrequency: "monthly",
-      priority: 1
+      priority: 1,
     },
     {
-      url: `${CONFIG.siteUrl}/blog`,
+      url: `${SITE_CONFIG.siteUrl}/blog`,
       lastModified: new Date().toISOString(),
       changeFrequency: "monthly",
-      priority: 0.5
+      priority: 0.5,
     },
     {
-      url: `${CONFIG.siteUrl}/compendium`,
+      url: `${SITE_CONFIG.siteUrl}/compendium`,
       lastModified: new Date().toISOString(),
       changeFrequency: "monthly",
-      priority: 0.6
-    }
+      priority: 0.6,
+    },
   ];
 
   return sitemap;

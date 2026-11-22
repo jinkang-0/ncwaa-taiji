@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import CONFIG from "@/data/config";
+import { SITE_CONFIG } from "@/data/cms-config";
 import { jsonLd } from "@/data/json-ld";
 import ProgressBarProvider from "@/components/ui/progress-bar";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 // load global styles
@@ -13,12 +12,6 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import { kaushanScript, sen } from "@/lib/fonts";
 
-// ensure environmental variables are imported
-if (!process.env.AUTH_GOOGLE_ID)
-  throw new Error(
-    "Google OAuth Client ID not included in environment variables.",
-  );
-
 // site metadata
 export const viewport: Viewport = {
   width: "device-width",
@@ -28,13 +21,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: CONFIG.siteName,
-    template: `%s | ${CONFIG.siteName}`,
+    default: SITE_CONFIG.siteTitle,
+    template: `%s | ${SITE_CONFIG.siteTitle}`,
   },
-  creator: CONFIG.siteName,
-  publisher: CONFIG.siteName,
-  applicationName: CONFIG.siteName,
-  description: CONFIG.siteDescription,
+  creator: SITE_CONFIG.siteTitle,
+  publisher: SITE_CONFIG.siteTitle,
+  applicationName: SITE_CONFIG.siteTitle,
+  description: SITE_CONFIG.siteDescription,
   keywords: [
     "taiji at berkeley",
     "tai chi at berkeley",
@@ -69,12 +62,12 @@ export const metadata: Metadata = {
     "uc tai chi",
     "caltaiji",
   ],
-  metadataBase: new URL(CONFIG.siteUrl),
+  metadataBase: new URL(SITE_CONFIG.siteUrl),
   openGraph: {
-    siteName: CONFIG.siteName,
-    title: CONFIG.siteName,
-    description: CONFIG.siteDescription,
-    url: CONFIG.siteUrl,
+    siteName: SITE_CONFIG.siteTitle,
+    title: SITE_CONFIG.siteTitle,
+    description: SITE_CONFIG.siteDescription,
+    url: SITE_CONFIG.siteUrl,
     type: "website",
     locale: "en_US",
   },
@@ -103,9 +96,7 @@ export default function AppLayout({
         />
       </head>
       <body className={`${kaushanScript.variable} ${sen.variable}`}>
-        <GoogleOAuthProvider clientId={process.env.AUTH_GOOGLE_ID || ""}>
-          <ProgressBarProvider>{children}</ProgressBarProvider>
-        </GoogleOAuthProvider>
+        <ProgressBarProvider>{children}</ProgressBarProvider>
       </body>
       <GoogleAnalytics gaId="G-3TN3Q2XMMR" />
     </html>

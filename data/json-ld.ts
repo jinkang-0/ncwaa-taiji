@@ -1,12 +1,14 @@
+import { CONTACT_CONFIG, SITE_CONFIG } from "./cms-config";
+
 export const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "NCWAA Taiji",
-  url: "https://ncwaataiji.org",
-  logo: "https://ncwaataiji.org/favicon.ico",
+  name: SITE_CONFIG.siteTitle,
+  url: SITE_CONFIG.siteUrl,
+  logo: `${SITE_CONFIG.siteUrl}/favicon.ico`,
   sameAs: [
-    "https://www.facebook.com/UCBTaiji",
-    "https://youtube.com/@TsanoVideos/",
-    "https://www.instagram.com/caltaiji/"
-  ]
+    CONTACT_CONFIG.facebook,
+    CONTACT_CONFIG.youtube,
+    CONTACT_CONFIG.instagram,
+  ],
 };

@@ -1,4 +1,4 @@
-import { getForms } from "@/components/cms-loader/form-loader";
+import { getForms } from "@/data/cms-forms";
 import { NextResponse } from "next/server";
 
 // static JSON, build once

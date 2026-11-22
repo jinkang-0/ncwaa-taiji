@@ -7,7 +7,9 @@ import { InstructorSectionPreviewTemplate } from "./info/instructor-section-prev
 import { LandingPreviewTemplate } from "./info/landing-preview";
 import { CompendiumPreviewTemplate } from "./compendium/compendium-preview";
 import { FormPreviewTemplate } from "./compendium/form-preview";
+import { BlogPreviewTemplate } from "./blogs/blog-preview";
 
+// home page previews
 CMS.registerPreviewTemplate("landing", LandingPreviewTemplate);
 CMS.registerPreviewTemplate("aboutSection", AboutSectionPreviewTemplate);
 CMS.registerPreviewTemplate("scheduleSection", ScheduleSectionPreviewTemplate);
@@ -18,8 +20,24 @@ CMS.registerPreviewTemplate(
   InstructorSectionPreviewTemplate,
 );
 
+// compendium previews
 CMS.registerPreviewTemplate("compendium", CompendiumPreviewTemplate);
 CMS.registerPreviewTemplate("forms", FormPreviewTemplate);
+
+// blog previews
+CMS.registerPreviewTemplate("blogs", BlogPreviewTemplate);
+
+// event listeners
+CMS.registerEventListener({
+  name: "preSave",
+  handler: ({ entry }) => {
+    const data = entry.get("data");
+
+    if (data.test("timeEdited")) {
+      entry.get("data").set("timeEdited", new Date());
+    }
+  },
+});
 
 CMS.init();
 
