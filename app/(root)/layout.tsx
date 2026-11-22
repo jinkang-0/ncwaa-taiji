@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import CONFIG from "@/data/config";
+import { SITE_CONFIG } from "@/data/cms-config";
 import { jsonLd } from "@/data/json-ld";
 import ProgressBarProvider from "@/components/ui/progress-bar";
 import { GoogleOAuthProvider } from "@react-oauth/google";
@@ -28,13 +28,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: CONFIG.siteName,
-    template: `%s | ${CONFIG.siteName}`,
+    default: SITE_CONFIG.siteTitle,
+    template: `%s | ${SITE_CONFIG.siteTitle}`,
   },
-  creator: CONFIG.siteName,
-  publisher: CONFIG.siteName,
-  applicationName: CONFIG.siteName,
-  description: CONFIG.siteDescription,
+  creator: SITE_CONFIG.siteTitle,
+  publisher: SITE_CONFIG.siteTitle,
+  applicationName: SITE_CONFIG.siteTitle,
+  description: SITE_CONFIG.siteDescription,
   keywords: [
     "taiji at berkeley",
     "tai chi at berkeley",
@@ -69,12 +69,12 @@ export const metadata: Metadata = {
     "uc tai chi",
     "caltaiji",
   ],
-  metadataBase: new URL(CONFIG.siteUrl),
+  metadataBase: new URL(SITE_CONFIG.siteUrl),
   openGraph: {
-    siteName: CONFIG.siteName,
-    title: CONFIG.siteName,
-    description: CONFIG.siteDescription,
-    url: CONFIG.siteUrl,
+    siteName: SITE_CONFIG.siteTitle,
+    title: SITE_CONFIG.siteTitle,
+    description: SITE_CONFIG.siteDescription,
+    url: SITE_CONFIG.siteUrl,
     type: "website",
     locale: "en_US",
   },

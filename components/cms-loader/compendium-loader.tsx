@@ -1,7 +1,7 @@
 import rawCompendiumContent from "@/content/page/compendium.yml";
 import { Compendium } from "@/lib/cms";
 import CompendiumShelf from "../compendium/compendium-shelf";
-import { getForm } from "./form-loader";
+import { getForm } from "../../data/cms-forms";
 
 const compendiumContent = rawCompendiumContent as unknown as Compendium;
 

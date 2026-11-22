@@ -11,7 +11,7 @@ import {
   useContext,
   useMemo,
   useState,
-  useTransition
+  useTransition,
 } from "react";
 
 interface BlogContextProps {
@@ -34,7 +34,7 @@ export const useBlogContext = () => {
 
 export function BlogContextProvider({
   children,
-  blog
+  blog,
 }: {
   children: React.ReactNode;
   blog: PopulatedBlog;
@@ -44,7 +44,7 @@ export function BlogContextProvider({
   const [isSaving, startSaving] = useTransition();
   const status = useMemo(
     () => (isSaving ? "saving" : isUnsaved ? "unsaved" : "saved"),
-    [isSaving, isUnsaved]
+    [isSaving, isUnsaved],
   );
 
   const reportEdit = useCallback(() => {
@@ -61,7 +61,7 @@ export function BlogContextProvider({
       setUnsaved(false);
       return awaitedResult;
     },
-    [startSaving, blogState._id]
+    [startSaving, blogState._id],
   );
 
   return (

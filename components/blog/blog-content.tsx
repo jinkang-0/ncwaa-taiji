@@ -3,7 +3,7 @@ import { serializeValue } from "./editor/editor-config-static";
 import styles from "./blog-content.module.scss";
 
 export default async function BlogContent({
-  blogContent
+  blogContent,
 }: {
   blogContent: Value;
 }) {
@@ -16,7 +16,7 @@ export default async function BlogContent({
         position: "relative",
         whiteSpace: "pre-wrap",
         overflowWrap: "break-word",
-        wordBreak: "break-word"
+        wordBreak: "break-word",
       }}
       dangerouslySetInnerHTML={{ __html: serializedContent }}
     />

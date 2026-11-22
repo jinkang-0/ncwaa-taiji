@@ -1,6 +1,5 @@
 import { nth } from "./generic";
 import { DateTime } from "luxon";
-import CONFIG from "@/data/config";
 
 /**
  * Get the month from a string of the format "Jan 1, 2025"
@@ -54,15 +53,22 @@ export const parseDateObj = (dateObj: Date) => {
  */
 export const compareDate = (base: Date, date: string, t: string) => {
   // try with date and time
-  const dt = DateTime.fromFormat(`${date} ${t}`, "DDD t", {
-    zone: CONFIG.timezone,
-  });
+  const dt = DateTime.fromFormat(`${date} ${t}`, "DDD t");
   if (dt.isValid) return base.getTime() < dt.toMillis();
 
   // try with date only
-  const d = DateTime.fromFormat(date, "DDD", { zone: CONFIG.timezone });
+  const d = DateTime.fromFormat(date, "DDD");
   if (d.isValid) return base.getTime() < d.toMillis();
 
   // invalid date
   return false;
+};
+
+/**
+ * Returns true if the two dates passed in are in the same day.
+ */
+export const sameDay = (a: Date, b: Date) => {
+  const dayA = new Date(a.getFullYear(), a.getMonth(), a.getDate());
+  const dayB = new Date(b.getFullYear(), b.getMonth(), b.getDate());
+  return dayA.getTime() === dayB.getTime();
 };

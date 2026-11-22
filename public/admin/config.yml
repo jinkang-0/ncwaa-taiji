@@ -63,6 +63,14 @@ collections:
             name: "blogTabTitle"
             widget: "string"
             hint: "This is the first text that appears on the blog tab. It is formatted as <Blog Tab Title> | <Main Tab Title>"
+          - label: "Site Description"
+            name: "siteDescription"
+            wiget: "string"
+            hint: "The description text that appears on search engines and link embeds."
+          - label: "Canonical URL"
+            name: "siteUrl"
+            widget: "string"
+            hint: "The canonical URL for the site."
       - label: "Contacts"
         name: "contacts"
         file: "content/config/contacts.yml"
@@ -377,7 +385,13 @@ collections:
     name: "blogs"
     folder: "content/blogs"
     create: true
+    identifier_field: "id"
+    summary: "{{title}}"
     fields:
+      - label: "ID"
+        name: "id"
+        widget: "string"
+        hint: "A unique ID for this blog, usually the title in kebab case (e.g. name-of-blog)"
       - label: "Title"
         name: "title"
         widget: "string"
@@ -394,6 +408,12 @@ collections:
           width: 800
           height: null
           aspect_ratio: 2x1
+      - label: "Image Offset"
+        name: "imageOffset"
+        widget: "number"
+        hint: "The horizontal offset percentage of the thumbnail image"
+        min: 0
+        max: 100
       - label: "Authors"
         name: "authors"
         widget: "list"
@@ -408,6 +428,21 @@ collections:
       - label: "Content"
         name: "content"
         widget: "richtext"
+      - label: "Visible"
+        name: "visible"
+        widget: "boolean"
+        default: true
+        hint: "Whether or not this blog should be visible on the site."
+      - label: "Time Created"
+        name: "timeCreated"
+        widget: "hidden"
+        default: "{{now}}"
+        format: "YYYY-MM-DDTHH:mm:ssZ"
+      - label: "Time Edited"
+        name: "timeEdited"
+        widget: "hidden"
+        default: "{{now}}"
+        format: "YYYY-MM-DDTHH:mm:ssZ"
   - label: "Compendium Forms"
     name: "forms"
     folder: "content/forms"
