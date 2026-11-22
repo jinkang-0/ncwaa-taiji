@@ -23,20 +23,27 @@ const blogSchema = z.object({
 
 export const getBlogs = async () => {
   if (!blogRetrieved) {
-    const blogPaths = (await fs.readdir(blogsDir)).filter((f) =>
-      /\.md$/.test(f),
-    );
+    try {
+      const blogPaths = (await fs.readdir(blogsDir)).filter((f) =>
+        /\.md$/.test(f),
+      );
 
-    await Promise.all(
-      blogPaths.map(async (blog) => {
-        const rawContent = await fs.readFile(path.join(blogsDir, blog), "utf8");
-        const { data } = matter(rawContent);
-        const { success, data: parsedData } = blogSchema.safeParse(data);
-        if (success) {
-          blogs[data.id] = parsedData;
-        }
-      }),
-    );
+      await Promise.all(
+        blogPaths.map(async (blog) => {
+          const rawContent = await fs.readFile(
+            path.join(blogsDir, blog),
+            "utf8",
+          );
+          const { data } = matter(rawContent);
+          const { success, data: parsedData } = blogSchema.safeParse(data);
+          if (success) {
+            blogs[data.id] = parsedData;
+          }
+        }),
+      );
+    } catch (err: unknown) {
+      console.error(err);
+    }
 
     blogRetrieved = true;
   }
