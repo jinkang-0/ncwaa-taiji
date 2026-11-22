@@ -412,6 +412,7 @@ collections:
         name: "imageOffset"
         widget: "number"
         hint: "The vertical offset percentage of the thumbnail image from 0% to 100%"
+        default: 0
         min: 0
         max: 100
       - label: "Authors"
@@ -436,12 +437,10 @@ collections:
       - label: "Time Created"
         name: "timeCreated"
         widget: "hidden"
-        default: "{{now}}"
         format: "YYYY-MM-DDTHH:mm:ssZ"
       - label: "Time Edited"
         name: "timeEdited"
         widget: "hidden"
-        default: "{{now}}"
         format: "YYYY-MM-DDTHH:mm:ssZ"
   - label: "Compendium Forms"
     name: "forms"
