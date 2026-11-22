@@ -2,13 +2,13 @@
 
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Mousewheel, Pagination } from "swiper/modules";
-import { CompendiumItem } from "@/lib/types";
 import { useEffect, useMemo, useRef, useState } from "react";
 import ChevronLeft from "@/icons/chevron-left";
 import ChevronRight from "@/icons/chevron-right";
 import CatalogCard from "./catalog-card";
 import { CatalogContextProvider } from "./catalog-context";
 import styles from "./catalog.module.scss";
+import { CompendiumForms } from "@/lib/cms";
 
 const alignments = [
   ["middle"],
@@ -19,7 +19,7 @@ const alignments = [
 export default function CompendiumCatalog({
   items,
 }: {
-  items: CompendiumItem[];
+  items: CompendiumForms[];
 }) {
   const swiperRef = useRef<SwiperRef>(null);
   const overlayPortalRef = useRef<HTMLDivElement>(null);

@@ -3,7 +3,7 @@
 import styles from "./catalog.module.scss";
 import Image from "next/image";
 import clsx from "clsx";
-import { CompendiumCardAlignment, CompendiumItem } from "@/lib/types";
+import { CompendiumCardAlignment } from "@/lib/types";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useCatalogContext } from "./catalog-context";
@@ -11,9 +11,10 @@ import { createPortal } from "react-dom";
 import { useCompendiumContext } from "./compendium-context";
 import { AnimatePresence } from "motion/react";
 import CatalogCardOverlay from "./catalog-card-overlay";
+import { CompendiumForms } from "@/lib/cms";
 
 interface CatalogCardProps {
-  item: CompendiumItem;
+  item: CompendiumForms;
   alignment: CompendiumCardAlignment;
   overlayPortalRef: React.RefObject<HTMLDivElement | null>;
 }

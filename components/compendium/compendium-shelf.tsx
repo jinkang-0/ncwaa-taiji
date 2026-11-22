@@ -1,13 +1,13 @@
-import { CompendiumItem } from "@/lib/types";
 import CompendiumCarousel from "./carousel";
 import styles from "@/app/(root)/(main)/(tabbed)/compendium/page.module.scss";
 import catalogStyles from "@/components/compendium/catalog.module.scss";
 import CompendiumCatalog from "./catalog";
 import clsx from "clsx";
+import { CompendiumForms } from "@/lib/cms";
 
 interface CompendiumShelfProps {
   type: "Featured" | "Default";
-  items: CompendiumItem[];
+  items: CompendiumForms[];
   title: string;
 }
 

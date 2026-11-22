@@ -4,11 +4,12 @@ import clsx from "clsx";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { CompendiumCardAlignment, CompendiumItem } from "@/lib/types";
+import { CompendiumCardAlignment } from "@/lib/types";
 import { useCompendiumContext } from "./compendium-context";
+import { CompendiumForms } from "@/lib/cms";
 
 interface CatalogCardOverlayProps {
-  item: CompendiumItem;
+  item: CompendiumForms;
   alignment: CompendiumCardAlignment;
   elementRef: React.RefObject<HTMLAnchorElement | null>;
   handleOpenModal: () => void;

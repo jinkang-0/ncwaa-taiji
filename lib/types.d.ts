@@ -1,3 +1,4 @@
+import { getBlogByBlogId } from "@/actions/db";
 import { PreviewTemplateComponentProps } from "decap-cms-core";
 
 // nextjs metadata generation props
@@ -6,20 +7,17 @@ interface GenerateMetadataProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
+// compendium
+type CompendiumCardAlignment = "left" | "middle" | "right";
+
+// database objects
+
+type PopulatedBlog = Awaited<ReturnType<typeof getBlogByBlogId>>[0];
+
 // utility types
 
 type PreviewTemplateProps<T> = PreviewTemplateComponentProps & { data: T };
 
 type Prettify<T> = {} & {
   [K in keyof T]: T[K];
-};
-
-type Serialize<T> = {
-  [K in keyof T]: T[K] extends Types.ObjectId
-    ? string
-    : T[K] extends Array<infer U>
-      ? Array<Serialize<U>>
-      : T[K] extends object
-        ? Serialize<T[K]>
-        : T[K];
 };
